@@ -32,11 +32,11 @@
             this.lblCnt1538 = new System.Windows.Forms.Label();
             this.chk1538 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblCnt1539 = new System.Windows.Forms.Label();
-            this.chk1539 = new System.Windows.Forms.CheckBox();
+            this.lblCnt1546 = new System.Windows.Forms.Label();
+            this.chk1546 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblCnt1366 = new System.Windows.Forms.Label();
-            this.chk1366 = new System.Windows.Forms.CheckBox();
+            this.lblCnt1554 = new System.Windows.Forms.Label();
+            this.chk1554 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblCntZaprosBU = new System.Windows.Forms.Label();
             this.chkZapros = new System.Windows.Forms.CheckBox();
@@ -69,9 +69,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(343, 13);
+            this.label1.Size = new System.Drawing.Size(197, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Счетчик 1538 (Углы_и_угловая_скорость_наведения_ПКП_МРО):";
+            this.label1.Text = "Счетчик 1538 (Состояние прицела_0):";
             // 
             // lblCnt1538
             // 
@@ -98,58 +98,58 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(20, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 13);
+            this.label2.Size = new System.Drawing.Size(197, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Счетчик 1539 (Состояние_ПКП_МРО):";
+            this.label2.Text = "Счетчик 1546 (Состояние прицела_1):";
             // 
-            // lblCnt1539
+            // lblCnt1546
             // 
-            this.lblCnt1539.AutoSize = true;
-            this.lblCnt1539.Location = new System.Drawing.Point(416, 54);
-            this.lblCnt1539.Name = "lblCnt1539";
-            this.lblCnt1539.Size = new System.Drawing.Size(13, 13);
-            this.lblCnt1539.TabIndex = 0;
-            this.lblCnt1539.Text = "0";
+            this.lblCnt1546.AutoSize = true;
+            this.lblCnt1546.Location = new System.Drawing.Point(416, 54);
+            this.lblCnt1546.Name = "lblCnt1546";
+            this.lblCnt1546.Size = new System.Drawing.Size(13, 13);
+            this.lblCnt1546.TabIndex = 0;
+            this.lblCnt1546.Text = "0";
             // 
-            // chk1539
+            // chk1546
             // 
-            this.chk1539.AutoSize = true;
-            this.chk1539.Checked = true;
-            this.chk1539.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk1539.Location = new System.Drawing.Point(522, 54);
-            this.chk1539.Name = "chk1539";
-            this.chk1539.Size = new System.Drawing.Size(15, 14);
-            this.chk1539.TabIndex = 1;
-            this.chk1539.UseVisualStyleBackColor = true;
+            this.chk1546.AutoSize = true;
+            this.chk1546.Checked = true;
+            this.chk1546.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk1546.Location = new System.Drawing.Point(522, 54);
+            this.chk1546.Name = "chk1546";
+            this.chk1546.Size = new System.Drawing.Size(15, 14);
+            this.chk1546.TabIndex = 1;
+            this.chk1546.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(20, 77);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(237, 13);
+            this.label4.Size = new System.Drawing.Size(197, 13);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Счетчик 1366 (Текущая_дальность_и_строб):";
+            this.label4.Text = "Счетчик 1554 (Состояние прицела_2):";
             // 
-            // lblCnt1366
+            // lblCnt1554
             // 
-            this.lblCnt1366.AutoSize = true;
-            this.lblCnt1366.Location = new System.Drawing.Point(416, 77);
-            this.lblCnt1366.Name = "lblCnt1366";
-            this.lblCnt1366.Size = new System.Drawing.Size(13, 13);
-            this.lblCnt1366.TabIndex = 0;
-            this.lblCnt1366.Text = "0";
+            this.lblCnt1554.AutoSize = true;
+            this.lblCnt1554.Location = new System.Drawing.Point(416, 77);
+            this.lblCnt1554.Name = "lblCnt1554";
+            this.lblCnt1554.Size = new System.Drawing.Size(13, 13);
+            this.lblCnt1554.TabIndex = 0;
+            this.lblCnt1554.Text = "0";
             // 
-            // chk1366
+            // chk1554
             // 
-            this.chk1366.AutoSize = true;
-            this.chk1366.Checked = true;
-            this.chk1366.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk1366.Location = new System.Drawing.Point(522, 77);
-            this.chk1366.Name = "chk1366";
-            this.chk1366.Size = new System.Drawing.Size(15, 14);
-            this.chk1366.TabIndex = 1;
-            this.chk1366.UseVisualStyleBackColor = true;
+            this.chk1554.AutoSize = true;
+            this.chk1554.Checked = true;
+            this.chk1554.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk1554.Location = new System.Drawing.Point(522, 77);
+            this.chk1554.Name = "chk1554";
+            this.chk1554.Size = new System.Drawing.Size(15, 14);
+            this.chk1554.TabIndex = 1;
+            this.chk1554.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -226,15 +226,15 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.chk1540);
-            this.groupBox1.Controls.Add(this.chk1366);
+            this.groupBox1.Controls.Add(this.chk1554);
             this.groupBox1.Controls.Add(this.lbl1540);
-            this.groupBox1.Controls.Add(this.lblCnt1539);
-            this.groupBox1.Controls.Add(this.lblCnt1366);
+            this.groupBox1.Controls.Add(this.lblCnt1546);
+            this.groupBox1.Controls.Add(this.lblCnt1554);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.chk1539);
+            this.groupBox1.Controls.Add(this.chk1546);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(554, 217);
@@ -423,11 +423,11 @@
         public System.Windows.Forms.CheckBox chk1538;
         public System.Windows.Forms.Label lblCnt1538;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label lblCnt1539;
-        public System.Windows.Forms.CheckBox chk1539;
+        public System.Windows.Forms.Label lblCnt1546;
+        public System.Windows.Forms.CheckBox chk1546;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label lblCnt1366;
-        public System.Windows.Forms.CheckBox chk1366;
+        public System.Windows.Forms.Label lblCnt1554;
+        public System.Windows.Forms.CheckBox chk1554;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label lblCntZaprosBU;
         public System.Windows.Forms.CheckBox chkZapros;

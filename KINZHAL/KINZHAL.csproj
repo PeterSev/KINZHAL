@@ -87,6 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CMR.cs" />
     <Compile Include="Device.cs" />
     <Compile Include="DoubleBufferedListBox.cs">
       <SubType>Component</SubType>

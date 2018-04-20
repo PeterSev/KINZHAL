@@ -170,6 +170,9 @@ namespace KINZHAL
             //пока не врубаем таймер. Может потом пригодиццо, поэтому не удаляем
             //tmrSend1540.Start();   
 
+
+            numSpeedAz.Tag = 0;
+            numSpeedUM.Tag = 0;
         }
 
         void sdi_eventFPS_FrameReceived(double fps)
@@ -276,8 +279,8 @@ namespace KINZHAL
 
             //Запись в лог об отправке команды
             if ((msg.Descriptor == 1538 && _frmDebug.chk1538.Checked) ||
-                        (msg.Descriptor == 1539 && _frmDebug.chk1539.Checked) ||
-                        (msg.Descriptor == 1366 && _frmDebug.chk1366.Checked) ||
+                        (msg.Descriptor == 1546 && _frmDebug.chk1546.Checked) ||
+                        (msg.Descriptor == 1554 && _frmDebug.chk1554.Checked) ||
                         (msg.Descriptor == 1 && _frmDebug.chkZapros.Checked) ||
                         (msg.Descriptor == 2 && _frmDebug.chkAck.Checked) ||
                         (msg.Descriptor == 1540 && _frmDebug.chk1540.Checked))
@@ -520,6 +523,150 @@ namespace KINZHAL
         private void btnA5_15_Click_1(object sender, EventArgs e)
         {
             SendMessage(Devices[selectedIndex], devPPK, a5_15);
+        }
+
+        private void numSpeedAz_ValueChanged(object sender, EventArgs e)
+        {
+            double d = (double)numSpeedAz.Value * CMR.SPEED_AZ_UM;
+            d = Math.Round(d);
+            int i = (int)d;
+            numSpeedAz.Tag = i;
+            trackAz.Value = i;   
+        }
+
+        private void trackAz_ValueChanged(object sender, EventArgs e)
+        {
+            lblTrackAzValue.Text = trackAz.Value.ToString();
+            if ((int)numSpeedAz.Tag == trackAz.Value) return;
+
+            numSpeedAz.Value = (decimal) (trackAz.Value / CMR.SPEED_AZ_UM);
+        }
+
+        private void trackUM_ValueChanged(object sender, EventArgs e)
+        {
+            lblTrackUM.Text = trackUM.Value.ToString();
+            if ((int)numSpeedUM.Tag == trackUM.Value) return;
+
+            numSpeedUM.Value = (decimal)(trackUM.Value / CMR.SPEED_AZ_UM);
+        }
+
+        private void numSpeedUM_ValueChanged(object sender, EventArgs e)
+        {
+            double d = (double)numSpeedUM.Value * CMR.SPEED_AZ_UM;
+            d = Math.Round(d);
+            int i = (int)d;
+            numSpeedUM.Tag = i;
+            trackUM.Value = i;
+        }
+
+        private void trackFocusTV_ValueChanged(object sender, EventArgs e)
+        {
+            numFocusTV.Value = trackFocusTV.Value;
+        }
+
+        private void numFocusTV_ValueChanged(object sender, EventArgs e)
+        {
+            trackFocusTV.Value = (int)numFocusTV.Value;
+        }
+
+        private void trackVremyaExpTV_ValueChanged(object sender, EventArgs e)
+        {
+            numVremyaExpTV.Value = trackVremyaExpTV.Value;
+        }
+
+        private void numVremyaExpTV_ValueChanged(object sender, EventArgs e)
+        {
+            trackVremyaExpTV.Value = (int)numVremyaExpTV.Value;
+        }
+
+        private void trackUsilMatrTV_ValueChanged(object sender, EventArgs e)
+        {
+            numUsilMatrTV.Value = trackUsilMatrTV.Value;
+        }
+
+        private void numUsilMatrTV_ValueChanged(object sender, EventArgs e)
+        {
+            trackUsilMatrTV.Value = (int)numUsilMatrTV.Value;
+        }
+
+        private void trackContrastTV_ValueChanged(object sender, EventArgs e)
+        {
+            numContrastTV.Value = trackContrastTV.Value;
+        }
+
+        private void numContrastTV_ValueChanged(object sender, EventArgs e)
+        {
+            trackContrastTV.Value = (int)numContrastTV.Value;
+        }
+
+        private void trackContrastTPV_ValueChanged(object sender, EventArgs e)
+        {
+            numContrastTPV.Value = trackContrastTPV.Value;
+        }
+
+        private void numContrastTPV_ValueChanged(object sender, EventArgs e)
+        {
+            trackContrastTPV.Value = (int)numContrastTPV.Value;
+        }
+
+        private void trackUsilMatrTPV_ValueChanged(object sender, EventArgs e)
+        {
+            numUsilMatrTPV.Value = trackUsilMatrTPV.Value;
+        }
+
+        private void numUsilMatrTPV_ValueChanged(object sender, EventArgs e)
+        {
+            trackUsilMatrTPV.Value = (int)numUsilMatrTPV.Value;
+        }
+
+        private void trackVremyaExpTPV_ValueChanged(object sender, EventArgs e)
+        {
+            numVremyaExpTPV.Value = trackVremyaExpTPV.Value;
+        }
+
+        private void numVremyaExpTPV_ValueChanged(object sender, EventArgs e)
+        {
+            trackVremyaExpTPV.Value = (int)numVremyaExpTPV.Value;
+        }
+
+        private void trackFocusTPV_ValueChanged(object sender, EventArgs e)
+        {
+            numFocusTPV.Value = trackFocusTPV.Value;
+        }
+
+        private void numFocusTPV_ValueChanged(object sender, EventArgs e)
+        {
+            trackFocusTPV.Value = (int)numFocusTPV.Value;
+        }
+
+        private void btnA5_9_11_Click(object sender, EventArgs e)
+        {
+            a5_9.Data[0] = 0;
+            a5_9.Data[1] = radSSK.Checked ? (byte)0 : (byte)1;
+            a5_9.Data[2] = (byte)trackAz.Value;
+            a5_9.Data[3] = (byte)(trackAz.Value >> 8);
+            a5_9.Data[4] = (byte)trackUM.Value;
+            a5_9.Data[5] = (byte)(trackUM.Value >> 8);
+            a5_9.Data[6] = (byte)trackFocusTV.Value;
+            a5_9.Data[7] = (byte)(trackFocusTV.Value >> 8);
+            SendMessage(Devices[selectedIndex], devPPK, a5_9);
+
+            a5_10.Data[0] = 1;
+            a5_10.Data[1] = (byte)trackVremyaExpTV.Value;
+            a5_10.Data[2] = (byte)(trackVremyaExpTV.Value >> 8);
+            a5_10.Data[3] = (byte)trackUsilMatrTV.Value;
+            a5_10.Data[4] = (byte)trackContrastTV.Value;
+            a5_10.Data[5] = (byte)(trackFocusTPV.Value);
+            a5_10.Data[6] = (byte)(trackFocusTPV.Value >> 8);
+            SendMessage(Devices[selectedIndex], devPPK, a5_10);
+
+            a5_11.Data[0] = 2;
+            a5_11.Data[1] = (byte)trackVremyaExpTPV.Value;
+            a5_11.Data[2] = (byte)(trackVremyaExpTPV.Value >> 8);
+            a5_11.Data[3] = (byte)trackUsilMatrTPV.Value;
+            a5_11.Data[4] = (byte)trackContrastTPV.Value;
+
+            SendMessage(Devices[selectedIndex], devPPK, a5_11);
         }
 
         private void radA5_2_Click(object sender, EventArgs e)
@@ -849,8 +996,8 @@ namespace KINZHAL
 
 
                     if ((descr == 1538 && _frmDebug.chk1538.Checked) ||
-                        (descr == 1539 && _frmDebug.chk1539.Checked) ||
-                        (descr == 1366 && _frmDebug.chk1366.Checked) ||
+                        (descr == 1546 && _frmDebug.chk1546.Checked) ||
+                        (descr == 1554 && _frmDebug.chk1554.Checked) ||
                         (descr == 1 && _frmDebug.chkZapros.Checked) ||
                         (descr == 2 && _frmDebug.chkAck.Checked))
                         //(descr == 2 && _frmDebug.chkAckBU.Checked && dAddr == 21))
@@ -899,16 +1046,19 @@ namespace KINZHAL
 
             switch (descr)
             {
-                case 1538:  //обработка широковещательного сообщения с углами наведения и угловыми скоростями по двум осям, вывод на форму
-                    cntOfAnglesRate++;
-                    if (cntOfAnglesRate >= 10) //прореживаем вывод на экран
-                    {
-                        UpdateAnglesAndSpeeds(inMsg.Data);
-                        cntOfAnglesRate = 0;
-                    }
+                case 1538:  //Состояние прицела в 3-х пакетах
+                    //cntOfAnglesRate++;
+                    //if (cntOfAnglesRate >= 10) //прореживаем вывод на экран
+                    //{
+                        UpdateAnglesAndSpeeds0(inMsg.Data);
+                        //cntOfAnglesRate = 0;
+                    //}
                     break;
-                case 1539:  //обработка широковещательного сообщения с состоянием ПКП-МРО, вывод на форму.   
-                    UpdateStatePKP_MRO(inMsg.Data);
+                case 1546:
+                    UpdateAnglesAndSpeeds1(inMsg.Data);
+                    break;
+                case 1554:     
+                    UpdateAnglesAndSpeeds2(inMsg.Data);
                     break;
                 case 1280: //в зависимости от прошлой посланной команды реагируем на пришедшее подтверждение
                     switch (lastMsg.Descriptor)
@@ -930,6 +1080,8 @@ namespace KINZHAL
                     break;
             }
         }
+
+        
 
         void UpdateDeviceCapturedBroadcast(byte sAddr)
         {
@@ -966,11 +1118,11 @@ namespace KINZHAL
                     case 1538:
                         if (_frmDebug.chk1538.Checked) _frmDebug.lblCnt1538.Text = (_frmDebug.iCnt1538++).ToString();
                         break;
-                    case 1539:
-                        if (_frmDebug.chk1539.Checked) _frmDebug.lblCnt1539.Text = (_frmDebug.iCnt1539++).ToString();
+                    case 1546:
+                        if (_frmDebug.chk1546.Checked) _frmDebug.lblCnt1546.Text = (_frmDebug.iCnt1546++).ToString();
                         break;
-                    case 1366:
-                        if (_frmDebug.chk1366.Checked) _frmDebug.lblCnt1366.Text = (_frmDebug.iCnt1366++).ToString();
+                    case 1554:
+                        if (_frmDebug.chk1554.Checked) _frmDebug.lblCnt1554.Text = (_frmDebug.iCnt1554++).ToString();
                         break;
                     case 1:
                         if (Addr == 21)
@@ -993,102 +1145,108 @@ namespace KINZHAL
         }
 
 
-        void UpdateStatePKP_MRO(byte[] buf)
+        
+
+        void UpdateAnglesAndSpeeds0(byte[] buf)
         {
-            if (buf.Length < 6) return;
+            if (buf.Length < 7) return;
             Invoke((MethodInvoker)delegate
             {
-                string str = "";
-                switch (buf[0] & 0x07)
-                {
-                    case 0: str = "инициализация"; txtPKP_MRO_Mode.BackColor = Color.Yellow; txtPKP_MRO_Mode.ForeColor = SystemColors.WindowText; break;
-                    case 1: str = "наблюдение"; txtPKP_MRO_Mode.BackColor = Color.LightGreen; txtPKP_MRO_Mode.ForeColor = SystemColors.WindowText; break;
-                    case 2: str = "автонаведение"; txtPKP_MRO_Mode.BackColor = Color.Black; txtPKP_MRO_Mode.ForeColor = Color.White; break;
-                    case 3: str = "фиксация скорости"; txtPKP_MRO_Mode.BackColor = Color.Black; txtPKP_MRO_Mode.ForeColor = Color.White; break;
-                    case 4: str = "целеуказание"; txtPKP_MRO_Mode.BackColor = Color.Black; txtPKP_MRO_Mode.ForeColor = Color.White; break;
-                    case 5: str = "выверка"; txtPKP_MRO_Mode.BackColor = Color.Violet; txtPKP_MRO_Mode.ForeColor = SystemColors.WindowText; break;
-                    case 6: str = "тестирование"; txtPKP_MRO_Mode.BackColor = Color.Violet; txtPKP_MRO_Mode.ForeColor = SystemColors.WindowText; break;
-                    case 7: str = "выключение"; txtPKP_MRO_Mode.BackColor = Color.LightCoral; txtPKP_MRO_Mode.ForeColor = Color.White; break;
-                }
-                txtPKP_MRO_Mode.Text = str;
+                double s1 = ((short)(buf[1] + (buf[2] << 8)) * 1);
+                double s2 = ((short)(buf[3] + (buf[4] << 8)) * 1);
+                double s3 = ((buf[5] + (buf[6] << 8)) * CMR.SPEED_AZ_UM);
 
-                if ((buf[0] & 0x08) != 0) indPKP_MRO_Ready.BackColor = Color.LightGreen;    else indPKP_MRO_Ready.BackColor = Color.Red;
-                if ((buf[0] & 0x10) != 0) indSS_Ready.BackColor = Color.LightGreen;         else indSS_Ready.BackColor = Color.Red;
-                if ((buf[0] & 0x20) != 0) indDK_Ready.BackColor = Color.LightGreen; else indDK_Ready.BackColor = Color.Red;
-                if ((buf[0] & 0x40) != 0) indDTK_Ready.BackColor = Color.LightGreen; else indDTK_Ready.BackColor = Color.Red;
-                if ((buf[0] & 0x80) != 0) indTPVK_Ready.BackColor = Color.LightGreen; else indTPVK_Ready.BackColor = Color.Red;
-
-                if ((buf[1] & 0x01) != 0) { txtCanal.Text = "ТПВК"; txtCanal.BackColor = Color.Black; txtCanal.ForeColor = Color.White; } else { txtCanal.Text = "ДТК"; txtCanal.BackColor = Color.LightGreen; txtCanal.ForeColor = SystemColors.WindowText; }
-
-                switch ((buf[1]>>1) & 0x03)
-                {
-                    case 0: str = "ШПЗ"; break;
-                    case 1: str = "УПЗ"; break;
-                    case 3: str = "ОПЗ"; break;
-                    default:
-                    case 2: str = "error"; break;
-                }
-                txtPoleZrenia.Text = str;
-
-                switch ((buf[1] >> 3) & 0x03)
-                {
-                    case 0: str = "1 крат"; break;
-                    case 1: str = "1.6 крат"; break;
-                    case 2: str = "2 крат"; break;
-                    case 3: str = "3.2 крат"; break;
-                }
-                txtUvel.Text = str;
-
-                switch ((buf[1] >> 5) & 0x03)
-                {
-                    case 0: str = "НОРМ"; break;
-                    case 1: str = "СВЕТ"; break;
-                    case 2: str = "ДЫМ"; break;
-                    default:
-                    case 3: str = "error"; break;
-                }
-                txtSvetofilter.Text = str;
-
-                if ((buf[1] & 0x80) != 0) txtPolar.Text = "негатив"; else txtPolar.Text = "позитив";
-
-                if ((buf[2] & 0x01) != 0) txtObogrev.Text = "включен"; else txtObogrev.Text = "выключен";
-                switch ((buf[2] >> 1) & 0x03)
-                {
-                    case 0: str = "белая"; break;
-                    case 1: str = "серая"; break;
-                    case 3: str = "выключена"; break;
-                    case 2: str = "черная"; break;
-                }
-                txtMark.Text = str;
-
-                if ((buf[2] & 0x08) != 0) indNizhPole.BackColor = Color.LightGreen; else indNizhPole.BackColor = Color.Red;
-                if ((buf[2] & 0x10) != 0) indVsplyv.BackColor = Color.LightGreen; else indVsplyv.BackColor = Color.Red;
-                if ((buf[2] & 0x20) != 0) indKrugDiag.BackColor = Color.LightGreen; else indKrugDiag.BackColor = Color.Red;
-                if ((buf[2] & 0x40) != 0) indMenu.BackColor = Color.LightGreen; else indMenu.BackColor = Color.Red;
-                if ((buf[2] & 0x80) != 0) indUgolVizir.BackColor = Color.LightGreen; else indUgolVizir.BackColor = Color.Red;
-
-                txtFocusDTK.Text = buf[3].ToString();
-                txtFocusTPVK.Text = buf[4].ToString();
-                txtUsil.Text = buf[5].ToString();
+                txtAngleAz.Text = Math.Round(s1,2).ToString();
+                txtAngleUM.Text = Math.Round(s2, 2).ToString();
+                txtSpeedAz.Text = Math.Round(s3, 2).ToString();
             });
         }
 
-        void UpdateAnglesAndSpeeds(byte[] buf)
+        void UpdateAnglesAndSpeeds1(byte[] buf)
         {
             if (buf.Length < 8) return;
             Invoke((MethodInvoker)delegate
             {
-                double s1 = ((short)(buf[0] + (buf[1] << 8)) * 0.091552734375);
-                double s2 = ((short)(buf[2] + (buf[3] << 8)) * 0.0275);
-                double s3 = ((buf[4] + (buf[5] << 8)) * 0.091552734375);
-                double s4 = ((short)(buf[6] + (buf[7] << 8)) * 0.0275);
-                txtUgolVert.Text = Math.Round(s1,2).ToString();
-                txtSkorVert.Text = Math.Round(s2, 2).ToString();
-                txtUgolHor.Text = Math.Round(s3, 2).ToString();
-                txtSkorHor.Text = Math.Round(s4, 2).ToString();
+                string str = "";
+                double s1 = ((short)(buf[1] + (buf[2] << 8)) * CMR.SPEED_AZ_UM);
+                txtSpeedUM.Text = Math.Round(s1, 2).ToString();
+                txtStateTVpotoka.Text = buf[3] == 0 ? "Включен" : "Отключен";
+                txtStateTPVpotoka.Text = buf[4] == 0 ? "Включен" : "Отключен";
+                switch(buf[5] & 0x03)
+                {
+                    default:
+                    case 0: str = "Дежурный"; break;
+                    case 1: str = "Рабочий"; break;
+                    case 2: str = "Технологический"; break;
+                }
+                txtRezhimPricela.Text = str;
+
+                if ((buf[5] & 0x04) != 0) indPrivodaVKL.BackColor = Color.LightGreen; else indPrivodaVKL.BackColor = Color.Red;
+                if ((buf[5] & 0x08) != 0) indTVMatrVKL.BackColor = Color.LightGreen; else indTVMatrVKL.BackColor = Color.Red;
+
+                switch(buf[5] & 0x30)
+                {
+                    default: str = "Ошибка!"; break;
+                    case 0: str = "Отключена"; break;
+                    case 1: str = "Включается"; break;
+                    case 2: str = "Включена"; break;
+                    case 3: str = "Отключается"; break;
+                }
+                txtStateTPVMatr.Text = str;
+
+                if ((buf[5] & 0x40) != 0) indLDGotov.BackColor = Color.LightGreen; else indLDGotov.BackColor = Color.Red;
+
+                txtSystemCoord.Text = (buf[6] & 0x02) != 0 ? "ЗСК" : "ССК";
+                switch (buf[6] & 0x0C)
+                {
+                    default:    str = "Ошибка!"; break;
+                    case 0: str = "Нет фильтра"; break;
+                    case 1: str = "1-й фильтр"; break;
+                    case 2: str = "2-й фильтр"; break;
+                    case 3: str = "3-й фильтр"; break;
+                }
+                txtOpticFilterTV.Text = str;
+
+                if ((buf[6] & 0x10) != 0) indObogrevStekla.BackColor = Color.LightGreen; else indObogrevStekla.BackColor = Color.Red;
+
+                switch (buf[7])
+                {
+                    case 0: str = "Стабилизация";  break;
+                    case 1: str = "Сопровождение по координатам и скоростям"; break;
+                    case 2: str = "Сопровождение с заданными скоростями"; break;
+                    case 3: str = "Переброс по координатам"; break;
+                    case 4: str = "Транспортное положение"; break;
+                    default: str = "Ошибка!"; break;
+                }
+                txtSposobDvizh.Text = str;
             });
         }
 
+        void UpdateAnglesAndSpeeds2(byte[] buf)
+        {
+            if (buf.Length < 3) return;
+            Invoke((MethodInvoker)delegate
+            {
+                string str = "";
+                switch (buf[1])
+                {
+                    case 0: str = "ШПЗ"; break;
+                    case 1: str = "УПЗ"; break;
+                    case 2: str = "УПЗх2"; break;
+                    default: str = "Ошибка!"; break;
+                }
+                txtPoleZrenTV.Text = str;
+
+                switch (buf[2])
+                {
+                    case 0: str = "ШПЗ"; break;
+                    case 1: str = "УПЗ"; break;
+                    case 2: str = "УПЗх2"; break;
+                    default: str = "Ошибка!"; break;
+                }
+                txtPoleZrenTPV.Text = str;
+            });
+        }
 
         Message GetMessageByDescriptor(ushort descr)
         {
