@@ -86,7 +86,7 @@ namespace KINZHAL
 
         List<Device> Devices = new List<Device>();  //список устройств, что мы имитируем
         List<Message> lstMessages = new List<Message>();
-        List<string> lstErr = new List<string>();
+        //List<string> lstErr = new List<string>();
         USBcanServer CanSrv = new USBcanServer();
         MyJoystick myJoystick;
         Message lastMsg; //храним ссылку на последнюю отправленную команду
@@ -110,6 +110,7 @@ namespace KINZHAL
         public frmDebug _frmDebug;
         public frmSettings _frmSettings;
         public frmCoord _frmCoord;
+        public frmAbout _frmAbout;
 
         byte bRet;
 
@@ -128,7 +129,7 @@ namespace KINZHAL
 
         public SDI_Capture sdi;
 
-
+        public double version = 1.8;
         //Bitmap bitmap;
         //Graphics imgr;
         public frmMain()
@@ -148,8 +149,10 @@ namespace KINZHAL
             _frmDebug = new frmDebug();
             _frmSettings = new frmSettings(this);
             _frmCoord = new frmCoord();
+            _frmAbout = new frmAbout();
             //_frmVideoSet = new frmVideoSettings();
-            _frmLog._frmMain =  _frmPU._frmMain = _frmDebug._frmMain = _frmCoord._frmMain = this;
+            _frmLog._frmMain =  _frmPU._frmMain = _frmDebug._frmMain = 
+                _frmCoord._frmMain = _frmAbout._frmMain = this;
 
             //pict1.Image = sdi.bitmap;
             sets = new SettingXML();
@@ -178,24 +181,6 @@ namespace KINZHAL
             numAngleAZ.Tag = 0;
             numAngleUM.Tag = 0;
 
-            lstErr.Add("готовность БУ");
-            lstErr.Add("готовность ТВ");
-            lstErr.Add("готовность ТПВ");
-            lstErr.Add("резерв");
-            lstErr.Add("готовность ЛД");
-            lstErr.Add("резерв");
-            lstErr.Add("резерв");
-            lstErr.Add("готовность привода");
-            lstErr.Add("неисправность БУ");
-            lstErr.Add("неисправность ТВ");
-            lstErr.Add("неисправность ТПВ");
-            lstErr.Add("резерв");
-            lstErr.Add("неисправность ЛД");
-            lstErr.Add("резерв");
-            lstErr.Add("резерв");
-            lstErr.Add("неисправность приводов");
-
-            //txtErrorCode.Text = String.Join(Environment.NewLine, lstErr);
         }
 
         private void TmrSendA5_9_11_Tick(object sender, EventArgs e)
@@ -541,10 +526,12 @@ namespace KINZHAL
         {
             a5_16.Data[0] = 0;
             a5_16.Data[1] = 0;
-            if (radUPZ_TV.Checked) a5_16.Data[0] = 1;
-            if (radUPZ2_TV.Checked) a5_16.Data[0] = 2;
-            if (radUPZ_TPV.Checked) a5_16.Data[1] = 1;
-            if (radUPZ2_TPV.Checked) a5_16.Data[1] = 2;
+            if (radSHPZ_TV.Checked) a5_16.Data[0] = 1;
+            if (radUPZ_TV.Checked) a5_16.Data[0] = 2;
+            if (radUPZ2_TV.Checked) a5_16.Data[0] = 3;
+            if (radSHPZ_TPV.Checked) a5_16.Data[1] = 1;
+            if (radUPZ_TPV.Checked) a5_16.Data[1] = 2;
+            if (radUPZ2_TPV.Checked) a5_16.Data[1] = 3;
 
             SendMessage(Devices[selectedIndex], devPPK, a5_16);
         }
@@ -804,12 +791,62 @@ namespace KINZHAL
             }
         }
 
+        private void btnMeasureRange_Click(object sender, EventArgs e)
+        {
+            a5_17.Data[0] = (byte)numAims.Value;
+            a5_17.Data[1] = (byte)(int)numStrobMin.Value;
+            a5_17.Data[2] = (byte)((int)numStrobMin.Value >> 8);
+            a5_17.Data[3] = (byte)(int)numStrobMax.Value;
+            a5_17.Data[4] = (byte)((int)numStrobMax.Value >> 8);
+
+            SendMessage(Devices[selectedIndex], devPPK, a5_17);
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _frmAbout.Show();
+        }
+
+        private void txtDiagnostic_MouseLeave(object sender, EventArgs e)
+        {
+            Control cntr = (Control)sender;
+            tipMessage.SetToolTip(cntr, null);
+        }
+
         public void chkPU_MouseDown(object sender, MouseEventArgs e)
         {
             CheckBox chk = (CheckBox)sender;
             chk.Tag = true;
 
             A5_20_Process();
+        }
+
+        private void lblErrorCode_MouseEnter(object sender, EventArgs e)
+        {
+            //UInt32 ErrCode = UInt32.Parse(lblErrorCode.Text, System.Globalization.NumberStyles.HexNumber);    //Все работает, если нет в строке приставки 0x
+            UInt32 ErrCode = Convert.ToUInt32(lblErrorCode.Text, 16);
+            var lstErr = CheckErrorCodes(ErrCode);
+            string msg;
+            if (lstErr.Count != 0)
+                msg = String.Join(Environment.NewLine, lstErr.ToArray());
+            else
+                msg = "NO_ERROR";
+
+            tipMessage.SetToolTip(lblErrorCode, msg);
+
+        }
+
+        private void txtDiagnostic_MouseEnter(object sender, EventArgs e)
+        {
+            UInt32 ErrCode = Convert.ToUInt32(txtDiagnostic.Text, 16);
+            var lstDiag = CheckDiagCodes(ErrCode);
+            string msg;
+            if (lstDiag.Count != 0)
+                msg = String.Join(Environment.NewLine, lstDiag.ToArray());
+            else
+                msg = "NO_ERROR";
+
+            tipMessage.SetToolTip(txtDiagnostic, msg);
         }
 
         public void chkPU_MouseUp(object sender, MouseEventArgs e)
@@ -898,7 +935,13 @@ namespace KINZHAL
             panelPict.Size = new Size(1920, 1080);
             videoSourcePlayer.Parent = panelPict;
 
-            this.HorizontalScroll.Enabled = false;
+
+            //FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Left = Top = 0;
+            Width = Screen.PrimaryScreen.WorkingArea.Width;
+            Height = Screen.PrimaryScreen.WorkingArea.Height;
+
+            this.HorizontalScroll.Enabled = true;
 
 
             _frmLog.Show();
@@ -1250,7 +1293,7 @@ namespace KINZHAL
                 (buf[0] + (buf[1] << 8) +
                 (buf[2] << 16) + (buf[3] << 24) +
                 (buf[4] << 32) + (buf[5] << 40) +
-                (buf[6] << 48) + (buf[7] << 56)).ToString();
+                (buf[6] << 48) + (buf[7] << 56)).ToString("X");
             });
         }
 
@@ -1277,19 +1320,54 @@ namespace KINZHAL
         void UpdateErrorCode(byte[] buf)
         {
             UInt32 erCode = 0;
-            List<string> lst = new List<string>();
-            //txtErrorCode.Text = "";
             erCode = (uint)(buf[0] + (buf[1] << 8) + (buf[2] << 16) + (buf[3] << 24));
+
             
-            for(int i = 0; i < lstErr.Count; i++)
-            {
-                if ((erCode & (1 << i)) != 0) lst.Add(lstErr[i]);
-            }
             Invoke((MethodInvoker)delegate
             {
-                lblErrorCode.Text = "Код ошибки (0х" + erCode.ToString("X") + ")";
-                txtErrorCode.Text = String.Join(Environment.NewLine, lst);
+                lblErrorCode.Text = erCode.ToString("X");
             });
+        }
+
+        List<string> CheckErrorCodes(UInt32 err)
+        {
+            List<string> lst = new List<string>();
+            for (int i = 0; i < sizeof(UInt32) * 8; i++)
+            {
+                if ((err & (1 << i)) != 0)
+                {
+                    string str = ((ERROR_CODE)(i)).ToString();
+                    lst.Add(str);
+                }
+            }
+            return lst;
+        }
+
+        List<string> CheckDiagCodes(UInt32 err)
+        {
+            List<string> lst = new List<string>();
+            if((err & 0x0F) != 0)
+            {
+                string str = ((DIAG_CODE)(err & 0x0F)).ToString();
+                lst.Add(str);
+            }
+            if((err & (0x0F << 4)) != 0)
+            {
+                string str = ((DIAG_CODE)(err & (0x0F << 4))).ToString();
+                lst.Add(str);
+            }
+            if((err & (0xFF << 8)) != 0)
+            {
+                string str = ((DIAG_CODE)(err & (0xFF << 8))).ToString();
+                lst.Add(str);
+            }
+            if ((err & (0xFF << 24)) != 0)
+            {
+                string str = ((DIAG_CODE)(err & (0xFF << 24))).ToString();
+                lst.Add(str);
+            }
+
+            return lst;
         }
 
         void UpdateReasonStartPPK(byte[] buf)
@@ -1453,18 +1531,20 @@ namespace KINZHAL
                 string str = "";
                 switch (buf[1])
                 {
-                    case 0: str = "ШПЗ"; break;
-                    case 1: str = "УПЗ"; break;
-                    case 2: str = "УПЗх2"; break;
+                    case 0: str = "ОПЗ"; break;
+                    case 1: str = "ШПЗ"; break;
+                    case 2: str = "УПЗ"; break;
+                    case 3: str = "УПЗх2"; break;
                     default: str = "Ошибка!"; break;
                 }
                 txtPoleZrenTV.Text = str;
 
                 switch (buf[2])
                 {
-                    case 0: str = "ШПЗ"; break;
-                    case 1: str = "УПЗ"; break;
-                    case 2: str = "УПЗх2"; break;
+                    case 0: str = "ОПЗ"; break;
+                    case 1: str = "ШПЗ"; break;
+                    case 2: str = "УПЗ"; break;
+                    case 3: str = "УПЗх2"; break;
                     default: str = "Ошибка!"; break;
                 }
                 txtPoleZrenTPV.Text = str;
