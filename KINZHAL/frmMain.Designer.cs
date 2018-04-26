@@ -31,26 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.cboDevices = new System.Windows.Forms.ComboBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.chkA5_29 = new System.Windows.Forms.CheckBox();
-            this.btnA5_29 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.numA5_29_Vert = new System.Windows.Forms.NumericUpDown();
-            this.trackA5_29_Vert = new System.Windows.Forms.TrackBar();
-            this.label9 = new System.Windows.Forms.Label();
-            this.numA5_29_Hor = new System.Windows.Forms.NumericUpDown();
-            this.trackA5_29_Hor = new System.Windows.Forms.TrackBar();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.chkJoy = new System.Windows.Forms.CheckBox();
-            this.btnA5_30_NULL = new System.Windows.Forms.Button();
-            this.btnA5_30 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.numA5_30_Vert = new System.Windows.Forms.NumericUpDown();
-            this.trackA5_30_Vert = new System.Windows.Forms.TrackBar();
-            this.label12 = new System.Windows.Forms.Label();
-            this.numA5_30_Hor = new System.Windows.Forms.NumericUpDown();
-            this.trackA5_30_Hor = new System.Windows.Forms.TrackBar();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtDiagnostic = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtVremyaIzmLD = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtNarabotkaLD = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtErrorCode = new System.Windows.Forms.TextBox();
+            this.lblErrorCode = new System.Windows.Forms.Label();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.txtSpeedAz = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
@@ -61,47 +52,98 @@
             this.txtAngleUM = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.indLDGotov = new System.Windows.Forms.Button();
+            this.indTVMatrVKL = new System.Windows.Forms.Button();
+            this.indObogrevStekla = new System.Windows.Forms.Button();
             this.indPrivodaVKL = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txtStateTPVpotoka = new System.Windows.Forms.TextBox();
+            this.txtPoleZrenTV = new System.Windows.Forms.TextBox();
+            this.txtRezhimPricela = new System.Windows.Forms.TextBox();
+            this.txtSposobDvizh = new System.Windows.Forms.TextBox();
+            this.txtStateTPVMatr = new System.Windows.Forms.TextBox();
+            this.txtOpticFilterTV = new System.Windows.Forms.TextBox();
+            this.txtPoleZrenTPV = new System.Windows.Forms.TextBox();
+            this.txtSystemCoord = new System.Windows.Forms.TextBox();
             this.txtStateTVpotoka = new System.Windows.Forms.TextBox();
-            this.btnA5_26 = new System.Windows.Forms.Button();
             this.tipMessage = new System.Windows.Forms.ToolTip(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lblTrackUM = new System.Windows.Forms.Label();
-            this.lblTrackAzValue = new System.Windows.Forms.Label();
-            this.trackContrastTPV = new System.Windows.Forms.TrackBar();
-            this.trackContrastTV = new System.Windows.Forms.TrackBar();
-            this.trackUsilMatrTPV = new System.Windows.Forms.TrackBar();
-            this.trackUsilMatrTV = new System.Windows.Forms.TrackBar();
-            this.trackVremyaExpTPV = new System.Windows.Forms.TrackBar();
-            this.trackVremyaExpTV = new System.Windows.Forms.TrackBar();
-            this.trackFocusTPV = new System.Windows.Forms.TrackBar();
-            this.trackFocusTV = new System.Windows.Forms.TrackBar();
-            this.trackUM = new System.Windows.Forms.TrackBar();
-            this.trackAz = new System.Windows.Forms.TrackBar();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.numContrastTPV = new System.Windows.Forms.NumericUpDown();
-            this.numContrastTV = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.numUsilMatrTPV = new System.Windows.Forms.NumericUpDown();
-            this.numUsilMatrTV = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.numVremyaExpTPV = new System.Windows.Forms.NumericUpDown();
-            this.numVremyaExpTV = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
+            this.grpCommandOut = new System.Windows.Forms.GroupBox();
+            this.grpOtherCommand = new System.Windows.Forms.GroupBox();
+            this.btnA5_22 = new System.Windows.Forms.Button();
+            this.btnZaprosCoord = new System.Windows.Forms.Button();
+            this.btnOtklTPVMatr = new System.Windows.Forms.Button();
+            this.btnVklTPVMatr = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numVklObogrev = new System.Windows.Forms.NumericUpDown();
+            this.btnVklObogrev = new System.Windows.Forms.Button();
+            this.btnCalibrateTPVMatr = new System.Windows.Forms.Button();
+            this.btnZaprosStatePricel = new System.Windows.Forms.Button();
+            this.btnZaprosLD = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.radUPZ2_TPV = new System.Windows.Forms.RadioButton();
+            this.radSHPZ = new System.Windows.Forms.RadioButton();
+            this.radUPZ_TPV = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.radSHPZ_TV = new System.Windows.Forms.RadioButton();
+            this.radUPZ_TV = new System.Windows.Forms.RadioButton();
+            this.radUPZ2_TV = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.grpSoprovozhdeniya = new System.Windows.Forms.GroupBox();
+            this.chkA5_9_11 = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.radByPerebros = new System.Windows.Forms.RadioButton();
+            this.radBySpeed = new System.Windows.Forms.RadioButton();
+            this.radByAngle = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radZSC = new System.Windows.Forms.RadioButton();
+            this.radSSK = new System.Windows.Forms.RadioButton();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.numFocusTPV = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.numVremyaExpTPV = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.numContrastTPV = new System.Windows.Forms.NumericUpDown();
+            this.label40 = new System.Windows.Forms.Label();
+            this.numUsilMatrTPV = new System.Windows.Forms.NumericUpDown();
+            this.label18 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.numFocusTV = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numVremyaExpTV = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.numContrastTV = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.numUsilMatrTV = new System.Windows.Forms.NumericUpDown();
+            this.lblTrackAngleUM = new System.Windows.Forms.Label();
+            this.lblTrackUM = new System.Windows.Forms.Label();
+            this.lblTrackAngleAZ = new System.Windows.Forms.Label();
+            this.lblTrackAzValue = new System.Windows.Forms.Label();
+            this.trackAngleUM = new System.Windows.Forms.TrackBar();
+            this.trackSpeedUM = new System.Windows.Forms.TrackBar();
+            this.trackAngleAz = new System.Windows.Forms.TrackBar();
+            this.trackSpeedAz = new System.Windows.Forms.TrackBar();
+            this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.numAngleUM = new System.Windows.Forms.NumericUpDown();
             this.numSpeedUM = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numAngleAZ = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.numSpeedAz = new System.Windows.Forms.NumericUpDown();
             this.btnA5_4 = new System.Windows.Forms.Button();
@@ -115,10 +157,6 @@
             this.radA5_3_Teh = new System.Windows.Forms.RadioButton();
             this.radA5_3_Rab = new System.Windows.Forms.RadioButton();
             this.radA5_3_Dezh = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numA1_35 = new System.Windows.Forms.NumericUpDown();
-            this.chkA1_35 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCaptureDevice = new System.Windows.Forms.Button();
             this.btnReleaseDevice = new System.Windows.Forms.Button();
@@ -153,70 +191,55 @@
             this.tmrSendA5_3 = new System.Windows.Forms.Timer(this.components);
             this.panelPict = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.radSSK = new System.Windows.Forms.RadioButton();
-            this.radZSC = new System.Windows.Forms.RadioButton();
-            this.btnA5_9_11 = new System.Windows.Forms.Button();
-            this.txtRezhimPricela = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.indTVMatrVKL = new System.Windows.Forms.Button();
-            this.txtStateTPVMatr = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.indLDGotov = new System.Windows.Forms.Button();
-            this.txtSystemCoord = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtOpticFilterTV = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.indObogrevStekla = new System.Windows.Forms.Button();
-            this.txtSposobDvizh = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtPoleZrenTPV = new System.Windows.Forms.TextBox();
-            this.txtPoleZrenTV = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numA5_29_Vert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackA5_29_Vert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numA5_29_Hor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackA5_29_Hor)).BeginInit();
-            this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numA5_30_Vert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackA5_30_Vert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numA5_30_Hor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackA5_30_Hor)).BeginInit();
+            this.txtA6_1 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.координатыВизирнойОсиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txtAim1 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtAim2 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txtAim3 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtNumOfAims = new System.Windows.Forms.TextBox();
             this.groupBox14.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.groupBox18.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackContrastTPV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackContrastTV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackUsilMatrTPV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackUsilMatrTV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackVremyaExpTPV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackVremyaExpTV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackFocusTPV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackFocusTV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackUM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackAz)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numContrastTPV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numContrastTV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUsilMatrTPV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUsilMatrTV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numVremyaExpTPV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numVremyaExpTV)).BeginInit();
+            this.grpCommandOut.SuspendLayout();
+            this.grpOtherCommand.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numVklObogrev)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.grpSoprovozhdeniya.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFocusTPV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numVremyaExpTPV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numContrastTPV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUsilMatrTPV)).BeginInit();
+            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFocusTV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numVremyaExpTV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numContrastTV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUsilMatrTV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackAngleUM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackSpeedUM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackAngleAz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackSpeedAz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAngleUM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeedUM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAngleAZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeedAz)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numA1_35)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -224,7 +247,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pict1)).BeginInit();
             this.panelPict.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.panelRight.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // cboDevices
@@ -238,288 +262,123 @@
             this.cboDevices.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboDevices_DrawItem);
             this.cboDevices.SelectedIndexChanged += new System.EventHandler(this.cboDevices_SelectedIndexChanged);
             // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.chkA5_29);
-            this.groupBox9.Controls.Add(this.btnA5_29);
-            this.groupBox9.Controls.Add(this.label10);
-            this.groupBox9.Controls.Add(this.numA5_29_Vert);
-            this.groupBox9.Controls.Add(this.trackA5_29_Vert);
-            this.groupBox9.Controls.Add(this.label9);
-            this.groupBox9.Controls.Add(this.numA5_29_Hor);
-            this.groupBox9.Controls.Add(this.trackA5_29_Hor);
-            this.groupBox9.Enabled = false;
-            this.groupBox9.Location = new System.Drawing.Point(6, 735);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(280, 134);
-            this.groupBox9.TabIndex = 15;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Управление наведением ПКП-МРО по углу";
-            // 
-            // chkA5_29
-            // 
-            this.chkA5_29.AutoSize = true;
-            this.chkA5_29.Checked = true;
-            this.chkA5_29.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkA5_29.Location = new System.Drawing.Point(110, 104);
-            this.chkA5_29.Name = "chkA5_29";
-            this.chkA5_29.Size = new System.Drawing.Size(79, 17);
-            this.chkA5_29.TabIndex = 14;
-            this.chkA5_29.Text = "По кнопке";
-            this.chkA5_29.UseVisualStyleBackColor = true;
-            this.chkA5_29.CheckedChanged += new System.EventHandler(this.chkA5_29_CheckedChanged);
-            // 
-            // btnA5_29
-            // 
-            this.btnA5_29.Location = new System.Drawing.Point(19, 100);
-            this.btnA5_29.Name = "btnA5_29";
-            this.btnA5_29.Size = new System.Drawing.Size(85, 23);
-            this.btnA5_29.TabIndex = 13;
-            this.btnA5_29.Text = "Выполнить";
-            this.btnA5_29.UseVisualStyleBackColor = true;
-            this.btnA5_29.Click += new System.EventHandler(this.btnA5_29_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 81);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 13);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Вертикаль:";
-            // 
-            // numA5_29_Vert
-            // 
-            this.numA5_29_Vert.DecimalPlaces = 2;
-            this.numA5_29_Vert.Increment = new decimal(new int[] {
-            9,
-            0,
-            0,
-            131072});
-            this.numA5_29_Vert.Location = new System.Drawing.Point(191, 100);
-            this.numA5_29_Vert.Maximum = new decimal(new int[] {
-            1250,
-            0,
-            0,
-            0});
-            this.numA5_29_Vert.Minimum = new decimal(new int[] {
-            250,
-            0,
-            0,
-            -2147483648});
-            this.numA5_29_Vert.Name = "numA5_29_Vert";
-            this.numA5_29_Vert.Size = new System.Drawing.Size(80, 20);
-            this.numA5_29_Vert.TabIndex = 11;
-            this.numA5_29_Vert.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numA5_29_Vert.ValueChanged += new System.EventHandler(this.numA5_29_Vert_ValueChanged);
-            // 
-            // trackA5_29_Vert
-            // 
-            this.trackA5_29_Vert.AutoSize = false;
-            this.trackA5_29_Vert.Location = new System.Drawing.Point(88, 75);
-            this.trackA5_29_Vert.Maximum = 1250;
-            this.trackA5_29_Vert.Minimum = -250;
-            this.trackA5_29_Vert.Name = "trackA5_29_Vert";
-            this.trackA5_29_Vert.Size = new System.Drawing.Size(183, 24);
-            this.trackA5_29_Vert.TabIndex = 10;
-            this.trackA5_29_Vert.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackA5_29_Vert.Scroll += new System.EventHandler(this.trackA5_29_Vert_Scroll);
-            this.trackA5_29_Vert.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackA5_29_Hor_MouseUp);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 13);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Горизонт:";
-            // 
-            // numA5_29_Hor
-            // 
-            this.numA5_29_Hor.DecimalPlaces = 2;
-            this.numA5_29_Hor.Increment = new decimal(new int[] {
-            9,
-            0,
-            0,
-            131072});
-            this.numA5_29_Hor.Location = new System.Drawing.Point(191, 44);
-            this.numA5_29_Hor.Maximum = new decimal(new int[] {
-            5999,
-            0,
-            0,
-            0});
-            this.numA5_29_Hor.Name = "numA5_29_Hor";
-            this.numA5_29_Hor.Size = new System.Drawing.Size(80, 20);
-            this.numA5_29_Hor.TabIndex = 8;
-            this.numA5_29_Hor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numA5_29_Hor.ValueChanged += new System.EventHandler(this.numA5_29_Hor_ValueChanged);
-            // 
-            // trackA5_29_Hor
-            // 
-            this.trackA5_29_Hor.AutoSize = false;
-            this.trackA5_29_Hor.Location = new System.Drawing.Point(88, 19);
-            this.trackA5_29_Hor.Maximum = 5999;
-            this.trackA5_29_Hor.Name = "trackA5_29_Hor";
-            this.trackA5_29_Hor.Size = new System.Drawing.Size(183, 24);
-            this.trackA5_29_Hor.TabIndex = 7;
-            this.trackA5_29_Hor.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackA5_29_Hor.Scroll += new System.EventHandler(this.trackA5_29_Scroll);
-            this.trackA5_29_Hor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackA5_29_Hor_MouseUp);
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.chkJoy);
-            this.groupBox10.Controls.Add(this.btnA5_30_NULL);
-            this.groupBox10.Controls.Add(this.btnA5_30);
-            this.groupBox10.Controls.Add(this.label11);
-            this.groupBox10.Controls.Add(this.numA5_30_Vert);
-            this.groupBox10.Controls.Add(this.trackA5_30_Vert);
-            this.groupBox10.Controls.Add(this.label12);
-            this.groupBox10.Controls.Add(this.numA5_30_Hor);
-            this.groupBox10.Controls.Add(this.trackA5_30_Hor);
-            this.groupBox10.Enabled = false;
-            this.groupBox10.Location = new System.Drawing.Point(6, 876);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(280, 190);
-            this.groupBox10.TabIndex = 16;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Управление наведением ПКП-МРО по скорости";
-            // 
             // chkJoy
             // 
             this.chkJoy.AutoSize = true;
             this.chkJoy.Checked = true;
             this.chkJoy.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkJoy.Location = new System.Drawing.Point(19, 132);
+            this.chkJoy.Location = new System.Drawing.Point(369, 49);
             this.chkJoy.Name = "chkJoy";
             this.chkJoy.Size = new System.Drawing.Size(154, 17);
             this.chkJoy.TabIndex = 29;
             this.chkJoy.Text = "Управление джойстиком";
             this.chkJoy.UseVisualStyleBackColor = true;
             // 
-            // btnA5_30_NULL
-            // 
-            this.btnA5_30_NULL.Location = new System.Drawing.Point(19, 155);
-            this.btnA5_30_NULL.Name = "btnA5_30_NULL";
-            this.btnA5_30_NULL.Size = new System.Drawing.Size(75, 23);
-            this.btnA5_30_NULL.TabIndex = 28;
-            this.btnA5_30_NULL.Text = "Обнулить";
-            this.btnA5_30_NULL.UseVisualStyleBackColor = true;
-            this.btnA5_30_NULL.Click += new System.EventHandler(this.btnA5_30_NULL_Click);
-            // 
-            // btnA5_30
-            // 
-            this.btnA5_30.Location = new System.Drawing.Point(19, 100);
-            this.btnA5_30.Name = "btnA5_30";
-            this.btnA5_30.Size = new System.Drawing.Size(85, 23);
-            this.btnA5_30.TabIndex = 13;
-            this.btnA5_30.Text = "Выполнить";
-            this.btnA5_30.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 81);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 13);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Вертикаль:";
-            // 
-            // numA5_30_Vert
-            // 
-            this.numA5_30_Vert.DecimalPlaces = 3;
-            this.numA5_30_Vert.Increment = new decimal(new int[] {
-            27,
-            0,
-            0,
-            196608});
-            this.numA5_30_Vert.Location = new System.Drawing.Point(186, 100);
-            this.numA5_30_Vert.Maximum = new decimal(new int[] {
-            900,
-            0,
-            0,
-            0});
-            this.numA5_30_Vert.Minimum = new decimal(new int[] {
-            900,
-            0,
-            0,
-            -2147483648});
-            this.numA5_30_Vert.Name = "numA5_30_Vert";
-            this.numA5_30_Vert.Size = new System.Drawing.Size(85, 20);
-            this.numA5_30_Vert.TabIndex = 11;
-            this.numA5_30_Vert.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numA5_30_Vert.ValueChanged += new System.EventHandler(this.numA5_30_Vert_ValueChanged);
-            // 
-            // trackA5_30_Vert
-            // 
-            this.trackA5_30_Vert.AutoSize = false;
-            this.trackA5_30_Vert.Location = new System.Drawing.Point(88, 75);
-            this.trackA5_30_Vert.Maximum = 900;
-            this.trackA5_30_Vert.Minimum = -900;
-            this.trackA5_30_Vert.Name = "trackA5_30_Vert";
-            this.trackA5_30_Vert.Size = new System.Drawing.Size(183, 24);
-            this.trackA5_30_Vert.TabIndex = 10;
-            this.trackA5_30_Vert.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackA5_30_Vert.ValueChanged += new System.EventHandler(this.trackA5_30_Vert_ValueChanged);
-            this.trackA5_30_Vert.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackA5_29_Hor_MouseUp);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 25);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 13);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Горизонт:";
-            // 
-            // numA5_30_Hor
-            // 
-            this.numA5_30_Hor.DecimalPlaces = 3;
-            this.numA5_30_Hor.Increment = new decimal(new int[] {
-            27,
-            0,
-            0,
-            196608});
-            this.numA5_30_Hor.Location = new System.Drawing.Point(186, 41);
-            this.numA5_30_Hor.Maximum = new decimal(new int[] {
-            900,
-            0,
-            0,
-            0});
-            this.numA5_30_Hor.Minimum = new decimal(new int[] {
-            900,
-            0,
-            0,
-            -2147483648});
-            this.numA5_30_Hor.Name = "numA5_30_Hor";
-            this.numA5_30_Hor.Size = new System.Drawing.Size(85, 20);
-            this.numA5_30_Hor.TabIndex = 8;
-            this.numA5_30_Hor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numA5_30_Hor.ValueChanged += new System.EventHandler(this.numA5_30_Hor_ValueChanged);
-            // 
-            // trackA5_30_Hor
-            // 
-            this.trackA5_30_Hor.AutoSize = false;
-            this.trackA5_30_Hor.Location = new System.Drawing.Point(88, 19);
-            this.trackA5_30_Hor.Maximum = 900;
-            this.trackA5_30_Hor.Minimum = -900;
-            this.trackA5_30_Hor.Name = "trackA5_30_Hor";
-            this.trackA5_30_Hor.Size = new System.Drawing.Size(183, 24);
-            this.trackA5_30_Hor.TabIndex = 7;
-            this.trackA5_30_Hor.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackA5_30_Hor.ValueChanged += new System.EventHandler(this.trackA5_30_Hor_ValueChanged);
-            // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.groupBox9);
+            this.groupBox14.Controls.Add(this.groupBox4);
+            this.groupBox14.Controls.Add(this.txtErrorCode);
+            this.groupBox14.Controls.Add(this.lblErrorCode);
             this.groupBox14.Controls.Add(this.groupBox17);
             this.groupBox14.Controls.Add(this.groupBox15);
             this.groupBox14.Location = new System.Drawing.Point(1296, 547);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(589, 496);
+            this.groupBox14.Size = new System.Drawing.Size(589, 522);
             this.groupBox14.TabIndex = 3;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Входящие посылки";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtDiagnostic);
+            this.groupBox4.Controls.Add(this.label35);
+            this.groupBox4.Controls.Add(this.txtVremyaIzmLD);
+            this.groupBox4.Controls.Add(this.label34);
+            this.groupBox4.Controls.Add(this.txtNarabotkaLD);
+            this.groupBox4.Controls.Add(this.label33);
+            this.groupBox4.Location = new System.Drawing.Point(177, 320);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(409, 93);
+            this.groupBox4.TabIndex = 12;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Другое";
+            // 
+            // txtDiagnostic
+            // 
+            this.txtDiagnostic.Location = new System.Drawing.Point(317, 22);
+            this.txtDiagnostic.Name = "txtDiagnostic";
+            this.txtDiagnostic.ReadOnly = true;
+            this.txtDiagnostic.Size = new System.Drawing.Size(80, 20);
+            this.txtDiagnostic.TabIndex = 16;
+            this.txtDiagnostic.Text = "0";
+            this.txtDiagnostic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(237, 26);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(74, 13);
+            this.label35.TabIndex = 15;
+            this.label35.Text = "Диагностика";
+            // 
+            // txtVremyaIzmLD
+            // 
+            this.txtVremyaIzmLD.Location = new System.Drawing.Point(106, 48);
+            this.txtVremyaIzmLD.Name = "txtVremyaIzmLD";
+            this.txtVremyaIzmLD.ReadOnly = true;
+            this.txtVremyaIzmLD.Size = new System.Drawing.Size(80, 20);
+            this.txtVremyaIzmLD.TabIndex = 14;
+            this.txtVremyaIzmLD.Text = "0";
+            this.txtVremyaIzmLD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(2, 51);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(98, 13);
+            this.label34.TabIndex = 13;
+            this.label34.Text = "Время измер. ЛД";
+            // 
+            // txtNarabotkaLD
+            // 
+            this.txtNarabotkaLD.Location = new System.Drawing.Point(106, 22);
+            this.txtNarabotkaLD.Name = "txtNarabotkaLD";
+            this.txtNarabotkaLD.ReadOnly = true;
+            this.txtNarabotkaLD.Size = new System.Drawing.Size(80, 20);
+            this.txtNarabotkaLD.TabIndex = 14;
+            this.txtNarabotkaLD.Text = "0";
+            this.txtNarabotkaLD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(18, 25);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(82, 13);
+            this.label33.TabIndex = 13;
+            this.label33.Text = "Наработка ЛД";
+            // 
+            // txtErrorCode
+            // 
+            this.txtErrorCode.Location = new System.Drawing.Point(6, 343);
+            this.txtErrorCode.Multiline = true;
+            this.txtErrorCode.Name = "txtErrorCode";
+            this.txtErrorCode.ReadOnly = true;
+            this.txtErrorCode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtErrorCode.Size = new System.Drawing.Size(165, 153);
+            this.txtErrorCode.TabIndex = 11;
+            // 
+            // lblErrorCode
+            // 
+            this.lblErrorCode.AutoSize = true;
+            this.lblErrorCode.Location = new System.Drawing.Point(28, 327);
+            this.lblErrorCode.Name = "lblErrorCode";
+            this.lblErrorCode.Size = new System.Drawing.Size(93, 13);
+            this.lblErrorCode.TabIndex = 10;
+            this.lblErrorCode.Text = "Код ошибки(0x0):";
             // 
             // groupBox17
             // 
@@ -531,16 +390,16 @@
             this.groupBox17.Controls.Add(this.label46);
             this.groupBox17.Controls.Add(this.txtAngleUM);
             this.groupBox17.Controls.Add(this.label47);
-            this.groupBox17.Location = new System.Drawing.Point(6, 362);
+            this.groupBox17.Location = new System.Drawing.Point(6, 238);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(579, 90);
+            this.groupBox17.Size = new System.Drawing.Size(579, 76);
             this.groupBox17.TabIndex = 1;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Углы и угловая скорость";
             // 
             // txtSpeedAz
             // 
-            this.txtSpeedAz.Location = new System.Drawing.Point(157, 22);
+            this.txtSpeedAz.Location = new System.Drawing.Point(157, 19);
             this.txtSpeedAz.Name = "txtSpeedAz";
             this.txtSpeedAz.ReadOnly = true;
             this.txtSpeedAz.Size = new System.Drawing.Size(120, 20);
@@ -551,7 +410,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(4, 28);
+            this.label44.Location = new System.Drawing.Point(12, 22);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(139, 13);
             this.label44.TabIndex = 10;
@@ -570,7 +429,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(296, 25);
+            this.label45.Location = new System.Drawing.Point(315, 22);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(128, 13);
             this.label45.TabIndex = 11;
@@ -578,7 +437,7 @@
             // 
             // txtSpeedUM
             // 
-            this.txtSpeedUM.Location = new System.Drawing.Point(157, 48);
+            this.txtSpeedUM.Location = new System.Drawing.Point(157, 45);
             this.txtSpeedUM.Name = "txtSpeedUM";
             this.txtSpeedUM.ReadOnly = true;
             this.txtSpeedUM.Size = new System.Drawing.Size(120, 20);
@@ -589,7 +448,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(29, 51);
+            this.label46.Location = new System.Drawing.Point(37, 48);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(114, 13);
             this.label46.TabIndex = 8;
@@ -597,7 +456,7 @@
             // 
             // txtAngleUM
             // 
-            this.txtAngleUM.Location = new System.Drawing.Point(449, 48);
+            this.txtAngleUM.Location = new System.Drawing.Point(449, 45);
             this.txtAngleUM.Name = "txtAngleUM";
             this.txtAngleUM.ReadOnly = true;
             this.txtAngleUM.Size = new System.Drawing.Size(120, 20);
@@ -608,7 +467,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(321, 51);
+            this.label47.Location = new System.Drawing.Point(340, 48);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(103, 13);
             this.label47.TabIndex = 8;
@@ -644,10 +503,40 @@
             this.groupBox15.Controls.Add(this.txtStateTVpotoka);
             this.groupBox15.Location = new System.Drawing.Point(6, 19);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(579, 337);
+            this.groupBox15.Size = new System.Drawing.Size(579, 213);
             this.groupBox15.TabIndex = 0;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Состояние прицела";
+            // 
+            // indLDGotov
+            // 
+            this.indLDGotov.Enabled = false;
+            this.indLDGotov.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.indLDGotov.Location = new System.Drawing.Point(549, 45);
+            this.indLDGotov.Name = "indLDGotov";
+            this.indLDGotov.Size = new System.Drawing.Size(20, 20);
+            this.indLDGotov.TabIndex = 33;
+            this.indLDGotov.UseVisualStyleBackColor = true;
+            // 
+            // indTVMatrVKL
+            // 
+            this.indTVMatrVKL.Enabled = false;
+            this.indTVMatrVKL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.indTVMatrVKL.Location = new System.Drawing.Point(257, 123);
+            this.indTVMatrVKL.Name = "indTVMatrVKL";
+            this.indTVMatrVKL.Size = new System.Drawing.Size(20, 20);
+            this.indTVMatrVKL.TabIndex = 33;
+            this.indTVMatrVKL.UseVisualStyleBackColor = true;
+            // 
+            // indObogrevStekla
+            // 
+            this.indObogrevStekla.Enabled = false;
+            this.indObogrevStekla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.indObogrevStekla.Location = new System.Drawing.Point(549, 123);
+            this.indObogrevStekla.Name = "indObogrevStekla";
+            this.indObogrevStekla.Size = new System.Drawing.Size(20, 20);
+            this.indObogrevStekla.TabIndex = 33;
+            this.indObogrevStekla.UseVisualStyleBackColor = true;
             // 
             // indPrivodaVKL
             // 
@@ -667,6 +556,96 @@
             this.label26.Size = new System.Drawing.Size(124, 13);
             this.label26.TabIndex = 8;
             this.label26.Text = "Состояние ТПВ потока";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(298, 49);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(55, 13);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "ЛД готов";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 178);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(89, 13);
+            this.label31.TabIndex = 8;
+            this.label31.Text = "Поле зрения ТВ";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 74);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(87, 13);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Режим прицела";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 127);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(119, 13);
+            this.label21.TabIndex = 8;
+            this.label21.Text = "ТВ матрица включена";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(9, 152);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(244, 13);
+            this.label29.TabIndex = 8;
+            this.label29.Text = "Способ движения линии визирования прицела";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(298, 22);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(134, 13);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Состояние ТПВ матрицы";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(298, 100);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(148, 13);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Оптический фильтр ТВ кан.";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(298, 178);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(97, 13);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "Поле зрения ТПВ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(298, 74);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(107, 13);
+            this.label24.TabIndex = 8;
+            this.label24.Text = "Система координат";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(298, 127);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(88, 13);
+            this.label28.TabIndex = 8;
+            this.label28.Text = "Обогрев стекла";
             // 
             // label25
             // 
@@ -696,6 +675,76 @@
             this.txtStateTPVpotoka.Text = "не определено";
             this.txtStateTPVpotoka.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txtPoleZrenTV
+            // 
+            this.txtPoleZrenTV.Location = new System.Drawing.Point(157, 175);
+            this.txtPoleZrenTV.Name = "txtPoleZrenTV";
+            this.txtPoleZrenTV.ReadOnly = true;
+            this.txtPoleZrenTV.Size = new System.Drawing.Size(120, 20);
+            this.txtPoleZrenTV.TabIndex = 7;
+            this.txtPoleZrenTV.Text = "не определено";
+            this.txtPoleZrenTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRezhimPricela
+            // 
+            this.txtRezhimPricela.Location = new System.Drawing.Point(157, 71);
+            this.txtRezhimPricela.Name = "txtRezhimPricela";
+            this.txtRezhimPricela.ReadOnly = true;
+            this.txtRezhimPricela.Size = new System.Drawing.Size(120, 20);
+            this.txtRezhimPricela.TabIndex = 7;
+            this.txtRezhimPricela.Text = "не определено";
+            this.txtRezhimPricela.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSposobDvizh
+            // 
+            this.txtSposobDvizh.Location = new System.Drawing.Point(257, 149);
+            this.txtSposobDvizh.Name = "txtSposobDvizh";
+            this.txtSposobDvizh.ReadOnly = true;
+            this.txtSposobDvizh.Size = new System.Drawing.Size(312, 20);
+            this.txtSposobDvizh.TabIndex = 7;
+            this.txtSposobDvizh.Text = "не определено";
+            this.txtSposobDvizh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtStateTPVMatr
+            // 
+            this.txtStateTPVMatr.Location = new System.Drawing.Point(449, 19);
+            this.txtStateTPVMatr.Name = "txtStateTPVMatr";
+            this.txtStateTPVMatr.ReadOnly = true;
+            this.txtStateTPVMatr.Size = new System.Drawing.Size(120, 20);
+            this.txtStateTPVMatr.TabIndex = 7;
+            this.txtStateTPVMatr.Text = "не определено";
+            this.txtStateTPVMatr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtOpticFilterTV
+            // 
+            this.txtOpticFilterTV.Location = new System.Drawing.Point(449, 97);
+            this.txtOpticFilterTV.Name = "txtOpticFilterTV";
+            this.txtOpticFilterTV.ReadOnly = true;
+            this.txtOpticFilterTV.Size = new System.Drawing.Size(120, 20);
+            this.txtOpticFilterTV.TabIndex = 7;
+            this.txtOpticFilterTV.Text = "не определено";
+            this.txtOpticFilterTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtPoleZrenTPV
+            // 
+            this.txtPoleZrenTPV.Location = new System.Drawing.Point(449, 175);
+            this.txtPoleZrenTPV.Name = "txtPoleZrenTPV";
+            this.txtPoleZrenTPV.ReadOnly = true;
+            this.txtPoleZrenTPV.Size = new System.Drawing.Size(120, 20);
+            this.txtPoleZrenTPV.TabIndex = 7;
+            this.txtPoleZrenTPV.Text = "не определено";
+            this.txtPoleZrenTPV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSystemCoord
+            // 
+            this.txtSystemCoord.Location = new System.Drawing.Point(449, 71);
+            this.txtSystemCoord.Name = "txtSystemCoord";
+            this.txtSystemCoord.ReadOnly = true;
+            this.txtSystemCoord.Size = new System.Drawing.Size(120, 20);
+            this.txtSystemCoord.TabIndex = 7;
+            this.txtSystemCoord.Text = "не определено";
+            this.txtSystemCoord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // txtStateTVpotoka
             // 
             this.txtStateTVpotoka.Location = new System.Drawing.Point(157, 19);
@@ -706,17 +755,6 @@
             this.txtStateTVpotoka.Text = "не определено";
             this.txtStateTVpotoka.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnA5_26
-            // 
-            this.btnA5_26.Enabled = false;
-            this.btnA5_26.Location = new System.Drawing.Point(5, 1072);
-            this.btnA5_26.Name = "btnA5_26";
-            this.btnA5_26.Size = new System.Drawing.Size(573, 23);
-            this.btnA5_26.TabIndex = 9;
-            this.btnA5_26.Text = "Выключить ПКП-МРО";
-            this.btnA5_26.UseVisualStyleBackColor = true;
-            this.btnA5_26.Click += new System.EventHandler(this.btnA5_26_Click);
-            // 
             // tipMessage
             // 
             this.tipMessage.AutoPopDelay = 5000;
@@ -726,393 +764,732 @@
             // panel7
             // 
             this.panel7.AutoScroll = true;
-            this.panel7.Controls.Add(this.groupBox18);
+            this.panel7.Controls.Add(this.grpCommandOut);
             this.panel7.Location = new System.Drawing.Point(1296, 62);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(606, 479);
             this.panel7.TabIndex = 5;
             // 
-            // groupBox18
+            // grpCommandOut
             // 
-            this.groupBox18.Controls.Add(this.groupBox5);
-            this.groupBox18.Controls.Add(this.groupBox4);
-            this.groupBox18.Controls.Add(this.btnA5_9_11);
-            this.groupBox18.Controls.Add(this.btnA5_4);
-            this.groupBox18.Controls.Add(this.btnA5_15);
-            this.groupBox18.Controls.Add(this.groupBox3);
-            this.groupBox18.Controls.Add(this.groupBox2);
-            this.groupBox18.Controls.Add(this.groupBox1);
-            this.groupBox18.Controls.Add(this.groupBox10);
-            this.groupBox18.Controls.Add(this.groupBox9);
-            this.groupBox18.Controls.Add(this.btnA5_26);
-            this.groupBox18.Location = new System.Drawing.Point(0, 5);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(586, 1115);
-            this.groupBox18.TabIndex = 0;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "Обмен выбранного устройства с ППК";
+            this.grpCommandOut.Controls.Add(this.grpOtherCommand);
+            this.grpCommandOut.Controls.Add(this.groupBox8);
+            this.grpCommandOut.Controls.Add(this.grpSoprovozhdeniya);
+            this.grpCommandOut.Controls.Add(this.btnA5_4);
+            this.grpCommandOut.Controls.Add(this.btnA5_15);
+            this.grpCommandOut.Controls.Add(this.groupBox3);
+            this.grpCommandOut.Controls.Add(this.groupBox2);
+            this.grpCommandOut.Location = new System.Drawing.Point(0, 5);
+            this.grpCommandOut.Name = "grpCommandOut";
+            this.grpCommandOut.Size = new System.Drawing.Size(586, 653);
+            this.grpCommandOut.TabIndex = 0;
+            this.grpCommandOut.TabStop = false;
+            this.grpCommandOut.Text = "Обмен выбранного устройства с ППК";
             // 
-            // groupBox4
+            // grpOtherCommand
             // 
-            this.groupBox4.Controls.Add(this.lblTrackUM);
-            this.groupBox4.Controls.Add(this.lblTrackAzValue);
-            this.groupBox4.Controls.Add(this.trackContrastTPV);
-            this.groupBox4.Controls.Add(this.trackContrastTV);
-            this.groupBox4.Controls.Add(this.trackUsilMatrTPV);
-            this.groupBox4.Controls.Add(this.trackUsilMatrTV);
-            this.groupBox4.Controls.Add(this.trackVremyaExpTPV);
-            this.groupBox4.Controls.Add(this.trackVremyaExpTV);
-            this.groupBox4.Controls.Add(this.trackFocusTPV);
-            this.groupBox4.Controls.Add(this.trackFocusTV);
-            this.groupBox4.Controls.Add(this.trackUM);
-            this.groupBox4.Controls.Add(this.trackAz);
-            this.groupBox4.Controls.Add(this.label40);
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.numContrastTPV);
-            this.groupBox4.Controls.Add(this.numContrastTV);
-            this.groupBox4.Controls.Add(this.label18);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.numUsilMatrTPV);
-            this.groupBox4.Controls.Add(this.numUsilMatrTV);
-            this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.numVremyaExpTPV);
-            this.groupBox4.Controls.Add(this.numVremyaExpTV);
-            this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.numFocusTPV);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.numFocusTV);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.numSpeedUM);
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.numSpeedAz);
-            this.groupBox4.Location = new System.Drawing.Point(6, 155);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(574, 531);
-            this.groupBox4.TabIndex = 26;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Сопровождения";
+            this.grpOtherCommand.Controls.Add(this.btnA5_22);
+            this.grpOtherCommand.Controls.Add(this.btnZaprosCoord);
+            this.grpOtherCommand.Controls.Add(this.btnOtklTPVMatr);
+            this.grpOtherCommand.Controls.Add(this.btnVklTPVMatr);
+            this.grpOtherCommand.Controls.Add(this.label12);
+            this.grpOtherCommand.Controls.Add(this.numVklObogrev);
+            this.grpOtherCommand.Controls.Add(this.btnVklObogrev);
+            this.grpOtherCommand.Controls.Add(this.btnCalibrateTPVMatr);
+            this.grpOtherCommand.Controls.Add(this.btnZaprosStatePricel);
+            this.grpOtherCommand.Controls.Add(this.btnZaprosLD);
+            this.grpOtherCommand.Location = new System.Drawing.Point(6, 522);
+            this.grpOtherCommand.Name = "grpOtherCommand";
+            this.grpOtherCommand.Size = new System.Drawing.Size(574, 118);
+            this.grpOtherCommand.TabIndex = 28;
+            this.grpOtherCommand.TabStop = false;
+            this.grpOtherCommand.Text = "Другое";
             // 
-            // lblTrackUM
+            // btnA5_22
             // 
-            this.lblTrackUM.AutoSize = true;
-            this.lblTrackUM.Location = new System.Drawing.Point(523, 80);
-            this.lblTrackUM.Name = "lblTrackUM";
-            this.lblTrackUM.Size = new System.Drawing.Size(13, 13);
-            this.lblTrackUM.TabIndex = 3;
-            this.lblTrackUM.Text = "0";
+            this.btnA5_22.Location = new System.Drawing.Point(212, 80);
+            this.btnA5_22.Name = "btnA5_22";
+            this.btnA5_22.Size = new System.Drawing.Size(233, 25);
+            this.btnA5_22.TabIndex = 34;
+            this.btnA5_22.Text = "Перейти в транспортное положение";
+            this.btnA5_22.UseVisualStyleBackColor = true;
+            this.btnA5_22.Click += new System.EventHandler(this.btnA5_22_Click);
             // 
-            // lblTrackAzValue
+            // btnZaprosCoord
             // 
-            this.lblTrackAzValue.AutoSize = true;
-            this.lblTrackAzValue.Location = new System.Drawing.Point(523, 16);
-            this.lblTrackAzValue.Name = "lblTrackAzValue";
-            this.lblTrackAzValue.Size = new System.Drawing.Size(13, 13);
-            this.lblTrackAzValue.TabIndex = 3;
-            this.lblTrackAzValue.Text = "0";
+            this.btnZaprosCoord.Location = new System.Drawing.Point(212, 19);
+            this.btnZaprosCoord.Name = "btnZaprosCoord";
+            this.btnZaprosCoord.Size = new System.Drawing.Size(234, 25);
+            this.btnZaprosCoord.TabIndex = 33;
+            this.btnZaprosCoord.Text = "Запросить координаты визирной оси";
+            this.btnZaprosCoord.UseVisualStyleBackColor = true;
+            this.btnZaprosCoord.Click += new System.EventHandler(this.btnZaprosCoord_Click);
             // 
-            // trackContrastTPV
+            // btnOtklTPVMatr
             // 
-            this.trackContrastTPV.Location = new System.Drawing.Point(393, 480);
-            this.trackContrastTPV.Maximum = 255;
-            this.trackContrastTPV.Name = "trackContrastTPV";
-            this.trackContrastTPV.Size = new System.Drawing.Size(165, 45);
-            this.trackContrastTPV.TabIndex = 2;
-            this.trackContrastTPV.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackContrastTPV.ValueChanged += new System.EventHandler(this.trackContrastTPV_ValueChanged);
+            this.btnOtklTPVMatr.Location = new System.Drawing.Point(452, 50);
+            this.btnOtklTPVMatr.Name = "btnOtklTPVMatr";
+            this.btnOtklTPVMatr.Size = new System.Drawing.Size(116, 25);
+            this.btnOtklTPVMatr.TabIndex = 31;
+            this.btnOtklTPVMatr.Text = "Откл. ТПВ матрицу";
+            this.btnOtklTPVMatr.UseVisualStyleBackColor = true;
+            this.btnOtklTPVMatr.Click += new System.EventHandler(this.btnOtklTPVMatr_Click);
             // 
-            // trackContrastTV
+            // btnVklTPVMatr
             // 
-            this.trackContrastTV.Location = new System.Drawing.Point(393, 288);
-            this.trackContrastTV.Maximum = 255;
-            this.trackContrastTV.Name = "trackContrastTV";
-            this.trackContrastTV.Size = new System.Drawing.Size(165, 45);
-            this.trackContrastTV.TabIndex = 2;
-            this.trackContrastTV.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackContrastTV.ValueChanged += new System.EventHandler(this.trackContrastTV_ValueChanged);
+            this.btnVklTPVMatr.Location = new System.Drawing.Point(452, 19);
+            this.btnVklTPVMatr.Name = "btnVklTPVMatr";
+            this.btnVklTPVMatr.Size = new System.Drawing.Size(116, 25);
+            this.btnVklTPVMatr.TabIndex = 32;
+            this.btnVklTPVMatr.Text = "Вкл. ТПВ матрицу";
+            this.btnVklTPVMatr.UseVisualStyleBackColor = true;
+            this.btnVklTPVMatr.Click += new System.EventHandler(this.btnVklTPVMatr_Click);
             // 
-            // trackUsilMatrTPV
+            // label12
             // 
-            this.trackUsilMatrTPV.Location = new System.Drawing.Point(105, 480);
-            this.trackUsilMatrTPV.Maximum = 255;
-            this.trackUsilMatrTPV.Name = "trackUsilMatrTPV";
-            this.trackUsilMatrTPV.Size = new System.Drawing.Size(165, 45);
-            this.trackUsilMatrTPV.TabIndex = 2;
-            this.trackUsilMatrTPV.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackUsilMatrTPV.ValueChanged += new System.EventHandler(this.trackUsilMatrTPV_ValueChanged);
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(432, 56);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(13, 13);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "с";
             // 
-            // trackUsilMatrTV
+            // numVklObogrev
             // 
-            this.trackUsilMatrTV.Location = new System.Drawing.Point(105, 288);
-            this.trackUsilMatrTV.Maximum = 255;
-            this.trackUsilMatrTV.Name = "trackUsilMatrTV";
-            this.trackUsilMatrTV.Size = new System.Drawing.Size(165, 45);
-            this.trackUsilMatrTV.TabIndex = 2;
-            this.trackUsilMatrTV.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackUsilMatrTV.ValueChanged += new System.EventHandler(this.trackUsilMatrTV_ValueChanged);
-            // 
-            // trackVremyaExpTPV
-            // 
-            this.trackVremyaExpTPV.Location = new System.Drawing.Point(105, 416);
-            this.trackVremyaExpTPV.Maximum = 65535;
-            this.trackVremyaExpTPV.Name = "trackVremyaExpTPV";
-            this.trackVremyaExpTPV.Size = new System.Drawing.Size(453, 45);
-            this.trackVremyaExpTPV.TabIndex = 2;
-            this.trackVremyaExpTPV.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackVremyaExpTPV.ValueChanged += new System.EventHandler(this.trackVremyaExpTPV_ValueChanged);
-            // 
-            // trackVremyaExpTV
-            // 
-            this.trackVremyaExpTV.Location = new System.Drawing.Point(105, 224);
-            this.trackVremyaExpTV.Maximum = 65535;
-            this.trackVremyaExpTV.Name = "trackVremyaExpTV";
-            this.trackVremyaExpTV.Size = new System.Drawing.Size(453, 45);
-            this.trackVremyaExpTV.TabIndex = 2;
-            this.trackVremyaExpTV.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackVremyaExpTV.ValueChanged += new System.EventHandler(this.trackVremyaExpTV_ValueChanged);
-            // 
-            // trackFocusTPV
-            // 
-            this.trackFocusTPV.Location = new System.Drawing.Point(105, 352);
-            this.trackFocusTPV.Maximum = 65535;
-            this.trackFocusTPV.Name = "trackFocusTPV";
-            this.trackFocusTPV.Size = new System.Drawing.Size(453, 45);
-            this.trackFocusTPV.TabIndex = 2;
-            this.trackFocusTPV.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackFocusTPV.ValueChanged += new System.EventHandler(this.trackFocusTPV_ValueChanged);
-            // 
-            // trackFocusTV
-            // 
-            this.trackFocusTV.Location = new System.Drawing.Point(105, 160);
-            this.trackFocusTV.Maximum = 65535;
-            this.trackFocusTV.Name = "trackFocusTV";
-            this.trackFocusTV.Size = new System.Drawing.Size(453, 45);
-            this.trackFocusTV.TabIndex = 2;
-            this.trackFocusTV.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackFocusTV.ValueChanged += new System.EventHandler(this.trackFocusTV_ValueChanged);
-            // 
-            // trackUM
-            // 
-            this.trackUM.Location = new System.Drawing.Point(105, 96);
-            this.trackUM.Maximum = 32767;
-            this.trackUM.Minimum = -32768;
-            this.trackUM.Name = "trackUM";
-            this.trackUM.Size = new System.Drawing.Size(453, 45);
-            this.trackUM.TabIndex = 2;
-            this.trackUM.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackUM.ValueChanged += new System.EventHandler(this.trackUM_ValueChanged);
-            // 
-            // trackAz
-            // 
-            this.trackAz.Location = new System.Drawing.Point(105, 32);
-            this.trackAz.Maximum = 32767;
-            this.trackAz.Minimum = -32768;
-            this.trackAz.Name = "trackAz";
-            this.trackAz.Size = new System.Drawing.Size(453, 45);
-            this.trackAz.TabIndex = 2;
-            this.trackAz.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackAz.ValueChanged += new System.EventHandler(this.trackAz_ValueChanged);
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(363, 464);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(108, 13);
-            this.label40.TabIndex = 1;
-            this.label40.Text = "Контрастность ТПВ";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(363, 272);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(100, 13);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Контрастность ТВ";
-            // 
-            // numContrastTPV
-            // 
-            this.numContrastTPV.Location = new System.Drawing.Point(297, 494);
-            this.numContrastTPV.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numContrastTPV.Name = "numContrastTPV";
-            this.numContrastTPV.Size = new System.Drawing.Size(90, 20);
-            this.numContrastTPV.TabIndex = 0;
-            this.numContrastTPV.Tag = "0";
-            this.numContrastTPV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numContrastTPV.ValueChanged += new System.EventHandler(this.numContrastTPV_ValueChanged);
-            // 
-            // numContrastTV
-            // 
-            this.numContrastTV.Location = new System.Drawing.Point(297, 302);
-            this.numContrastTV.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numContrastTV.Name = "numContrastTV";
-            this.numContrastTV.Size = new System.Drawing.Size(90, 20);
-            this.numContrastTV.TabIndex = 0;
-            this.numContrastTV.Tag = "0";
-            this.numContrastTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numContrastTV.ValueChanged += new System.EventHandler(this.numContrastTV_ValueChanged);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(75, 464);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(130, 13);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Усиление матрицы ТПВ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(75, 272);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(122, 13);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Усиление матрицы ТВ";
-            // 
-            // numUsilMatrTPV
-            // 
-            this.numUsilMatrTPV.Location = new System.Drawing.Point(9, 494);
-            this.numUsilMatrTPV.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numUsilMatrTPV.Name = "numUsilMatrTPV";
-            this.numUsilMatrTPV.Size = new System.Drawing.Size(90, 20);
-            this.numUsilMatrTPV.TabIndex = 0;
-            this.numUsilMatrTPV.Tag = "0";
-            this.numUsilMatrTPV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numUsilMatrTPV.ValueChanged += new System.EventHandler(this.numUsilMatrTPV_ValueChanged);
-            // 
-            // numUsilMatrTV
-            // 
-            this.numUsilMatrTV.Location = new System.Drawing.Point(9, 302);
-            this.numUsilMatrTV.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numUsilMatrTV.Name = "numUsilMatrTV";
-            this.numUsilMatrTV.Size = new System.Drawing.Size(90, 20);
-            this.numUsilMatrTV.TabIndex = 0;
-            this.numUsilMatrTV.Tag = "0";
-            this.numUsilMatrTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numUsilMatrTV.ValueChanged += new System.EventHandler(this.numUsilMatrTV_ValueChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(229, 400);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(128, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Время экспозиции ТПВ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(229, 208);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Время экспозиции ТВ";
-            // 
-            // numVremyaExpTPV
-            // 
-            this.numVremyaExpTPV.Location = new System.Drawing.Point(9, 430);
-            this.numVremyaExpTPV.Maximum = new decimal(new int[] {
+            this.numVklObogrev.Location = new System.Drawing.Point(356, 54);
+            this.numVklObogrev.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.numVremyaExpTPV.Name = "numVremyaExpTPV";
-            this.numVremyaExpTPV.Size = new System.Drawing.Size(90, 20);
-            this.numVremyaExpTPV.TabIndex = 0;
-            this.numVremyaExpTPV.Tag = "0";
-            this.numVremyaExpTPV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numVremyaExpTPV.ValueChanged += new System.EventHandler(this.numVremyaExpTPV_ValueChanged);
+            this.numVklObogrev.Name = "numVklObogrev";
+            this.numVklObogrev.Size = new System.Drawing.Size(73, 20);
+            this.numVklObogrev.TabIndex = 29;
+            this.numVklObogrev.Tag = "0";
+            this.numVklObogrev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numVremyaExpTV
+            // btnVklObogrev
             // 
-            this.numVremyaExpTV.Location = new System.Drawing.Point(9, 238);
-            this.numVremyaExpTV.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.numVremyaExpTV.Name = "numVremyaExpTV";
-            this.numVremyaExpTV.Size = new System.Drawing.Size(90, 20);
-            this.numVremyaExpTV.TabIndex = 0;
-            this.numVremyaExpTV.Tag = "0";
-            this.numVremyaExpTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numVremyaExpTV.ValueChanged += new System.EventHandler(this.numVremyaExpTV_ValueChanged);
+            this.btnVklObogrev.Location = new System.Drawing.Point(212, 50);
+            this.btnVklObogrev.Name = "btnVklObogrev";
+            this.btnVklObogrev.Size = new System.Drawing.Size(138, 25);
+            this.btnVklObogrev.TabIndex = 28;
+            this.btnVklObogrev.Text = "Вкл. обогрев стекла";
+            this.btnVklObogrev.UseVisualStyleBackColor = true;
+            this.btnVklObogrev.Click += new System.EventHandler(this.btnVklObogrev_Click);
             // 
-            // label16
+            // btnCalibrateTPVMatr
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(229, 336);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(146, 13);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "Фокусное расстояние ТПВ";
+            this.btnCalibrateTPVMatr.Location = new System.Drawing.Point(6, 81);
+            this.btnCalibrateTPVMatr.Name = "btnCalibrateTPVMatr";
+            this.btnCalibrateTPVMatr.Size = new System.Drawing.Size(200, 25);
+            this.btnCalibrateTPVMatr.TabIndex = 27;
+            this.btnCalibrateTPVMatr.Text = "Провести калибровку ТПВ матрицы";
+            this.btnCalibrateTPVMatr.UseVisualStyleBackColor = true;
+            this.btnCalibrateTPVMatr.Click += new System.EventHandler(this.btnCalibrateTPVMatr_Click);
+            // 
+            // btnZaprosStatePricel
+            // 
+            this.btnZaprosStatePricel.Location = new System.Drawing.Point(6, 50);
+            this.btnZaprosStatePricel.Name = "btnZaprosStatePricel";
+            this.btnZaprosStatePricel.Size = new System.Drawing.Size(200, 25);
+            this.btnZaprosStatePricel.TabIndex = 26;
+            this.btnZaprosStatePricel.Text = "Запросить состояние прицела";
+            this.btnZaprosStatePricel.UseVisualStyleBackColor = true;
+            this.btnZaprosStatePricel.Click += new System.EventHandler(this.btnZaprosStatePricel_Click);
+            // 
+            // btnZaprosLD
+            // 
+            this.btnZaprosLD.Location = new System.Drawing.Point(6, 19);
+            this.btnZaprosLD.Name = "btnZaprosLD";
+            this.btnZaprosLD.Size = new System.Drawing.Size(200, 25);
+            this.btnZaprosLD.TabIndex = 26;
+            this.btnZaprosLD.Text = "Запросить наработку ЛД";
+            this.btnZaprosLD.UseVisualStyleBackColor = true;
+            this.btnZaprosLD.Click += new System.EventHandler(this.btnZaprosLD_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.panel2);
+            this.groupBox8.Controls.Add(this.panel1);
+            this.groupBox8.Controls.Add(this.label11);
+            this.groupBox8.Controls.Add(this.label10);
+            this.groupBox8.Location = new System.Drawing.Point(410, 19);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(170, 130);
+            this.groupBox8.TabIndex = 27;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Поле зрения";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.radUPZ2_TPV);
+            this.panel2.Controls.Add(this.radSHPZ);
+            this.panel2.Controls.Add(this.radUPZ_TPV);
+            this.panel2.Location = new System.Drawing.Point(86, 39);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(74, 85);
+            this.panel2.TabIndex = 1;
+            // 
+            // radUPZ2_TPV
+            // 
+            this.radUPZ2_TPV.AutoSize = true;
+            this.radUPZ2_TPV.Location = new System.Drawing.Point(3, 49);
+            this.radUPZ2_TPV.Name = "radUPZ2_TPV";
+            this.radUPZ2_TPV.Size = new System.Drawing.Size(59, 17);
+            this.radUPZ2_TPV.TabIndex = 1;
+            this.radUPZ2_TPV.Text = "УПЗх2";
+            this.radUPZ2_TPV.UseVisualStyleBackColor = true;
+            this.radUPZ2_TPV.Click += new System.EventHandler(this.radUPZ_TV_Click);
+            // 
+            // radSHPZ
+            // 
+            this.radSHPZ.AutoSize = true;
+            this.radSHPZ.Checked = true;
+            this.radSHPZ.Location = new System.Drawing.Point(3, 3);
+            this.radSHPZ.Name = "radSHPZ";
+            this.radSHPZ.Size = new System.Drawing.Size(49, 17);
+            this.radSHPZ.TabIndex = 1;
+            this.radSHPZ.TabStop = true;
+            this.radSHPZ.Text = "ШПЗ";
+            this.radSHPZ.UseVisualStyleBackColor = true;
+            this.radSHPZ.Click += new System.EventHandler(this.radUPZ_TV_Click);
+            // 
+            // radUPZ_TPV
+            // 
+            this.radUPZ_TPV.AutoSize = true;
+            this.radUPZ_TPV.Location = new System.Drawing.Point(3, 26);
+            this.radUPZ_TPV.Name = "radUPZ_TPV";
+            this.radUPZ_TPV.Size = new System.Drawing.Size(48, 17);
+            this.radUPZ_TPV.TabIndex = 1;
+            this.radUPZ_TPV.Text = "УПЗ";
+            this.radUPZ_TPV.UseVisualStyleBackColor = true;
+            this.radUPZ_TPV.Click += new System.EventHandler(this.radUPZ_TV_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radSHPZ_TV);
+            this.panel1.Controls.Add(this.radUPZ_TV);
+            this.panel1.Controls.Add(this.radUPZ2_TV);
+            this.panel1.Location = new System.Drawing.Point(6, 39);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(74, 85);
+            this.panel1.TabIndex = 1;
+            // 
+            // radSHPZ_TV
+            // 
+            this.radSHPZ_TV.AutoSize = true;
+            this.radSHPZ_TV.Checked = true;
+            this.radSHPZ_TV.Location = new System.Drawing.Point(3, 3);
+            this.radSHPZ_TV.Name = "radSHPZ_TV";
+            this.radSHPZ_TV.Size = new System.Drawing.Size(49, 17);
+            this.radSHPZ_TV.TabIndex = 1;
+            this.radSHPZ_TV.TabStop = true;
+            this.radSHPZ_TV.Text = "ШПЗ";
+            this.radSHPZ_TV.UseVisualStyleBackColor = true;
+            this.radSHPZ_TV.Click += new System.EventHandler(this.radUPZ_TV_Click);
+            // 
+            // radUPZ_TV
+            // 
+            this.radUPZ_TV.AutoSize = true;
+            this.radUPZ_TV.Location = new System.Drawing.Point(3, 26);
+            this.radUPZ_TV.Name = "radUPZ_TV";
+            this.radUPZ_TV.Size = new System.Drawing.Size(48, 17);
+            this.radUPZ_TV.TabIndex = 1;
+            this.radUPZ_TV.Text = "УПЗ";
+            this.radUPZ_TV.UseVisualStyleBackColor = true;
+            this.radUPZ_TV.Click += new System.EventHandler(this.radUPZ_TV_Click);
+            // 
+            // radUPZ2_TV
+            // 
+            this.radUPZ2_TV.AutoSize = true;
+            this.radUPZ2_TV.Location = new System.Drawing.Point(3, 49);
+            this.radUPZ2_TV.Name = "radUPZ2_TV";
+            this.radUPZ2_TV.Size = new System.Drawing.Size(59, 17);
+            this.radUPZ2_TV.TabIndex = 1;
+            this.radUPZ2_TV.Text = "УПЗх2";
+            this.radUPZ2_TV.UseVisualStyleBackColor = true;
+            this.radUPZ2_TV.Click += new System.EventHandler(this.radUPZ_TV_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(103, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "ТПВ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(28, 23);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(21, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "ТВ";
+            // 
+            // grpSoprovozhdeniya
+            // 
+            this.grpSoprovozhdeniya.Controls.Add(this.chkA5_9_11);
+            this.grpSoprovozhdeniya.Controls.Add(this.groupBox5);
+            this.grpSoprovozhdeniya.Controls.Add(this.groupBox1);
+            this.grpSoprovozhdeniya.Controls.Add(this.groupBox7);
+            this.grpSoprovozhdeniya.Controls.Add(this.groupBox6);
+            this.grpSoprovozhdeniya.Controls.Add(this.chkJoy);
+            this.grpSoprovozhdeniya.Controls.Add(this.lblTrackAngleUM);
+            this.grpSoprovozhdeniya.Controls.Add(this.lblTrackUM);
+            this.grpSoprovozhdeniya.Controls.Add(this.lblTrackAngleAZ);
+            this.grpSoprovozhdeniya.Controls.Add(this.lblTrackAzValue);
+            this.grpSoprovozhdeniya.Controls.Add(this.trackAngleUM);
+            this.grpSoprovozhdeniya.Controls.Add(this.trackSpeedUM);
+            this.grpSoprovozhdeniya.Controls.Add(this.trackAngleAz);
+            this.grpSoprovozhdeniya.Controls.Add(this.trackSpeedAz);
+            this.grpSoprovozhdeniya.Controls.Add(this.label9);
+            this.grpSoprovozhdeniya.Controls.Add(this.label4);
+            this.grpSoprovozhdeniya.Controls.Add(this.numAngleUM);
+            this.grpSoprovozhdeniya.Controls.Add(this.numSpeedUM);
+            this.grpSoprovozhdeniya.Controls.Add(this.label7);
+            this.grpSoprovozhdeniya.Controls.Add(this.numAngleAZ);
+            this.grpSoprovozhdeniya.Controls.Add(this.label3);
+            this.grpSoprovozhdeniya.Controls.Add(this.numSpeedAz);
+            this.grpSoprovozhdeniya.Location = new System.Drawing.Point(6, 155);
+            this.grpSoprovozhdeniya.Name = "grpSoprovozhdeniya";
+            this.grpSoprovozhdeniya.Size = new System.Drawing.Size(574, 361);
+            this.grpSoprovozhdeniya.TabIndex = 26;
+            this.grpSoprovozhdeniya.TabStop = false;
+            this.grpSoprovozhdeniya.Text = "Сопровождения";
+            // 
+            // chkA5_9_11
+            // 
+            this.chkA5_9_11.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkA5_9_11.Location = new System.Drawing.Point(333, 19);
+            this.chkA5_9_11.Name = "chkA5_9_11";
+            this.chkA5_9_11.Size = new System.Drawing.Size(231, 24);
+            this.chkA5_9_11.TabIndex = 27;
+            this.chkA5_9_11.Text = "Включить наведение";
+            this.chkA5_9_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkA5_9_11.UseVisualStyleBackColor = true;
+            this.chkA5_9_11.CheckedChanged += new System.EventHandler(this.chkA5_9_11_CheckedChanged);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.radByPerebros);
+            this.groupBox5.Controls.Add(this.radBySpeed);
+            this.groupBox5.Controls.Add(this.radByAngle);
+            this.groupBox5.Location = new System.Drawing.Point(138, 19);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(191, 72);
+            this.groupBox5.TabIndex = 32;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Параметры";
+            // 
+            // radByPerebros
+            // 
+            this.radByPerebros.AutoSize = true;
+            this.radByPerebros.Location = new System.Drawing.Point(14, 42);
+            this.radByPerebros.Name = "radByPerebros";
+            this.radByPerebros.Size = new System.Drawing.Size(75, 17);
+            this.radByPerebros.TabIndex = 0;
+            this.radByPerebros.Text = "Переброс";
+            this.radByPerebros.UseVisualStyleBackColor = true;
+            // 
+            // radBySpeed
+            // 
+            this.radBySpeed.AutoSize = true;
+            this.radBySpeed.Checked = true;
+            this.radBySpeed.Location = new System.Drawing.Point(14, 19);
+            this.radBySpeed.Name = "radBySpeed";
+            this.radBySpeed.Size = new System.Drawing.Size(97, 17);
+            this.radBySpeed.TabIndex = 0;
+            this.radBySpeed.TabStop = true;
+            this.radBySpeed.Text = "По скоростям";
+            this.radBySpeed.UseVisualStyleBackColor = true;
+            // 
+            // radByAngle
+            // 
+            this.radByAngle.AutoSize = true;
+            this.radByAngle.Location = new System.Drawing.Point(126, 19);
+            this.radByAngle.Name = "radByAngle";
+            this.radByAngle.Size = new System.Drawing.Size(63, 17);
+            this.radByAngle.TabIndex = 0;
+            this.radByAngle.Text = "По углу";
+            this.radByAngle.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radZSC);
+            this.groupBox1.Controls.Add(this.radSSK);
+            this.groupBox1.Location = new System.Drawing.Point(6, 19);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(126, 72);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Система координат";
+            // 
+            // radZSC
+            // 
+            this.radZSC.AutoSize = true;
+            this.radZSC.Location = new System.Drawing.Point(13, 42);
+            this.radZSC.Name = "radZSC";
+            this.radZSC.Size = new System.Drawing.Size(46, 17);
+            this.radZSC.TabIndex = 0;
+            this.radZSC.Text = "ЗСК";
+            this.radZSC.UseVisualStyleBackColor = true;
+            // 
+            // radSSK
+            // 
+            this.radSSK.AutoSize = true;
+            this.radSSK.Checked = true;
+            this.radSSK.Location = new System.Drawing.Point(13, 19);
+            this.radSSK.Name = "radSSK";
+            this.radSSK.Size = new System.Drawing.Size(46, 17);
+            this.radSSK.TabIndex = 0;
+            this.radSSK.TabStop = true;
+            this.radSSK.Text = "ССК";
+            this.radSSK.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.numFocusTPV);
+            this.groupBox7.Controls.Add(this.label16);
+            this.groupBox7.Controls.Add(this.numVremyaExpTPV);
+            this.groupBox7.Controls.Add(this.label17);
+            this.groupBox7.Controls.Add(this.numContrastTPV);
+            this.groupBox7.Controls.Add(this.label40);
+            this.groupBox7.Controls.Add(this.numUsilMatrTPV);
+            this.groupBox7.Controls.Add(this.label18);
+            this.groupBox7.Location = new System.Drawing.Point(234, 221);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(222, 130);
+            this.groupBox7.TabIndex = 30;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "ТПВ";
             // 
             // numFocusTPV
             // 
-            this.numFocusTPV.Location = new System.Drawing.Point(9, 366);
+            this.numFocusTPV.Location = new System.Drawing.Point(135, 19);
             this.numFocusTPV.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.numFocusTPV.Name = "numFocusTPV";
-            this.numFocusTPV.Size = new System.Drawing.Size(90, 20);
+            this.numFocusTPV.Size = new System.Drawing.Size(68, 20);
             this.numFocusTPV.TabIndex = 0;
             this.numFocusTPV.Tag = "0";
             this.numFocusTPV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numFocusTPV.ValueChanged += new System.EventHandler(this.numFocusTPV_ValueChanged);
             // 
-            // label5
+            // label16
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(229, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Фокусное расстояние ТВ";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(8, 20);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(121, 13);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Фокусное расстояние";
+            // 
+            // numVremyaExpTPV
+            // 
+            this.numVremyaExpTPV.Location = new System.Drawing.Point(135, 45);
+            this.numVremyaExpTPV.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.numVremyaExpTPV.Name = "numVremyaExpTPV";
+            this.numVremyaExpTPV.Size = new System.Drawing.Size(68, 20);
+            this.numVremyaExpTPV.TabIndex = 0;
+            this.numVremyaExpTPV.Tag = "0";
+            this.numVremyaExpTPV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(10, 46);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(103, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Время экспозиции";
+            // 
+            // numContrastTPV
+            // 
+            this.numContrastTPV.Location = new System.Drawing.Point(135, 71);
+            this.numContrastTPV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numContrastTPV.Name = "numContrastTPV";
+            this.numContrastTPV.Size = new System.Drawing.Size(68, 20);
+            this.numContrastTPV.TabIndex = 0;
+            this.numContrastTPV.Tag = "0";
+            this.numContrastTPV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(10, 72);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(83, 13);
+            this.label40.TabIndex = 1;
+            this.label40.Text = "Контрастность";
+            // 
+            // numUsilMatrTPV
+            // 
+            this.numUsilMatrTPV.Location = new System.Drawing.Point(135, 97);
+            this.numUsilMatrTPV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numUsilMatrTPV.Name = "numUsilMatrTPV";
+            this.numUsilMatrTPV.Size = new System.Drawing.Size(68, 20);
+            this.numUsilMatrTPV.TabIndex = 0;
+            this.numUsilMatrTPV.Tag = "0";
+            this.numUsilMatrTPV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(12, 98);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(105, 13);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Усиление матрицы";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.numFocusTV);
+            this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Controls.Add(this.numVremyaExpTV);
+            this.groupBox6.Controls.Add(this.label15);
+            this.groupBox6.Controls.Add(this.numContrastTV);
+            this.groupBox6.Controls.Add(this.label14);
+            this.groupBox6.Controls.Add(this.numUsilMatrTV);
+            this.groupBox6.Location = new System.Drawing.Point(6, 221);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(222, 130);
+            this.groupBox6.TabIndex = 30;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "ТВ";
             // 
             // numFocusTV
             // 
-            this.numFocusTV.Location = new System.Drawing.Point(9, 174);
+            this.numFocusTV.Location = new System.Drawing.Point(139, 18);
             this.numFocusTV.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.numFocusTV.Name = "numFocusTV";
-            this.numFocusTV.Size = new System.Drawing.Size(90, 20);
+            this.numFocusTV.Size = new System.Drawing.Size(68, 20);
             this.numFocusTV.TabIndex = 0;
             this.numFocusTV.Tag = "0";
             this.numFocusTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numFocusTV.ValueChanged += new System.EventHandler(this.numFocusTV_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Фокусное расстояние";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Время экспозиции";
+            // 
+            // numVremyaExpTV
+            // 
+            this.numVremyaExpTV.Location = new System.Drawing.Point(139, 44);
+            this.numVremyaExpTV.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.numVremyaExpTV.Name = "numVremyaExpTV";
+            this.numVremyaExpTV.Size = new System.Drawing.Size(68, 20);
+            this.numVremyaExpTV.TabIndex = 0;
+            this.numVremyaExpTV.Tag = "0";
+            this.numVremyaExpTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 72);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(83, 13);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Контрастность";
+            // 
+            // numContrastTV
+            // 
+            this.numContrastTV.Location = new System.Drawing.Point(139, 70);
+            this.numContrastTV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numContrastTV.Name = "numContrastTV";
+            this.numContrastTV.Size = new System.Drawing.Size(68, 20);
+            this.numContrastTV.TabIndex = 0;
+            this.numContrastTV.Tag = "0";
+            this.numContrastTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(12, 98);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(105, 13);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Усиление матрицы";
+            // 
+            // numUsilMatrTV
+            // 
+            this.numUsilMatrTV.Location = new System.Drawing.Point(139, 96);
+            this.numUsilMatrTV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numUsilMatrTV.Name = "numUsilMatrTV";
+            this.numUsilMatrTV.Size = new System.Drawing.Size(68, 20);
+            this.numUsilMatrTV.TabIndex = 0;
+            this.numUsilMatrTV.Tag = "0";
+            this.numUsilMatrTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTrackAngleUM
+            // 
+            this.lblTrackAngleUM.AutoSize = true;
+            this.lblTrackAngleUM.Location = new System.Drawing.Point(315, 179);
+            this.lblTrackAngleUM.Name = "lblTrackAngleUM";
+            this.lblTrackAngleUM.Size = new System.Drawing.Size(13, 13);
+            this.lblTrackAngleUM.TabIndex = 3;
+            this.lblTrackAngleUM.Text = "0";
+            // 
+            // lblTrackUM
+            // 
+            this.lblTrackUM.AutoSize = true;
+            this.lblTrackUM.Location = new System.Drawing.Point(316, 119);
+            this.lblTrackUM.Name = "lblTrackUM";
+            this.lblTrackUM.Size = new System.Drawing.Size(13, 13);
+            this.lblTrackUM.TabIndex = 3;
+            this.lblTrackUM.Text = "0";
+            // 
+            // lblTrackAngleAZ
+            // 
+            this.lblTrackAngleAZ.AutoSize = true;
+            this.lblTrackAngleAZ.Location = new System.Drawing.Point(29, 179);
+            this.lblTrackAngleAZ.Name = "lblTrackAngleAZ";
+            this.lblTrackAngleAZ.Size = new System.Drawing.Size(13, 13);
+            this.lblTrackAngleAZ.TabIndex = 3;
+            this.lblTrackAngleAZ.Text = "0";
+            // 
+            // lblTrackAzValue
+            // 
+            this.lblTrackAzValue.AutoSize = true;
+            this.lblTrackAzValue.Location = new System.Drawing.Point(29, 119);
+            this.lblTrackAzValue.Name = "lblTrackAzValue";
+            this.lblTrackAzValue.Size = new System.Drawing.Size(13, 13);
+            this.lblTrackAzValue.TabIndex = 3;
+            this.lblTrackAzValue.Text = "0";
+            // 
+            // trackAngleUM
+            // 
+            this.trackAngleUM.Location = new System.Drawing.Point(368, 181);
+            this.trackAngleUM.Maximum = 32767;
+            this.trackAngleUM.Minimum = -32768;
+            this.trackAngleUM.Name = "trackAngleUM";
+            this.trackAngleUM.Size = new System.Drawing.Size(200, 45);
+            this.trackAngleUM.TabIndex = 2;
+            this.trackAngleUM.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.trackAngleUM.ValueChanged += new System.EventHandler(this.trackAngleUM_ValueChanged);
+            // 
+            // trackSpeedUM
+            // 
+            this.trackSpeedUM.Location = new System.Drawing.Point(368, 121);
+            this.trackSpeedUM.Maximum = 32767;
+            this.trackSpeedUM.Minimum = -32768;
+            this.trackSpeedUM.Name = "trackSpeedUM";
+            this.trackSpeedUM.Size = new System.Drawing.Size(200, 45);
+            this.trackSpeedUM.TabIndex = 2;
+            this.trackSpeedUM.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.trackSpeedUM.ValueChanged += new System.EventHandler(this.trackUM_ValueChanged);
+            // 
+            // trackAngleAz
+            // 
+            this.trackAngleAz.Location = new System.Drawing.Point(81, 181);
+            this.trackAngleAz.Maximum = 32767;
+            this.trackAngleAz.Minimum = -32768;
+            this.trackAngleAz.Name = "trackAngleAz";
+            this.trackAngleAz.Size = new System.Drawing.Size(200, 45);
+            this.trackAngleAz.TabIndex = 2;
+            this.trackAngleAz.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.trackAngleAz.ValueChanged += new System.EventHandler(this.trackAngleAz_ValueChanged);
+            // 
+            // trackSpeedAz
+            // 
+            this.trackSpeedAz.Location = new System.Drawing.Point(81, 121);
+            this.trackSpeedAz.Maximum = 32767;
+            this.trackSpeedAz.Minimum = -32768;
+            this.trackSpeedAz.Name = "trackSpeedAz";
+            this.trackSpeedAz.Size = new System.Drawing.Size(200, 45);
+            this.trackSpeedAz.TabIndex = 2;
+            this.trackSpeedAz.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.trackSpeedAz.ValueChanged += new System.EventHandler(this.trackAz_ValueChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(366, 165);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(198, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Угол подъема прицела по углу места";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(229, 80);
+            this.label4.Location = new System.Drawing.Point(380, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Угловая скорость по углу места";
+            // 
+            // numAngleUM
+            // 
+            this.numAngleUM.DecimalPlaces = 3;
+            this.numAngleUM.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numAngleUM.Location = new System.Drawing.Point(294, 195);
+            this.numAngleUM.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numAngleUM.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numAngleUM.Name = "numAngleUM";
+            this.numAngleUM.Size = new System.Drawing.Size(68, 20);
+            this.numAngleUM.TabIndex = 0;
+            this.numAngleUM.Tag = "0";
+            this.numAngleUM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numAngleUM.ValueChanged += new System.EventHandler(this.numAngleUM_ValueChanged);
             // 
             // numSpeedUM
             // 
@@ -1122,7 +1499,7 @@
             0,
             0,
             65536});
-            this.numSpeedUM.Location = new System.Drawing.Point(9, 110);
+            this.numSpeedUM.Location = new System.Drawing.Point(294, 135);
             this.numSpeedUM.Maximum = new decimal(new int[] {
             180,
             0,
@@ -1134,16 +1511,51 @@
             0,
             -2147483648});
             this.numSpeedUM.Name = "numSpeedUM";
-            this.numSpeedUM.Size = new System.Drawing.Size(90, 20);
+            this.numSpeedUM.Size = new System.Drawing.Size(68, 20);
             this.numSpeedUM.TabIndex = 0;
             this.numSpeedUM.Tag = "0";
             this.numSpeedUM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numSpeedUM.ValueChanged += new System.EventHandler(this.numSpeedUM_ValueChanged);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(96, 165);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(186, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Угол поворота прицела по азимуту";
+            // 
+            // numAngleAZ
+            // 
+            this.numAngleAZ.DecimalPlaces = 3;
+            this.numAngleAZ.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numAngleAZ.Location = new System.Drawing.Point(7, 195);
+            this.numAngleAZ.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numAngleAZ.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numAngleAZ.Name = "numAngleAZ";
+            this.numAngleAZ.Size = new System.Drawing.Size(68, 20);
+            this.numAngleAZ.TabIndex = 0;
+            this.numAngleAZ.Tag = "0";
+            this.numAngleAZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numAngleAZ.ValueChanged += new System.EventHandler(this.numAngleAZ_ValueChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 16);
+            this.label3.Location = new System.Drawing.Point(107, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 13);
             this.label3.TabIndex = 1;
@@ -1157,7 +1569,7 @@
             0,
             0,
             65536});
-            this.numSpeedAz.Location = new System.Drawing.Point(9, 46);
+            this.numSpeedAz.Location = new System.Drawing.Point(7, 135);
             this.numSpeedAz.Maximum = new decimal(new int[] {
             180,
             0,
@@ -1169,17 +1581,22 @@
             0,
             -2147483648});
             this.numSpeedAz.Name = "numSpeedAz";
-            this.numSpeedAz.Size = new System.Drawing.Size(90, 20);
+            this.numSpeedAz.Size = new System.Drawing.Size(68, 20);
             this.numSpeedAz.TabIndex = 0;
             this.numSpeedAz.Tag = "0";
             this.numSpeedAz.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numSpeedAz.Value = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
             this.numSpeedAz.ValueChanged += new System.EventHandler(this.numSpeedAz_ValueChanged);
             // 
             // btnA5_4
             // 
-            this.btnA5_4.Location = new System.Drawing.Point(182, 124);
+            this.btnA5_4.Location = new System.Drawing.Point(172, 124);
             this.btnA5_4.Name = "btnA5_4";
-            this.btnA5_4.Size = new System.Drawing.Size(170, 25);
+            this.btnA5_4.Size = new System.Drawing.Size(232, 25);
             this.btnA5_4.TabIndex = 25;
             this.btnA5_4.Text = "Перейти в стабилизацию";
             this.btnA5_4.UseVisualStyleBackColor = true;
@@ -1189,7 +1606,7 @@
             // 
             this.btnA5_15.Location = new System.Drawing.Point(6, 124);
             this.btnA5_15.Name = "btnA5_15";
-            this.btnA5_15.Size = new System.Drawing.Size(170, 25);
+            this.btnA5_15.Size = new System.Drawing.Size(160, 25);
             this.btnA5_15.TabIndex = 25;
             this.btnA5_15.Text = "Запрос диагностики";
             this.btnA5_15.UseVisualStyleBackColor = true;
@@ -1301,59 +1718,6 @@
             this.radA5_3_Dezh.UseVisualStyleBackColor = true;
             this.radA5_3_Dezh.Click += new System.EventHandler(this.radA5_3_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.numA1_35);
-            this.groupBox1.Controls.Add(this.chkA1_35);
-            this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(297, 735);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(281, 134);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Угол наведения и угловая скорость МТТД";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 76);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 13);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Угол наведения по горизонту";
-            // 
-            // numA1_35
-            // 
-            this.numA1_35.DecimalPlaces = 3;
-            this.numA1_35.Increment = new decimal(new int[] {
-            9,
-            0,
-            0,
-            131072});
-            this.numA1_35.Location = new System.Drawing.Point(168, 74);
-            this.numA1_35.Maximum = new decimal(new int[] {
-            359999,
-            0,
-            0,
-            196608});
-            this.numA1_35.Name = "numA1_35";
-            this.numA1_35.Size = new System.Drawing.Size(90, 20);
-            this.numA1_35.TabIndex = 23;
-            this.numA1_35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // chkA1_35
-            // 
-            this.chkA1_35.AutoSize = true;
-            this.chkA1_35.Checked = true;
-            this.chkA1_35.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkA1_35.Location = new System.Drawing.Point(12, 26);
-            this.chkA1_35.Name = "chkA1_35";
-            this.chkA1_35.Size = new System.Drawing.Size(202, 17);
-            this.chkA1_35.TabIndex = 22;
-            this.chkA1_35.Text = "Включить периодическую посылку";
-            this.chkA1_35.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1455,7 +1819,8 @@
             this.окнаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.логToolStripMenuItem,
             this.панельУправленияToolStripMenuItem,
-            this.отладкаToolStripMenuItem});
+            this.отладкаToolStripMenuItem,
+            this.координатыВизирнойОсиToolStripMenuItem});
             this.окнаToolStripMenuItem.Name = "окнаToolStripMenuItem";
             this.окнаToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.окнаToolStripMenuItem.Text = "Окна";
@@ -1463,21 +1828,21 @@
             // логToolStripMenuItem
             // 
             this.логToolStripMenuItem.Name = "логToolStripMenuItem";
-            this.логToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.логToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.логToolStripMenuItem.Text = "Лог";
             this.логToolStripMenuItem.Click += new System.EventHandler(this.логToolStripMenuItem_Click);
             // 
             // панельУправленияToolStripMenuItem
             // 
             this.панельУправленияToolStripMenuItem.Name = "панельУправленияToolStripMenuItem";
-            this.панельУправленияToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.панельУправленияToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.панельУправленияToolStripMenuItem.Text = "Панель управления";
             this.панельУправленияToolStripMenuItem.Click += new System.EventHandler(this.панельУправленияToolStripMenuItem_Click);
             // 
             // отладкаToolStripMenuItem
             // 
             this.отладкаToolStripMenuItem.Name = "отладкаToolStripMenuItem";
-            this.отладкаToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.отладкаToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.отладкаToolStripMenuItem.Text = "Отладка";
             this.отладкаToolStripMenuItem.Click += new System.EventHandler(this.отладкаToolStripMenuItem_Click);
             // 
@@ -1659,243 +2024,161 @@
             // 
             // panelRight
             // 
+            this.panelRight.Controls.Add(this.txtA6_1);
+            this.panelRight.Controls.Add(this.label32);
             this.panelRight.Location = new System.Drawing.Point(1296, 1);
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(640, 1080);
             this.panelRight.TabIndex = 34;
             // 
-            // groupBox5
+            // txtA6_1
             // 
-            this.groupBox5.Controls.Add(this.radZSC);
-            this.groupBox5.Controls.Add(this.radSSK);
-            this.groupBox5.Location = new System.Drawing.Point(410, 19);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(170, 99);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Система координат";
+            this.txtA6_1.Location = new System.Drawing.Point(430, 36);
+            this.txtA6_1.Name = "txtA6_1";
+            this.txtA6_1.ReadOnly = true;
+            this.txtA6_1.Size = new System.Drawing.Size(170, 20);
+            this.txtA6_1.TabIndex = 7;
+            this.txtA6_1.Text = "не определено";
+            this.txtA6_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // radSSK
+            // label32
             // 
-            this.radSSK.AutoSize = true;
-            this.radSSK.Checked = true;
-            this.radSSK.Location = new System.Drawing.Point(33, 19);
-            this.radSSK.Name = "radSSK";
-            this.radSSK.Size = new System.Drawing.Size(46, 17);
-            this.radSSK.TabIndex = 0;
-            this.radSSK.TabStop = true;
-            this.radSSK.Text = "ССК";
-            this.radSSK.UseVisualStyleBackColor = true;
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(311, 38);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(113, 13);
+            this.label32.TabIndex = 8;
+            this.label32.Text = "Причина старта ППК";
             // 
-            // radZSC
+            // координатыВизирнойОсиToolStripMenuItem
             // 
-            this.radZSC.AutoSize = true;
-            this.radZSC.Location = new System.Drawing.Point(33, 65);
-            this.radZSC.Name = "radZSC";
-            this.radZSC.Size = new System.Drawing.Size(46, 17);
-            this.radZSC.TabIndex = 0;
-            this.radZSC.Text = "ЗСК";
-            this.radZSC.UseVisualStyleBackColor = true;
+            this.координатыВизирнойОсиToolStripMenuItem.Name = "координатыВизирнойОсиToolStripMenuItem";
+            this.координатыВизирнойОсиToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.координатыВизирнойОсиToolStripMenuItem.Text = "Координаты визирной оси";
+            this.координатыВизирнойОсиToolStripMenuItem.Click += new System.EventHandler(this.координатыВизирнойОсиToolStripMenuItem_Click);
             // 
-            // btnA5_9_11
+            // label36
             // 
-            this.btnA5_9_11.Location = new System.Drawing.Point(410, 124);
-            this.btnA5_9_11.Name = "btnA5_9_11";
-            this.btnA5_9_11.Size = new System.Drawing.Size(170, 25);
-            this.btnA5_9_11.TabIndex = 25;
-            this.btnA5_9_11.Text = "Включить наведение";
-            this.btnA5_9_11.UseVisualStyleBackColor = true;
-            this.btnA5_9_11.Click += new System.EventHandler(this.btnA5_9_11_Click);
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(206, 22);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(118, 13);
+            this.label36.TabIndex = 13;
+            this.label36.Text = "Расстояние до цели 1";
             // 
-            // txtRezhimPricela
+            // txtAim1
             // 
-            this.txtRezhimPricela.Location = new System.Drawing.Point(157, 71);
-            this.txtRezhimPricela.Name = "txtRezhimPricela";
-            this.txtRezhimPricela.ReadOnly = true;
-            this.txtRezhimPricela.Size = new System.Drawing.Size(120, 20);
-            this.txtRezhimPricela.TabIndex = 7;
-            this.txtRezhimPricela.Text = "не определено";
-            this.txtRezhimPricela.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAim1.Location = new System.Drawing.Point(329, 19);
+            this.txtAim1.Name = "txtAim1";
+            this.txtAim1.ReadOnly = true;
+            this.txtAim1.Size = new System.Drawing.Size(52, 20);
+            this.txtAim1.TabIndex = 14;
+            this.txtAim1.Text = "0";
+            this.txtAim1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label19
+            // label37
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 74);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(87, 13);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "Режим прицела";
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(387, 22);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(15, 13);
+            this.label37.TabIndex = 13;
+            this.label37.Text = "м";
             // 
-            // label21
+            // groupBox9
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 127);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(119, 13);
-            this.label21.TabIndex = 8;
-            this.label21.Text = "ТВ матрица включена";
+            this.groupBox9.Controls.Add(this.txtAim3);
+            this.groupBox9.Controls.Add(this.label42);
+            this.groupBox9.Controls.Add(this.txtNumOfAims);
+            this.groupBox9.Controls.Add(this.label43);
+            this.groupBox9.Controls.Add(this.txtAim2);
+            this.groupBox9.Controls.Add(this.label39);
+            this.groupBox9.Controls.Add(this.label41);
+            this.groupBox9.Controls.Add(this.txtAim1);
+            this.groupBox9.Controls.Add(this.label38);
+            this.groupBox9.Controls.Add(this.label36);
+            this.groupBox9.Controls.Add(this.label37);
+            this.groupBox9.Location = new System.Drawing.Point(177, 419);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(409, 97);
+            this.groupBox9.TabIndex = 13;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Результат измерения дальности";
             // 
-            // indTVMatrVKL
+            // label38
             // 
-            this.indTVMatrVKL.Enabled = false;
-            this.indTVMatrVKL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.indTVMatrVKL.Location = new System.Drawing.Point(257, 123);
-            this.indTVMatrVKL.Name = "indTVMatrVKL";
-            this.indTVMatrVKL.Size = new System.Drawing.Size(20, 20);
-            this.indTVMatrVKL.TabIndex = 33;
-            this.indTVMatrVKL.UseVisualStyleBackColor = true;
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(388, 48);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(15, 13);
+            this.label38.TabIndex = 13;
+            this.label38.Text = "м";
             // 
-            // txtStateTPVMatr
+            // label39
             // 
-            this.txtStateTPVMatr.Location = new System.Drawing.Point(449, 19);
-            this.txtStateTPVMatr.Name = "txtStateTPVMatr";
-            this.txtStateTPVMatr.ReadOnly = true;
-            this.txtStateTPVMatr.Size = new System.Drawing.Size(120, 20);
-            this.txtStateTPVMatr.TabIndex = 7;
-            this.txtStateTPVMatr.Text = "не определено";
-            this.txtStateTPVMatr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(206, 48);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(118, 13);
+            this.label39.TabIndex = 13;
+            this.label39.Text = "Расстояние до цели 2";
             // 
-            // label22
+            // txtAim2
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(298, 22);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(134, 13);
-            this.label22.TabIndex = 8;
-            this.label22.Text = "Состояние ТПВ матрицы";
+            this.txtAim2.Location = new System.Drawing.Point(330, 45);
+            this.txtAim2.Name = "txtAim2";
+            this.txtAim2.ReadOnly = true;
+            this.txtAim2.Size = new System.Drawing.Size(52, 20);
+            this.txtAim2.TabIndex = 14;
+            this.txtAim2.Text = "0";
+            this.txtAim2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label23
+            // label41
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(298, 49);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(55, 13);
-            this.label23.TabIndex = 8;
-            this.label23.Text = "ЛД готов";
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(388, 74);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(15, 13);
+            this.label41.TabIndex = 13;
+            this.label41.Text = "м";
             // 
-            // indLDGotov
+            // label42
             // 
-            this.indLDGotov.Enabled = false;
-            this.indLDGotov.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.indLDGotov.Location = new System.Drawing.Point(549, 45);
-            this.indLDGotov.Name = "indLDGotov";
-            this.indLDGotov.Size = new System.Drawing.Size(20, 20);
-            this.indLDGotov.TabIndex = 33;
-            this.indLDGotov.UseVisualStyleBackColor = true;
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(206, 74);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(118, 13);
+            this.label42.TabIndex = 13;
+            this.label42.Text = "Расстояние до цели 3";
             // 
-            // txtSystemCoord
+            // txtAim3
             // 
-            this.txtSystemCoord.Location = new System.Drawing.Point(449, 71);
-            this.txtSystemCoord.Name = "txtSystemCoord";
-            this.txtSystemCoord.ReadOnly = true;
-            this.txtSystemCoord.Size = new System.Drawing.Size(120, 20);
-            this.txtSystemCoord.TabIndex = 7;
-            this.txtSystemCoord.Text = "не определено";
-            this.txtSystemCoord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAim3.Location = new System.Drawing.Point(330, 71);
+            this.txtAim3.Name = "txtAim3";
+            this.txtAim3.ReadOnly = true;
+            this.txtAim3.Size = new System.Drawing.Size(52, 20);
+            this.txtAim3.TabIndex = 14;
+            this.txtAim3.Text = "0";
+            this.txtAim3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label24
+            // label43
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(298, 74);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(107, 13);
-            this.label24.TabIndex = 8;
-            this.label24.Text = "Система координат";
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(1, 48);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(99, 13);
+            this.label43.TabIndex = 13;
+            this.label43.Text = "Количество целей";
             // 
-            // txtOpticFilterTV
+            // txtNumOfAims
             // 
-            this.txtOpticFilterTV.Location = new System.Drawing.Point(449, 97);
-            this.txtOpticFilterTV.Name = "txtOpticFilterTV";
-            this.txtOpticFilterTV.ReadOnly = true;
-            this.txtOpticFilterTV.Size = new System.Drawing.Size(120, 20);
-            this.txtOpticFilterTV.TabIndex = 7;
-            this.txtOpticFilterTV.Text = "не определено";
-            this.txtOpticFilterTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(298, 100);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(148, 13);
-            this.label27.TabIndex = 8;
-            this.label27.Text = "Оптический фильтр ТВ кан.";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(298, 127);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(88, 13);
-            this.label28.TabIndex = 8;
-            this.label28.Text = "Обогрев стекла";
-            // 
-            // indObogrevStekla
-            // 
-            this.indObogrevStekla.Enabled = false;
-            this.indObogrevStekla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.indObogrevStekla.Location = new System.Drawing.Point(549, 123);
-            this.indObogrevStekla.Name = "indObogrevStekla";
-            this.indObogrevStekla.Size = new System.Drawing.Size(20, 20);
-            this.indObogrevStekla.TabIndex = 33;
-            this.indObogrevStekla.UseVisualStyleBackColor = true;
-            // 
-            // txtSposobDvizh
-            // 
-            this.txtSposobDvizh.Location = new System.Drawing.Point(257, 149);
-            this.txtSposobDvizh.Name = "txtSposobDvizh";
-            this.txtSposobDvizh.ReadOnly = true;
-            this.txtSposobDvizh.Size = new System.Drawing.Size(312, 20);
-            this.txtSposobDvizh.TabIndex = 7;
-            this.txtSposobDvizh.Text = "не определено";
-            this.txtSposobDvizh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(9, 152);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(244, 13);
-            this.label29.TabIndex = 8;
-            this.label29.Text = "Способ движения линии визирования прицела";
-            // 
-            // txtPoleZrenTPV
-            // 
-            this.txtPoleZrenTPV.Location = new System.Drawing.Point(449, 175);
-            this.txtPoleZrenTPV.Name = "txtPoleZrenTPV";
-            this.txtPoleZrenTPV.ReadOnly = true;
-            this.txtPoleZrenTPV.Size = new System.Drawing.Size(120, 20);
-            this.txtPoleZrenTPV.TabIndex = 7;
-            this.txtPoleZrenTPV.Text = "не определено";
-            this.txtPoleZrenTPV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtPoleZrenTV
-            // 
-            this.txtPoleZrenTV.Location = new System.Drawing.Point(157, 175);
-            this.txtPoleZrenTV.Name = "txtPoleZrenTV";
-            this.txtPoleZrenTV.ReadOnly = true;
-            this.txtPoleZrenTV.Size = new System.Drawing.Size(120, 20);
-            this.txtPoleZrenTV.TabIndex = 7;
-            this.txtPoleZrenTV.Text = "не определено";
-            this.txtPoleZrenTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(298, 178);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(97, 13);
-            this.label30.TabIndex = 8;
-            this.label30.Text = "Поле зрения ТПВ";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(6, 178);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(89, 13);
-            this.label31.TabIndex = 8;
-            this.label31.Text = "Поле зрения ТВ";
+            this.txtNumOfAims.Location = new System.Drawing.Point(106, 45);
+            this.txtNumOfAims.Name = "txtNumOfAims";
+            this.txtNumOfAims.ReadOnly = true;
+            this.txtNumOfAims.Size = new System.Drawing.Size(80, 20);
+            this.txtNumOfAims.TabIndex = 14;
+            this.txtNumOfAims.Text = "0";
+            this.txtNumOfAims.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmMain
             // 
@@ -1924,59 +2207,60 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "KINZHAL v.1.5";
+            this.Text = "KINZHAL v.1.75";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numA5_29_Vert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackA5_29_Vert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numA5_29_Hor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackA5_29_Hor)).EndInit();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numA5_30_Vert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackA5_30_Vert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numA5_30_Hor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackA5_30_Hor)).EndInit();
             this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackContrastTPV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackContrastTV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackUsilMatrTPV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackUsilMatrTV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackVremyaExpTPV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackVremyaExpTV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackFocusTPV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackFocusTV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackUM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackAz)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numContrastTPV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numContrastTV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUsilMatrTPV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUsilMatrTV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numVremyaExpTPV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numVremyaExpTV)).EndInit();
+            this.grpCommandOut.ResumeLayout(false);
+            this.grpOtherCommand.ResumeLayout(false);
+            this.grpOtherCommand.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numVklObogrev)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.grpSoprovozhdeniya.ResumeLayout(false);
+            this.grpSoprovozhdeniya.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFocusTPV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numVremyaExpTPV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numContrastTPV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUsilMatrTPV)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFocusTV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numVremyaExpTV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numContrastTV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUsilMatrTV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackAngleUM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackSpeedUM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackAngleAz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackSpeedAz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAngleUM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeedUM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAngleAZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeedAz)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numA1_35)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -1985,8 +2269,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pict1)).EndInit();
             this.panelPict.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.panelRight.ResumeLayout(false);
+            this.panelRight.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1996,23 +2282,6 @@
 
         private System.Windows.Forms.ComboBox cboDevices;
         private System.Windows.Forms.ToolTip tipMessage;
-        private System.Windows.Forms.Button btnA5_26;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numA5_29_Hor;
-        private System.Windows.Forms.TrackBar trackA5_29_Hor;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numA5_29_Vert;
-        private System.Windows.Forms.TrackBar trackA5_29_Vert;
-        private System.Windows.Forms.Button btnA5_29;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Button btnA5_30;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown numA5_30_Vert;
-        private System.Windows.Forms.TrackBar trackA5_30_Vert;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown numA5_30_Hor;
-        private System.Windows.Forms.TrackBar trackA5_30_Hor;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Label label20;
@@ -2031,13 +2300,12 @@
         private System.Windows.Forms.TextBox txtAngleUM;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.GroupBox grpCommandOut;
         private System.Windows.Forms.Button btnReleaseDevice;
         private System.Windows.Forms.Button btnCaptureDevice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Timer timerSendValues;
-        private System.Windows.Forms.Button btnA5_30_NULL;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem командыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem обнаружитьДжойстикToolStripMenuItem;
@@ -2057,10 +2325,6 @@
         private System.Windows.Forms.ToolStripMenuItem отладкаToolStripMenuItem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblCapturedDevice;
-        private System.Windows.Forms.CheckBox chkA1_35;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numA1_35;
         private System.Windows.Forms.Timer tmrSendA5_1;
         private System.Windows.Forms.CheckBox chkA5_1_ON;
         private System.Windows.Forms.Label label13;
@@ -2072,7 +2336,6 @@
         private System.Windows.Forms.Timer tmrSendA5_3;
         public System.Windows.Forms.Panel panelPict;
         private System.Windows.Forms.Panel panelRight;
-        private System.Windows.Forms.CheckBox chkA5_29;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radA5_3_Teh;
         private System.Windows.Forms.RadioButton radA5_3_Rab;
@@ -2084,31 +2347,23 @@
         private System.Windows.Forms.RadioButton radA5_2_3Filter;
         private System.Windows.Forms.Button btnA5_4;
         private System.Windows.Forms.Button btnA5_15;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TrackBar trackAz;
+        private System.Windows.Forms.GroupBox grpSoprovozhdeniya;
+        private System.Windows.Forms.TrackBar trackSpeedAz;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numSpeedAz;
         private System.Windows.Forms.Label lblTrackAzValue;
         private System.Windows.Forms.Label lblTrackUM;
-        private System.Windows.Forms.TrackBar trackUM;
+        private System.Windows.Forms.TrackBar trackSpeedUM;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numSpeedUM;
-        private System.Windows.Forms.TrackBar trackFocusTV;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numFocusTV;
-        private System.Windows.Forms.TrackBar trackVremyaExpTV;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numVremyaExpTV;
-        private System.Windows.Forms.TrackBar trackUsilMatrTV;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.NumericUpDown numUsilMatrTV;
-        private System.Windows.Forms.TrackBar trackContrastTV;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown numContrastTV;
-        private System.Windows.Forms.TrackBar trackContrastTPV;
-        private System.Windows.Forms.TrackBar trackUsilMatrTPV;
-        private System.Windows.Forms.TrackBar trackVremyaExpTPV;
-        private System.Windows.Forms.TrackBar trackFocusTPV;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.NumericUpDown numContrastTPV;
         private System.Windows.Forms.Label label18;
@@ -2117,10 +2372,8 @@
         private System.Windows.Forms.NumericUpDown numVremyaExpTPV;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.NumericUpDown numFocusTPV;
-        private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton radZSC;
         private System.Windows.Forms.RadioButton radSSK;
-        private System.Windows.Forms.Button btnA5_9_11;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtRezhimPricela;
         private System.Windows.Forms.Button indTVMatrVKL;
@@ -2141,6 +2394,68 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtPoleZrenTV;
         private System.Windows.Forms.TextBox txtPoleZrenTPV;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.CheckBox chkA5_9_11;
+        private System.Windows.Forms.Label lblTrackAngleUM;
+        private System.Windows.Forms.Label lblTrackAngleAZ;
+        private System.Windows.Forms.TrackBar trackAngleUM;
+        private System.Windows.Forms.TrackBar trackAngleAz;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown numAngleUM;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numAngleAZ;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton radByPerebros;
+        private System.Windows.Forms.RadioButton radBySpeed;
+        private System.Windows.Forms.RadioButton radByAngle;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton radUPZ2_TPV;
+        private System.Windows.Forms.RadioButton radSHPZ;
+        private System.Windows.Forms.RadioButton radUPZ_TPV;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radSHPZ_TV;
+        private System.Windows.Forms.RadioButton radUPZ_TV;
+        private System.Windows.Forms.RadioButton radUPZ2_TV;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox grpOtherCommand;
+        private System.Windows.Forms.Button btnZaprosLD;
+        private System.Windows.Forms.Button btnZaprosStatePricel;
+        private System.Windows.Forms.Button btnCalibrateTPVMatr;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown numVklObogrev;
+        private System.Windows.Forms.Button btnVklObogrev;
+        private System.Windows.Forms.Button btnZaprosCoord;
+        private System.Windows.Forms.Button btnOtklTPVMatr;
+        private System.Windows.Forms.Button btnVklTPVMatr;
+        private System.Windows.Forms.TextBox txtA6_1;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtErrorCode;
+        private System.Windows.Forms.Label lblErrorCode;
+        private System.Windows.Forms.Button btnA5_22;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtVremyaIzmLD;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtNarabotkaLD;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtDiagnostic;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ToolStripMenuItem координатыВизирнойОсиToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtAim1;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox txtAim3;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txtAim2;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox txtNumOfAims;
+        private System.Windows.Forms.Label label43;
     }
 }
 

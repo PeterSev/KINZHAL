@@ -86,7 +86,7 @@ namespace KINZHAL
 
         List<Device> Devices = new List<Device>();  //список устройств, что мы имитируем
         List<Message> lstMessages = new List<Message>();
-
+        List<string> lstErr = new List<string>();
         USBcanServer CanSrv = new USBcanServer();
         MyJoystick myJoystick;
         Message lastMsg; //храним ссылку на последнюю отправленную команду
@@ -109,6 +109,7 @@ namespace KINZHAL
         public frmPU _frmPU;
         public frmDebug _frmDebug;
         public frmSettings _frmSettings;
+        public frmCoord _frmCoord;
 
         byte bRet;
 
@@ -120,7 +121,7 @@ namespace KINZHAL
 
         public int iCnt1280 = 0, iCnt1280_ = 0, iCnt1280__ = 0;
         int cntFPSrate = 0;
-        Multimedia.Timer tmrSend1540 = new Multimedia.Timer();
+        Multimedia.Timer tmrSendA5_9_11 = new Multimedia.Timer();
         bool flag_a5_3;
 
         private SettingXML sets;
@@ -146,8 +147,9 @@ namespace KINZHAL
             _frmPU = new frmPU();
             _frmDebug = new frmDebug();
             _frmSettings = new frmSettings(this);
+            _frmCoord = new frmCoord();
             //_frmVideoSet = new frmVideoSettings();
-            _frmLog._frmMain =  _frmPU._frmMain = _frmDebug._frmMain = this;
+            _frmLog._frmMain =  _frmPU._frmMain = _frmDebug._frmMain = _frmCoord._frmMain = this;
 
             //pict1.Image = sdi.bitmap;
             sets = new SettingXML();
@@ -163,16 +165,42 @@ namespace KINZHAL
 
             tmrSendA5_1.Enabled = true; //стартуем таймер посылки запроса от выбранного абонента в ППК
 
-            tmrSend1540.Period = 20; //стартуем таймер посылки команды с дескриптором 1540 (Угол наведения и угловая скорость МТТД по горизонту) 
-            //tmrSend1540.Tick += tmrSend1540_Tick;
-            tmrSend1540.Resolution = 1;
-            tmrSend1540.Mode = Multimedia.TimerMode.Periodic;
+            tmrSendA5_9_11.Period = 20; //стартуем таймер посылки команды 
+            tmrSendA5_9_11.Tick += TmrSendA5_9_11_Tick;
+            tmrSendA5_9_11.Resolution = 1;
+            tmrSendA5_9_11.Mode = Multimedia.TimerMode.Periodic;
             //пока не врубаем таймер. Может потом пригодиццо, поэтому не удаляем
             //tmrSend1540.Start();   
 
 
             numSpeedAz.Tag = 0;
             numSpeedUM.Tag = 0;
+            numAngleAZ.Tag = 0;
+            numAngleUM.Tag = 0;
+
+            lstErr.Add("готовность БУ");
+            lstErr.Add("готовность ТВ");
+            lstErr.Add("готовность ТПВ");
+            lstErr.Add("резерв");
+            lstErr.Add("готовность ЛД");
+            lstErr.Add("резерв");
+            lstErr.Add("резерв");
+            lstErr.Add("готовность привода");
+            lstErr.Add("неисправность БУ");
+            lstErr.Add("неисправность ТВ");
+            lstErr.Add("неисправность ТПВ");
+            lstErr.Add("резерв");
+            lstErr.Add("неисправность ЛД");
+            lstErr.Add("резерв");
+            lstErr.Add("резерв");
+            lstErr.Add("неисправность приводов");
+
+            //txtErrorCode.Text = String.Join(Environment.NewLine, lstErr);
+        }
+
+        private void TmrSendA5_9_11_Tick(object sender, EventArgs e)
+        {
+            A5_9_11();
         }
 
         void sdi_eventFPS_FrameReceived(double fps)
@@ -318,7 +346,7 @@ namespace KINZHAL
 
             a5_21 =             new Message(20, 464, 0, 0);
             a5_22 =             new Message(20, 472, 0, 0);
-            a5_23 =             new Message(20, 473, 0, 8);
+            a5_23 =             new Message(20, 476, 0, 8);
             a5_24 =             new Message(20, 480, 0, 4);
             a5_25 =             new Message(20, 488, 0, 0);
             a5_26 =             new Message(20, 496, 0, 0);
@@ -337,7 +365,7 @@ namespace KINZHAL
             a6_4 =              new Message(0, 2, 0, 0);
 
             a6_5 =              new Message(20, 1538, 500, 7);
-            a6_6 =              new Message(20, 1546, 500, 7);
+            a6_6 =              new Message(20, 1546, 500, 8);
             a6_7 =              new Message(20, 1554, 500, 3);
             a6_8 =              new Message(20, 1562, 0, 2);
             a6_9 =              new Message(20, 1570, 0, 4);
@@ -468,28 +496,94 @@ namespace KINZHAL
             SendMessage(Devices[selectedIndex], devPPK, a5_26);
         }
 
+        
+
         void A5_27_Process()
         {
             SendMessage(Devices[selectedIndex], devPPK, a5_27);
         }
 
-        private void numA5_29_Hor_ValueChanged(object sender, EventArgs e)
+        private void numAngleAZ_ValueChanged(object sender, EventArgs e)
         {
-            trackA5_29_Hor.Value = (int)numA5_29_Hor.Value;
-
-            if(numA5_29_Hor.Focused)
-                if (!chkA5_29.Checked)
-                    SendA5_29();
+            double d = (double)numAngleAZ.Value * CMR.SPEED_AZ_UM;
+            d = Math.Round(d);
+            int i = (int)d;
+            numAngleAZ.Tag = i;
+            trackAngleAz.Value = i;
         }
 
-        private void trackA5_29_Scroll(object sender, EventArgs e)
+        private void numAngleUM_ValueChanged(object sender, EventArgs e)
         {
-            numA5_29_Hor.Value = trackA5_29_Hor.Value;
+            double d = (double)numAngleUM.Value * CMR.SPEED_AZ_UM;
+            d = Math.Round(d);
+            int i = (int)d;
+            numAngleUM.Tag = i;
+            trackAngleUM.Value = i;
         }
 
-        private void trackA5_29_Vert_Scroll(object sender, EventArgs e)
+        private void trackAngleAz_ValueChanged(object sender, EventArgs e)
         {
-            numA5_29_Vert.Value = trackA5_29_Vert.Value;
+            lblTrackAngleAZ.Text = trackAngleAz.Value.ToString();
+            if ((int)numAngleAZ.Tag == trackAngleAz.Value) return;
+
+            numAngleAZ.Value = (decimal)(trackAngleAz.Value / CMR.SPEED_AZ_UM);
+        }
+
+        private void trackAngleUM_ValueChanged(object sender, EventArgs e)
+        {
+            lblTrackAngleUM.Text = trackAngleUM.Value.ToString();
+            if ((int)numAngleUM.Tag == trackAngleUM.Value) return;
+
+            numAngleUM.Value = (decimal)(trackAngleUM.Value / CMR.SPEED_AZ_UM);
+        }
+
+        private void radUPZ_TV_Click(object sender, EventArgs e)
+        {
+            a5_16.Data[0] = 0;
+            a5_16.Data[1] = 0;
+            if (radUPZ_TV.Checked) a5_16.Data[0] = 1;
+            if (radUPZ2_TV.Checked) a5_16.Data[0] = 2;
+            if (radUPZ_TPV.Checked) a5_16.Data[1] = 1;
+            if (radUPZ2_TPV.Checked) a5_16.Data[1] = 2;
+
+            SendMessage(Devices[selectedIndex], devPPK, a5_16);
+        }
+
+        private void btnZaprosLD_Click(object sender, EventArgs e)
+        {
+            SendMessage(Devices[selectedIndex], devPPK, a5_19);
+        }
+
+        private void btnZaprosStatePricel_Click(object sender, EventArgs e)
+        {
+            SendMessage(Devices[selectedIndex], devPPK, a5_20);
+        }
+
+        private void btnCalibrateTPVMatr_Click(object sender, EventArgs e)
+        {
+            SendMessage(Devices[selectedIndex], devPPK, a5_21);
+        }
+
+        private void btnVklObogrev_Click(object sender, EventArgs e)
+        {
+            a5_18.Data[0] = (byte)(int)numVklObogrev.Value;
+            a5_18.Data[1] = (byte)((int)numVklObogrev.Value >> 8);
+            SendMessage(Devices[selectedIndex], devPPK, a5_18);
+        }
+
+        private void btnZaprosCoord_Click(object sender, EventArgs e)
+        {
+            SendMessage(Devices[selectedIndex], devPPK, a5_27);
+        }
+
+        private void btnVklTPVMatr_Click(object sender, EventArgs e)
+        {
+            SendMessage(Devices[selectedIndex], devPPK, a5_25);
+        }
+
+        private void btnOtklTPVMatr_Click(object sender, EventArgs e)
+        {
+            SendMessage(Devices[selectedIndex], devPPK, a5_26);
         }
 
         private void radA5_3_Click(object sender, EventArgs e)
@@ -520,6 +614,11 @@ namespace KINZHAL
             SendMessage(Devices[selectedIndex], devPPK, a5_4);
         }
 
+        private void btnA5_22_Click(object sender, EventArgs e)
+        {
+            SendMessage(Devices[selectedIndex], devPPK, a5_22);
+        }
+
         private void btnA5_15_Click_1(object sender, EventArgs e)
         {
             SendMessage(Devices[selectedIndex], devPPK, a5_15);
@@ -531,23 +630,28 @@ namespace KINZHAL
             d = Math.Round(d);
             int i = (int)d;
             numSpeedAz.Tag = i;
-            trackAz.Value = i;   
+            trackSpeedAz.Value = i;   
         }
 
         private void trackAz_ValueChanged(object sender, EventArgs e)
         {
-            lblTrackAzValue.Text = trackAz.Value.ToString();
-            if ((int)numSpeedAz.Tag == trackAz.Value) return;
+            lblTrackAzValue.Text = trackSpeedAz.Value.ToString();
+            if ((int)numSpeedAz.Tag == trackSpeedAz.Value) return;
 
-            numSpeedAz.Value = (decimal) (trackAz.Value / CMR.SPEED_AZ_UM);
+            numSpeedAz.Value = (decimal) (trackSpeedAz.Value / CMR.SPEED_AZ_UM);
+        }
+
+        private void координатыВизирнойОсиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _frmCoord.Show();
         }
 
         private void trackUM_ValueChanged(object sender, EventArgs e)
         {
-            lblTrackUM.Text = trackUM.Value.ToString();
-            if ((int)numSpeedUM.Tag == trackUM.Value) return;
+            lblTrackUM.Text = trackSpeedUM.Value.ToString();
+            if ((int)numSpeedUM.Tag == trackSpeedUM.Value) return;
 
-            numSpeedUM.Value = (decimal)(trackUM.Value / CMR.SPEED_AZ_UM);
+            numSpeedUM.Value = (decimal)(trackSpeedUM.Value / CMR.SPEED_AZ_UM);
         }
 
         private void numSpeedUM_ValueChanged(object sender, EventArgs e)
@@ -556,117 +660,123 @@ namespace KINZHAL
             d = Math.Round(d);
             int i = (int)d;
             numSpeedUM.Tag = i;
-            trackUM.Value = i;
+            trackSpeedUM.Value = i;
         }
 
-        private void trackFocusTV_ValueChanged(object sender, EventArgs e)
+        private void chkA5_9_11_CheckedChanged(object sender, EventArgs e)
         {
-            numFocusTV.Value = trackFocusTV.Value;
+            if (chkA5_9_11.Checked)
+            {
+                chkA5_9_11.BackColor = Color.FromArgb(255, 128, 0);
+                chkA5_9_11.ForeColor = Color.White;
+                tmrSendA5_9_11.Start();
+            }
+            else
+            {
+                chkA5_9_11.BackColor = SystemColors.Control;
+                chkA5_9_11.ForeColor = SystemColors.ControlText;
+                tmrSendA5_9_11.Stop();
+            }
         }
 
-        private void numFocusTV_ValueChanged(object sender, EventArgs e)
+        void A5_9_11()
         {
-            trackFocusTV.Value = (int)numFocusTV.Value;
-        }
+            Invoke((MethodInvoker)delegate
+            {
+                if (radBySpeed.Checked)
+                {
+                    a5_9.Data[0] = 0;
+                    a5_9.Data[1] = radSSK.Checked ? (byte)0 : (byte)1;
+                    a5_9.Data[2] = (byte)trackSpeedAz.Value;
+                    a5_9.Data[3] = (byte)(trackSpeedAz.Value >> 8);
+                    a5_9.Data[4] = (byte)trackSpeedUM.Value;
+                    a5_9.Data[5] = (byte)(trackSpeedUM.Value >> 8);
+                    a5_9.Data[6] = (byte)(int)numFocusTV.Value;
+                    a5_9.Data[7] = (byte)((int)numFocusTV.Value >> 8);
+                    SendMessage(Devices[selectedIndex], devPPK, a5_9);
 
-        private void trackVremyaExpTV_ValueChanged(object sender, EventArgs e)
-        {
-            numVremyaExpTV.Value = trackVremyaExpTV.Value;
-        }
+                    a5_10.Data[0] = 1;
+                    a5_10.Data[1] = (byte)(int)numVremyaExpTV.Value;
+                    a5_10.Data[2] = (byte)((int)numVremyaExpTV.Value >> 8);
+                    a5_10.Data[3] = (byte)numUsilMatrTV.Value;
+                    a5_10.Data[4] = (byte)numContrastTV.Value;
+                    a5_10.Data[5] = (byte)(int)numFocusTPV.Value;
+                    a5_10.Data[6] = (byte)((int)numFocusTPV.Value >> 8);
+                    SendMessage(Devices[selectedIndex], devPPK, a5_10);
 
-        private void numVremyaExpTV_ValueChanged(object sender, EventArgs e)
-        {
-            trackVremyaExpTV.Value = (int)numVremyaExpTV.Value;
-        }
+                    a5_11.Data[0] = 2;
+                    a5_11.Data[1] = (byte)(int)numVremyaExpTPV.Value;
+                    a5_11.Data[2] = (byte)((int)numVremyaExpTPV.Value >> 8);
+                    a5_11.Data[3] = (byte)numUsilMatrTPV.Value;
+                    a5_11.Data[4] = (byte)numContrastTPV.Value;
+                    SendMessage(Devices[selectedIndex], devPPK, a5_11);
+                }
+                else if (radByAngle.Checked)
+                {
+                    a5_5.Data[0] = 0;
+                    a5_5.Data[1] = radSSK.Checked ? (byte)0 : (byte)1;
+                    a5_5.Data[2] = (byte)trackAngleAz.Value;
+                    a5_5.Data[3] = (byte)(trackAngleAz.Value >> 8);
+                    a5_5.Data[4] = (byte)trackAngleUM.Value;
+                    a5_5.Data[5] = (byte)(trackAngleUM.Value >> 8);
+                    a5_5.Data[6] = (byte)trackSpeedAz.Value;
+                    a5_5.Data[7] = (byte)(trackSpeedAz.Value >> 8);
+                    SendMessage(Devices[selectedIndex], devPPK, a5_5);
 
-        private void trackUsilMatrTV_ValueChanged(object sender, EventArgs e)
-        {
-            numUsilMatrTV.Value = trackUsilMatrTV.Value;
-        }
+                    a5_6.Data[0] = 1;
+                    a5_6.Data[1] = (byte)trackSpeedUM.Value;
+                    a5_6.Data[2] = (byte)(trackSpeedUM.Value >> 8);
+                    a5_6.Data[3] = (byte)(int)numFocusTV.Value;
+                    a5_6.Data[4] = (byte)((int)numFocusTV.Value >> 8);
+                    a5_6.Data[5] = (byte)(int)numVremyaExpTV.Value;
+                    a5_6.Data[6] = (byte)((int)numVremyaExpTV.Value >> 8);
+                    SendMessage(Devices[selectedIndex], devPPK, a5_6);
 
-        private void numUsilMatrTV_ValueChanged(object sender, EventArgs e)
-        {
-            trackUsilMatrTV.Value = (int)numUsilMatrTV.Value;
-        }
+                    a5_7.Data[0] = 2;
+                    a5_7.Data[1] = (byte)numUsilMatrTV.Value;
+                    a5_7.Data[2] = (byte)numContrastTV.Value;
+                    a5_7.Data[3] = (byte)(int)numFocusTPV.Value;
+                    a5_7.Data[4] = (byte)((int)numFocusTPV.Value >> 8);
+                    a5_7.Data[5] = (byte)(int)numVremyaExpTPV.Value;
+                    a5_7.Data[6] = (byte)((int)numVremyaExpTPV.Value >> 8);
+                    SendMessage(Devices[selectedIndex], devPPK, a5_7);
 
-        private void trackContrastTV_ValueChanged(object sender, EventArgs e)
-        {
-            numContrastTV.Value = trackContrastTV.Value;
-        }
+                    a5_8.Data[0] = 3;
+                    a5_8.Data[1] = (byte)numUsilMatrTPV.Value;
+                    a5_8.Data[2] = (byte)numContrastTPV.Value;
+                    SendMessage(Devices[selectedIndex], devPPK, a5_8);
+                }
+                else if (radByPerebros.Checked)
+                {
+                    a5_12.Data[0] = 0;
+                    a5_12.Data[1] = radSSK.Checked ? (byte)0 : (byte)1;
+                    a5_12.Data[2] = (byte)trackAngleAz.Value;
+                    a5_12.Data[3] = (byte)(trackAngleAz.Value >> 8);
+                    a5_12.Data[4] = (byte)trackAngleUM.Value;
+                    a5_12.Data[5] = (byte)(trackAngleUM.Value >> 8);
+                    a5_12.Data[6] = (byte)(int)numFocusTV.Value;
+                    a5_12.Data[7] = (byte)((int)numFocusTV.Value >> 8); ;
+                    SendMessage(Devices[selectedIndex], devPPK, a5_12);
 
-        private void numContrastTV_ValueChanged(object sender, EventArgs e)
-        {
-            trackContrastTV.Value = (int)numContrastTV.Value;
-        }
+                    a5_13.Data[0] = 1;
+                    a5_13.Data[1] = (byte)(int)numVremyaExpTV.Value;
+                    a5_13.Data[2] = (byte)((int)numVremyaExpTV.Value >> 8);
+                    a5_13.Data[3] = (byte)numUsilMatrTV.Value;
+                    a5_13.Data[4] = (byte)numContrastTV.Value;
+                    a5_13.Data[5] = (byte)(int)numFocusTPV.Value;
+                    a5_13.Data[6] = (byte)((int)numFocusTPV.Value >> 8);
+                    SendMessage(Devices[selectedIndex], devPPK, a5_13);
 
-        private void trackContrastTPV_ValueChanged(object sender, EventArgs e)
-        {
-            numContrastTPV.Value = trackContrastTPV.Value;
-        }
+                    a5_14.Data[0] = 2;
+                    a5_14.Data[1] = (byte)(int)numVremyaExpTPV.Value;
+                    a5_14.Data[2] = (byte)((int)numVremyaExpTPV.Value >> 8);
+                    a5_14.Data[3] = (byte)numUsilMatrTPV.Value;
+                    a5_14.Data[4] = (byte)numContrastTPV.Value;
+                    SendMessage(Devices[selectedIndex], devPPK, a5_14);
 
-        private void numContrastTPV_ValueChanged(object sender, EventArgs e)
-        {
-            trackContrastTPV.Value = (int)numContrastTPV.Value;
-        }
-
-        private void trackUsilMatrTPV_ValueChanged(object sender, EventArgs e)
-        {
-            numUsilMatrTPV.Value = trackUsilMatrTPV.Value;
-        }
-
-        private void numUsilMatrTPV_ValueChanged(object sender, EventArgs e)
-        {
-            trackUsilMatrTPV.Value = (int)numUsilMatrTPV.Value;
-        }
-
-        private void trackVremyaExpTPV_ValueChanged(object sender, EventArgs e)
-        {
-            numVremyaExpTPV.Value = trackVremyaExpTPV.Value;
-        }
-
-        private void numVremyaExpTPV_ValueChanged(object sender, EventArgs e)
-        {
-            trackVremyaExpTPV.Value = (int)numVremyaExpTPV.Value;
-        }
-
-        private void trackFocusTPV_ValueChanged(object sender, EventArgs e)
-        {
-            numFocusTPV.Value = trackFocusTPV.Value;
-        }
-
-        private void numFocusTPV_ValueChanged(object sender, EventArgs e)
-        {
-            trackFocusTPV.Value = (int)numFocusTPV.Value;
-        }
-
-        private void btnA5_9_11_Click(object sender, EventArgs e)
-        {
-            a5_9.Data[0] = 0;
-            a5_9.Data[1] = radSSK.Checked ? (byte)0 : (byte)1;
-            a5_9.Data[2] = (byte)trackAz.Value;
-            a5_9.Data[3] = (byte)(trackAz.Value >> 8);
-            a5_9.Data[4] = (byte)trackUM.Value;
-            a5_9.Data[5] = (byte)(trackUM.Value >> 8);
-            a5_9.Data[6] = (byte)trackFocusTV.Value;
-            a5_9.Data[7] = (byte)(trackFocusTV.Value >> 8);
-            SendMessage(Devices[selectedIndex], devPPK, a5_9);
-
-            a5_10.Data[0] = 1;
-            a5_10.Data[1] = (byte)trackVremyaExpTV.Value;
-            a5_10.Data[2] = (byte)(trackVremyaExpTV.Value >> 8);
-            a5_10.Data[3] = (byte)trackUsilMatrTV.Value;
-            a5_10.Data[4] = (byte)trackContrastTV.Value;
-            a5_10.Data[5] = (byte)(trackFocusTPV.Value);
-            a5_10.Data[6] = (byte)(trackFocusTPV.Value >> 8);
-            SendMessage(Devices[selectedIndex], devPPK, a5_10);
-
-            a5_11.Data[0] = 2;
-            a5_11.Data[1] = (byte)trackVremyaExpTPV.Value;
-            a5_11.Data[2] = (byte)(trackVremyaExpTPV.Value >> 8);
-            a5_11.Data[3] = (byte)trackUsilMatrTPV.Value;
-            a5_11.Data[4] = (byte)trackContrastTPV.Value;
-
-            SendMessage(Devices[selectedIndex], devPPK, a5_11);
+                    chkA5_9_11.Checked = false;
+                }
+            }); 
         }
 
         private void radA5_2_Click(object sender, EventArgs e)
@@ -692,47 +802,6 @@ namespace KINZHAL
                 }
                 SendMessage(Devices[selectedIndex], devPPK, a5_2);
             }
-        }
-
-        private void numA5_29_Vert_ValueChanged(object sender, EventArgs e)
-        {
-            trackA5_29_Vert.Value = (int)numA5_29_Vert.Value;
-
-            if (numA5_29_Vert.Focused)
-                if (!chkA5_29.Checked)
-                    SendA5_29();
-            
-        }
-
-        private void btnA5_29_Click(object sender, EventArgs e)
-        {
-            SendA5_29();
-        }
-
-        void SendA5_29()
-        {
-            /*a5_29.Data[0] = (byte)((int)((double)numA5_29_Hor.Value / 0.091552734375));
-            a5_29.Data[1] = (byte)((int)((double)numA5_29_Hor.Value / 0.091552734375) >> 8);
-            a5_29.Data[2] = (byte)((int)((double)numA5_29_Vert.Value / 0.091552734375));
-            a5_29.Data[3] = (byte)((int)((double)numA5_29_Vert.Value / 0.091552734375) >> 8);
-
-            SendMessage(Devices[selectedIndex], devPPK, a5_29);*/
-        }
-
-        private void numA5_30_Hor_ValueChanged(object sender, EventArgs e)
-        {
-            trackA5_30_Hor.Value = (int)numA5_30_Hor.Value;
-            //if(!chkA5_41.Checked)
-                //SendA5_30();
-        }
-
-        private void numA5_30_Vert_ValueChanged(object sender, EventArgs e)
-        {
-            trackA5_30_Vert.Value = (int)numA5_30_Vert.Value;
-
-
-            //if (!chkA5_41.Checked)
-                //SendA5_30();
         }
 
         public void chkPU_MouseDown(object sender, MouseEventArgs e)
@@ -862,9 +931,9 @@ namespace KINZHAL
             {
                 //обработка нажатий кнопок джойстика
                 if (state.buttons[0] != lastJoystickStateButtons[0] && state.buttons[0]) A5_27_Process(); //выполняем команду Измерить дальность
-                if (state.buttons[1] != lastJoystickStateButtons[1]) 
-                    if(state.buttons[1])
-                        //chkA5_41.Checked = !chkA5_41.Checked; ;  //включаем фиксацию (имитируем нажатие чекбокса)
+                if (state.buttons[1] != lastJoystickStateButtons[1])
+                    if (state.buttons[1])
+                        A5_9_11();  //Включение наведения
                 if (state.buttons[2] != lastJoystickStateButtons[2]) //Шагаем вправо по ШПЗ/УПЗ/УПЗ2/ОПЗ
                     if (state.buttons[2])
                     {
@@ -891,26 +960,27 @@ namespace KINZHAL
                 //управление ползунками "Управление наведением ПКП-МРО по скорости А5.30"
                 if (chkJoy.Checked)
                 {
-                    kHor = (Math.Abs(trackA5_30_Hor.Minimum) + Math.Abs(trackA5_30_Hor.Maximum)) / ((double)(ushort.MaxValue) - 2 *(double)_frmSettings.numCoefSensHor.Value) ;
+                    int dMiddle = ushort.MaxValue / 2 + 1;
+                    kHor = (Math.Abs(trackSpeedAz.Minimum) + Math.Abs(trackSpeedAz.Maximum)) / (ushort.MaxValue - 2 * (double)_frmSettings.numCoefSensHor.Value);
                     int codeH = state.x;
-                    if (Math.Abs(codeH - ushort.MaxValue / 2) > (double)_frmSettings.numCoefSensHor.Value)
+                    if (Math.Abs(codeH - dMiddle) > (double)_frmSettings.numCoefSensHor.Value)
                     {
-                        if (codeH > ushort.MaxValue / 2)
+                        if (codeH > dMiddle)
                             codeH -= (int)_frmSettings.numCoefSensHor.Value;
                         else
                             codeH += (int)_frmSettings.numCoefSensHor.Value;
                     }
                     else
-                        codeH = ushort.MaxValue / 2;
+                        codeH = dMiddle;
 
-                    double dCodeHor = kHor * (codeH - ushort.MaxValue / 2);
+                    double dCodeHor = kHor * (codeH - dMiddle);
                     int valH = (int)(Math.Round(dCodeHor * (double)_frmSettings.numCoefKrutHor.Value));
-                    trackA5_30_Hor.Value = valH;
+                    trackSpeedAz.Value = valH;
 
                     
 
 
-                    kVert = (Math.Abs(trackA5_30_Vert.Minimum) + Math.Abs(trackA5_30_Vert.Maximum)) / ((double)(ushort.MaxValue) - 2 * (double)_frmSettings.numCoefSensVert.Value);
+                    kVert = (Math.Abs(trackSpeedUM.Minimum) + Math.Abs(trackSpeedUM.Maximum)) / (ushort.MaxValue - 2 * (double)_frmSettings.numCoefSensVert.Value);
                     int codeV = state.y;
 
                     if (Math.Abs(codeV - ushort.MaxValue / 2) > (double)_frmSettings.numCoefSensVert.Value)
@@ -925,7 +995,7 @@ namespace KINZHAL
 
                     double dCodeVert = kVert * (codeV - ushort.MaxValue / 2);
                     int valV = (int)(Math.Round(dCodeVert * (double)_frmSettings.numCoefKrutVert.Value));
-                    trackA5_30_Vert.Value = -1*valV;
+                    trackSpeedUM.Value = -1*valV;
                 }
             });
         }
@@ -1075,13 +1145,169 @@ namespace KINZHAL
                     UpdateDeviceCapturedBroadcast(sAddr);
                     break;
                 case 257:
-                case 3:
                     UpdateDeviceReleased();
                     break;
+                case 3:
+                    UpdateReasonStartPPK(inMsg.Data);
+                    break;
+                case 1570:
+                    UpdateErrorCode(inMsg.Data);
+                    break;
+                case 1578:
+                    UpdateNarabotkaLD(inMsg.Data);
+                    break;
+                case 1586:
+                    UpdateAims(inMsg.Data);
+                    break;
+                case 1594:
+                    UpdateVremyaIzmerLD(inMsg.Data);
+                    break;
+                case 1602:
+                    UpdateDiagnostic(inMsg.Data);
+                    break;
+                case 1618:
+                    UpdateCoordinates0(inMsg.Data);
+                    break;
+                case 1626:
+                    UpdateCoordinates1(inMsg.Data);
+                    break;
+                case 1634:
+                    UpdateCoordinates2(inMsg.Data);
+                    break;
+                case 1642:
+                    UpdateCoordinates3(inMsg.Data);
+                    break;
+                    
             }
         }
 
-        
+        private void UpdateAims(byte[] buf)
+        {
+            string sNum = "", sAim1 = "", sAim2 = "", sAim3 = "";
+            UInt16 num = (UInt16)(buf[0] + buf[1] << 8);
+            UInt16 aim1 = (UInt16)(buf[2] + buf[3] << 8);
+            UInt16 aim2 = (UInt16)(buf[4] + buf[5] << 8);
+            UInt16 aim3 = (UInt16)(buf[6] + buf[7] << 8);
+            sNum = num.ToString();
+
+            if (num == 1 && aim1 == 0) sNum = "Промах";
+            else if (num == 65535) sNum = "Уголок";
+            else if (num == 1 && aim1 == 65535) sNum = "Нет старта";
+            Invoke((MethodInvoker)delegate
+            {
+                txtNumOfAims.Text = sNum;
+                txtAim1.Text = aim1.ToString();
+                txtAim2.Text = aim2.ToString();
+                txtAim3.Text = aim3.ToString();
+            });
+        }
+
+        private void UpdateCoordinates3(byte[] buf)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                _frmCoord.txtTPV_UPZ_X.Text = (buf[1] + buf[2] << 8).ToString();
+                _frmCoord.txtTPV_SHPZ_Y.Text = (buf[3] + buf[4] << 8).ToString();
+                _frmCoord.txtTPV_SHPZ_X.Text = (buf[5] + buf[6] << 8).ToString();
+            });
+        }
+
+        private void UpdateCoordinates2(byte[] buf)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                _frmCoord.txtTPV_UPZ2_Y.Text = (buf[1] + buf[2] << 8).ToString();
+                _frmCoord.txtTPV_UPZ2_X.Text = (buf[3] + buf[4] << 8).ToString();
+                _frmCoord.txtTPV_UPZ_Y.Text = (buf[5] + buf[6] << 8).ToString();
+            });
+        }
+
+        private void UpdateCoordinates1(byte[] buf)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                _frmCoord.txtTV_UPZ_X.Text = (buf[1] + buf[2] << 8).ToString();
+                _frmCoord.txtTV_SHPZ_Y.Text = (buf[3] + buf[4] << 8).ToString();
+                _frmCoord.txtTV_SHPZ_X.Text = (buf[5] + buf[6] << 8).ToString();
+            });
+        }
+
+        private void UpdateCoordinates0(byte[] buf)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                _frmCoord.txtTV_UPZ2_Y.Text = (buf[1] + buf[2] << 8).ToString();
+                _frmCoord.txtTV_UPZ2_X.Text = (buf[3] + buf[4] << 8).ToString();
+                _frmCoord.txtTV_UPZ_Y.Text = (buf[5] + buf[6] << 8).ToString();
+            });
+        }
+
+        private void UpdateDiagnostic(byte[] buf)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                txtDiagnostic.Text =
+                (buf[0] + (buf[1] << 8) +
+                (buf[2] << 16) + (buf[3] << 24) +
+                (buf[4] << 32) + (buf[5] << 40) +
+                (buf[6] << 48) + (buf[7] << 56)).ToString();
+            });
+        }
+
+        private void UpdateVremyaIzmerLD(byte[] buf)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                txtVremyaIzmLD.Text =
+                (buf[0] + (buf[1] << 8) +
+                (buf[2] << 16) + (buf[3] << 24) +
+                (buf[4] << 32) + (buf[5] << 40) +
+                (buf[6] << 48) + (buf[7] << 56)).ToString();
+            });
+        }
+
+        private void UpdateNarabotkaLD(byte[] buf)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                txtNarabotkaLD.Text = (buf[0] + (buf[1] << 8) + (buf[2] << 16) + (buf[3] << 24)).ToString();
+            });
+        }
+
+        void UpdateErrorCode(byte[] buf)
+        {
+            UInt32 erCode = 0;
+            List<string> lst = new List<string>();
+            //txtErrorCode.Text = "";
+            erCode = (uint)(buf[0] + (buf[1] << 8) + (buf[2] << 16) + (buf[3] << 24));
+            
+            for(int i = 0; i < lstErr.Count; i++)
+            {
+                if ((erCode & (1 << i)) != 0) lst.Add(lstErr[i]);
+            }
+            Invoke((MethodInvoker)delegate
+            {
+                lblErrorCode.Text = "Код ошибки (0х" + erCode.ToString("X") + ")";
+                txtErrorCode.Text = String.Join(Environment.NewLine, lst);
+            });
+        }
+
+        void UpdateReasonStartPPK(byte[] buf)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                string str = "";
+                switch (buf[0])
+                {
+                    case 0: str = "Включение питания"; break;
+                    case 1: str = "Сигнал аппаратного сброса"; break;
+                    case 2: str = "Срабатывание защиты ВИП"; break;
+                    case 3: str = "Программный рестарт"; break;
+                    default: str = "Резерв"; break;
+                }
+                txtA6_1.Text = str;
+            });
+        }
 
         void UpdateDeviceCapturedBroadcast(byte sAddr)
         {
@@ -1144,21 +1370,18 @@ namespace KINZHAL
             });
         }
 
-
-        
-
         void UpdateAnglesAndSpeeds0(byte[] buf)
         {
             if (buf.Length < 7) return;
             Invoke((MethodInvoker)delegate
             {
-                double s1 = ((short)(buf[1] + (buf[2] << 8)) * 1);
-                double s2 = ((short)(buf[3] + (buf[4] << 8)) * 1);
-                double s3 = ((buf[5] + (buf[6] << 8)) * CMR.SPEED_AZ_UM);
+                double s1 = ((short)(buf[1] + (buf[2] << 8)) / CMR.SPEED_AZ_UM);
+                double s2 = ((short)(buf[3] + (buf[4] << 8)) / CMR.SPEED_AZ_UM);
+                double s3 = ((short)(buf[5] + (buf[6] << 8)) / CMR.SPEED_AZ_UM);
 
-                txtAngleAz.Text = Math.Round(s1,2).ToString();
-                txtAngleUM.Text = Math.Round(s2, 2).ToString();
-                txtSpeedAz.Text = Math.Round(s3, 2).ToString();
+                txtAngleAz.Text = Math.Round(s1, 3).ToString();
+                txtAngleUM.Text = Math.Round(s2, 3).ToString();
+                txtSpeedAz.Text = Math.Round(s3, 3).ToString();
             });
         }
 
@@ -1168,7 +1391,7 @@ namespace KINZHAL
             Invoke((MethodInvoker)delegate
             {
                 string str = "";
-                double s1 = ((short)(buf[1] + (buf[2] << 8)) * CMR.SPEED_AZ_UM);
+                double s1 = ((short)(buf[1] + (buf[2] << 8)) / CMR.SPEED_AZ_UM);
                 txtSpeedUM.Text = Math.Round(s1, 2).ToString();
                 txtStateTVpotoka.Text = buf[3] == 0 ? "Включен" : "Отключен";
                 txtStateTPVpotoka.Text = buf[4] == 0 ? "Включен" : "Отключен";
@@ -1184,7 +1407,7 @@ namespace KINZHAL
                 if ((buf[5] & 0x04) != 0) indPrivodaVKL.BackColor = Color.LightGreen; else indPrivodaVKL.BackColor = Color.Red;
                 if ((buf[5] & 0x08) != 0) indTVMatrVKL.BackColor = Color.LightGreen; else indTVMatrVKL.BackColor = Color.Red;
 
-                switch(buf[5] & 0x30)
+                switch((buf[5]>>4) & 0x03)
                 {
                     default: str = "Ошибка!"; break;
                     case 0: str = "Отключена"; break;
@@ -1197,7 +1420,7 @@ namespace KINZHAL
                 if ((buf[5] & 0x40) != 0) indLDGotov.BackColor = Color.LightGreen; else indLDGotov.BackColor = Color.Red;
 
                 txtSystemCoord.Text = (buf[6] & 0x02) != 0 ? "ЗСК" : "ССК";
-                switch (buf[6] & 0x0C)
+                switch ((buf[6] >> 2) & 0x03)
                 {
                     default:    str = "Ошибка!"; break;
                     case 0: str = "Нет фильтра"; break;
@@ -1321,23 +1544,6 @@ namespace KINZHAL
             return true;
         }
 
-        private void trackA5_30_Hor_ValueChanged(object sender, EventArgs e)
-        {
-            numA5_30_Hor.Value = trackA5_30_Hor.Value;
-        }
-
-        private void trackA5_30_Vert_ValueChanged(object sender, EventArgs e)
-        {
-            numA5_30_Vert.Value = trackA5_30_Vert.Value;
-        }
-
-
-        private void btnA5_30_NULL_Click(object sender, EventArgs e)
-        {
-            numA5_30_Hor.Value = 0;
-            numA5_30_Vert.Value = 0;
-        }
-
         private void cboDevices_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedIndex = cboDevices.SelectedIndex;
@@ -1397,8 +1603,8 @@ namespace KINZHAL
 
             CanShutdown();
 
-            while (tmrSend1540.IsRunning)
-                tmrSend1540.Stop();
+            while (tmrSendA5_9_11.IsRunning)
+                tmrSendA5_9_11.Stop();
 
 
             try
@@ -1519,19 +1725,6 @@ namespace KINZHAL
             {
                 this.CloseMainForm(null);
             }
-        }
-
-        private void chkA5_29_CheckedChanged(object sender, EventArgs e)
-        {
-            /*if (chkA5_29.Checked) btnA5_29.Enabled = true;
-            else btnA5_29.Enabled = false;*/
-            btnA5_29.Enabled = chkA5_29.Checked ? true : false;
-        }
-
-        private void trackA5_29_Hor_MouseUp(object sender, MouseEventArgs e)
-        {
-            if(!chkA5_29.Checked)
-                SendA5_29();
         }
     }
 

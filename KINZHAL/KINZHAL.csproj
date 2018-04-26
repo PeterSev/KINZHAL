@@ -93,6 +93,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Enums.cs" />
+    <Compile Include="frmCoord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCoord.Designer.cs">
+      <DependentUpon>frmCoord.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDebug.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </Compile>
     <Compile Include="SDI_Capture.cs" />
     <Compile Include="SettingXML.cs" />
+    <EmbeddedResource Include="frmCoord.resx">
+      <DependentUpon>frmCoord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDebug.resx">
       <DependentUpon>frmDebug.cs</DependentUpon>
       <SubType>Designer</SubType>
