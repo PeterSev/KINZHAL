@@ -38,6 +38,8 @@
             this.label42 = new System.Windows.Forms.Label();
             this.txtNumOfAims = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
+            this.txtVremyaIzmLD = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.txtAim2 = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.lblErrorCode = new System.Windows.Forms.Label();
-            this.txtVremyaIzmLD = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.txtNarabotkaLD = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -93,6 +93,7 @@
             this.tipMessage = new System.Windows.Forms.ToolTip(this.components);
             this.panelOUT = new System.Windows.Forms.Panel();
             this.grpCommandOut = new System.Windows.Forms.GroupBox();
+            this.btnA5_22 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.btnMeasureRange = new System.Windows.Forms.Button();
             this.label50 = new System.Windows.Forms.Label();
@@ -102,13 +103,13 @@
             this.label48 = new System.Windows.Forms.Label();
             this.numAims = new System.Windows.Forms.NumericUpDown();
             this.grpOtherCommand = new System.Windows.Forms.GroupBox();
-            this.btnA5_22 = new System.Windows.Forms.Button();
             this.btnZaprosCoord = new System.Windows.Forms.Button();
             this.btnOtklTPVMatr = new System.Windows.Forms.Button();
             this.btnVklTPVMatr = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.btnCalibrateTPVMatr = new System.Windows.Forms.Button();
             this.btnZaprosStatePricel = new System.Windows.Forms.Button();
+            this.btnA5_15 = new System.Windows.Forms.Button();
             this.numVklObogrev = new System.Windows.Forms.NumericUpDown();
             this.btnZaprosLD = new System.Windows.Forms.Button();
             this.btnVklObogrev = new System.Windows.Forms.Button();
@@ -169,7 +170,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.numSpeedAz = new System.Windows.Forms.NumericUpDown();
             this.btnA5_4 = new System.Windows.Forms.Button();
-            this.btnA5_15 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.radA5_2_2Filter = new System.Windows.Forms.RadioButton();
             this.radA5_2_1Filter = new System.Windows.Forms.RadioButton();
@@ -218,6 +218,7 @@
             this.txtA6_1 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.pict1 = new System.Windows.Forms.PictureBox();
+            this.btnShowCoord = new System.Windows.Forms.Button();
             this.groupCommandIN.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -363,6 +364,24 @@
             this.label43.TabIndex = 13;
             this.label43.Text = "Количество целей";
             // 
+            // txtVremyaIzmLD
+            // 
+            this.txtVremyaIzmLD.Location = new System.Drawing.Point(111, 21);
+            this.txtVremyaIzmLD.Name = "txtVremyaIzmLD";
+            this.txtVremyaIzmLD.ReadOnly = true;
+            this.txtVremyaIzmLD.Size = new System.Drawing.Size(271, 20);
+            this.txtVremyaIzmLD.TabIndex = 14;
+            this.txtVremyaIzmLD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(19, 24);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(86, 13);
+            this.label34.TabIndex = 13;
+            this.label34.Text = "Время изм. ЛД";
+            // 
             // txtAim2
             // 
             this.txtAim2.Location = new System.Drawing.Point(512, 41);
@@ -430,6 +449,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnShowCoord);
             this.groupBox4.Controls.Add(this.txtDiagnostic);
             this.groupBox4.Controls.Add(this.label35);
             this.groupBox4.Controls.Add(this.label51);
@@ -450,7 +470,7 @@
             this.txtDiagnostic.ReadOnly = true;
             this.txtDiagnostic.Size = new System.Drawing.Size(80, 20);
             this.txtDiagnostic.TabIndex = 16;
-            this.txtDiagnostic.Text = "02020B48";
+            this.txtDiagnostic.Text = "0";
             this.txtDiagnostic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDiagnostic.MouseEnter += new System.EventHandler(this.txtDiagnostic_MouseEnter);
             this.txtDiagnostic.MouseLeave += new System.EventHandler(this.txtDiagnostic_MouseLeave);
@@ -483,24 +503,6 @@
             this.lblErrorCode.Text = "0x0";
             this.lblErrorCode.MouseEnter += new System.EventHandler(this.lblErrorCode_MouseEnter);
             this.lblErrorCode.MouseLeave += new System.EventHandler(this.txtDiagnostic_MouseLeave);
-            // 
-            // txtVremyaIzmLD
-            // 
-            this.txtVremyaIzmLD.Location = new System.Drawing.Point(111, 21);
-            this.txtVremyaIzmLD.Name = "txtVremyaIzmLD";
-            this.txtVremyaIzmLD.ReadOnly = true;
-            this.txtVremyaIzmLD.Size = new System.Drawing.Size(271, 20);
-            this.txtVremyaIzmLD.TabIndex = 14;
-            this.txtVremyaIzmLD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(19, 24);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(86, 13);
-            this.label34.TabIndex = 13;
-            this.label34.Text = "Время изм. ЛД";
             // 
             // txtNarabotkaLD
             // 
@@ -929,6 +931,16 @@
             this.grpCommandOut.TabStop = false;
             this.grpCommandOut.Text = "Исходящие посылки";
             // 
+            // btnA5_22
+            // 
+            this.btnA5_22.Location = new System.Drawing.Point(6, 115);
+            this.btnA5_22.Name = "btnA5_22";
+            this.btnA5_22.Size = new System.Drawing.Size(216, 25);
+            this.btnA5_22.TabIndex = 34;
+            this.btnA5_22.Text = "Перейти в транспортное положение";
+            this.btnA5_22.UseVisualStyleBackColor = true;
+            this.btnA5_22.Click += new System.EventHandler(this.btnA5_22_Click);
+            // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.btnMeasureRange);
@@ -1043,16 +1055,6 @@
             this.grpOtherCommand.TabStop = false;
             this.grpOtherCommand.Text = "Другое";
             // 
-            // btnA5_22
-            // 
-            this.btnA5_22.Location = new System.Drawing.Point(6, 115);
-            this.btnA5_22.Name = "btnA5_22";
-            this.btnA5_22.Size = new System.Drawing.Size(216, 25);
-            this.btnA5_22.TabIndex = 34;
-            this.btnA5_22.Text = "Перейти в транспортное положение";
-            this.btnA5_22.UseVisualStyleBackColor = true;
-            this.btnA5_22.Click += new System.EventHandler(this.btnA5_22_Click);
-            // 
             // btnZaprosCoord
             // 
             this.btnZaprosCoord.Location = new System.Drawing.Point(212, 19);
@@ -1111,6 +1113,16 @@
             this.btnZaprosStatePricel.Text = "Запросить состояние прицела";
             this.btnZaprosStatePricel.UseVisualStyleBackColor = true;
             this.btnZaprosStatePricel.Click += new System.EventHandler(this.btnZaprosStatePricel_Click);
+            // 
+            // btnA5_15
+            // 
+            this.btnA5_15.Location = new System.Drawing.Point(6, 50);
+            this.btnA5_15.Name = "btnA5_15";
+            this.btnA5_15.Size = new System.Drawing.Size(200, 25);
+            this.btnA5_15.TabIndex = 25;
+            this.btnA5_15.Text = "Запрос диагностики";
+            this.btnA5_15.UseVisualStyleBackColor = true;
+            this.btnA5_15.Click += new System.EventHandler(this.btnA5_15_Click_1);
             // 
             // numVklObogrev
             // 
@@ -1869,16 +1881,6 @@
             this.btnA5_4.UseVisualStyleBackColor = true;
             this.btnA5_4.Click += new System.EventHandler(this.btnA5_4_Click);
             // 
-            // btnA5_15
-            // 
-            this.btnA5_15.Location = new System.Drawing.Point(6, 50);
-            this.btnA5_15.Name = "btnA5_15";
-            this.btnA5_15.Size = new System.Drawing.Size(200, 25);
-            this.btnA5_15.TabIndex = 25;
-            this.btnA5_15.Text = "Запрос диагностики";
-            this.btnA5_15.UseVisualStyleBackColor = true;
-            this.btnA5_15.Click += new System.EventHandler(this.btnA5_15_Click_1);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.radA5_2_2Filter);
@@ -2339,6 +2341,16 @@
             this.pict1.TabStop = false;
             this.pict1.Visible = false;
             // 
+            // btnShowCoord
+            // 
+            this.btnShowCoord.Location = new System.Drawing.Point(239, 19);
+            this.btnShowCoord.Name = "btnShowCoord";
+            this.btnShowCoord.Size = new System.Drawing.Size(103, 42);
+            this.btnShowCoord.TabIndex = 17;
+            this.btnShowCoord.Text = "Координаты визирной оси";
+            this.btnShowCoord.UseVisualStyleBackColor = true;
+            this.btnShowCoord.Click += new System.EventHandler(this.btnShowCoord_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2630,6 +2642,7 @@
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Button btnShowCoord;
     }
 }
 

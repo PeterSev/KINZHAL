@@ -132,7 +132,7 @@ namespace KINZHAL
 
         public SDI_Capture sdi;
 
-        public double version = 2.00;
+        public double version = 2.01;
         //Bitmap bitmap;
         //Graphics imgr;
         public frmMain()
@@ -865,6 +865,11 @@ namespace KINZHAL
             A5_20_Process();
         }
 
+        private void btnShowCoord_Click(object sender, EventArgs e)
+        {
+            _frmCoord.Show();
+        }
+
         public void A5_20_MenuTehnAndInzh()
         {
             A5_20_Process();
@@ -1305,9 +1310,9 @@ namespace KINZHAL
         {
             Invoke((MethodInvoker)delegate
             {
-                _frmCoord.txtTV_UPZ2_Y.Text = (buf[1] + buf[2] << 8).ToString();
-                _frmCoord.txtTV_UPZ2_X.Text = (buf[3] + buf[4] << 8).ToString();
-                _frmCoord.txtTV_UPZ_Y.Text = (buf[5] + buf[6] << 8).ToString();
+                _frmCoord.txtTV_UPZ2_Y.Text = (buf[1] + (buf[2] << 8)).ToString();
+                _frmCoord.txtTV_UPZ2_X.Text = (buf[3] + (buf[4] << 8)).ToString();
+                _frmCoord.txtTV_UPZ_Y.Text = (buf[5] + (buf[6] << 8)).ToString();
             });
         }
 

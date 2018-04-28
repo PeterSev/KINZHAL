@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace KINZHAL
 
         private void frmAbout_Load(object sender, EventArgs e)
         {
-            lblVersion.Text = _frmMain.version.ToString();
+            lblVersion.Text = _frmMain.version.ToString(CultureInfo.InvariantCulture); 
         }
     }
 }
