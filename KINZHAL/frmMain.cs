@@ -125,11 +125,14 @@ namespace KINZHAL
         Multimedia.Timer tmrSendA5_9_11 = new Multimedia.Timer();
         bool flag_a5_3;
 
+        DateTime dt1970 = new DateTime(1970, 1, 1);
+        DateTime dt;
+
         private SettingXML sets;
 
         public SDI_Capture sdi;
 
-        public double version = 1.8;
+        public double version = 2.00;
         //Bitmap bitmap;
         //Graphics imgr;
         public frmMain()
@@ -793,6 +796,11 @@ namespace KINZHAL
 
         private void btnMeasureRange_Click(object sender, EventArgs e)
         {
+            A5_17_Process();
+        }
+
+        void A5_17_Process()
+        {
             a5_17.Data[0] = (byte)numAims.Value;
             a5_17.Data[1] = (byte)(int)numStrobMin.Value;
             a5_17.Data[2] = (byte)((int)numStrobMin.Value >> 8);
@@ -941,7 +949,7 @@ namespace KINZHAL
             Width = Screen.PrimaryScreen.WorkingArea.Width;
             Height = Screen.PrimaryScreen.WorkingArea.Height;
 
-            this.HorizontalScroll.Enabled = true;
+            //this.AutoScroll = true;
 
 
             _frmLog.Show();
@@ -973,7 +981,8 @@ namespace KINZHAL
             Invoke((MethodInvoker)delegate
             {
                 //обработка нажатий кнопок джойстика
-                if (state.buttons[0] != lastJoystickStateButtons[0] && state.buttons[0]) A5_27_Process(); //выполняем команду Измерить дальность
+                if (state.buttons[0] != lastJoystickStateButtons[0] && state.buttons[0])
+                    A5_17_Process(); //выполняем команду Измерить дальность
                 if (state.buttons[1] != lastJoystickStateButtons[1])
                     if (state.buttons[1])
                         A5_9_11();  //Включение наведения
@@ -1226,22 +1235,39 @@ namespace KINZHAL
 
         private void UpdateAims(byte[] buf)
         {
-            string sNum = "", sAim1 = "", sAim2 = "", sAim3 = "";
-            UInt16 num = (UInt16)(buf[0] + buf[1] << 8);
-            UInt16 aim1 = (UInt16)(buf[2] + buf[3] << 8);
-            UInt16 aim2 = (UInt16)(buf[4] + buf[5] << 8);
-            UInt16 aim3 = (UInt16)(buf[6] + buf[7] << 8);
+            string sNum = "";
+            UInt16 num = (UInt16)(buf[0] + (buf[1] << 8));
+            UInt16 aim1 = (UInt16)(buf[2] + (buf[3] << 8));
+            UInt16 aim2 = (UInt16)(buf[4] + (buf[5] << 8));
+            UInt16 aim3 = (UInt16)(buf[6] + (buf[7] << 8));
             sNum = num.ToString();
 
-            if (num == 1 && aim1 == 0) sNum = "Промах";
-            else if (num == 65535) sNum = "Уголок";
-            else if (num == 1 && aim1 == 65535) sNum = "Нет старта";
+            if (num == 1 && aim1 == 0)
+            {
+                sNum = "Промах";
+                aim1 = 0;
+                aim2 = 0;
+                aim3 = 0;
+            }
+            if (num == 65535)
+            {
+                sNum = "Уголок";
+                aim2 = 0;
+                aim3 = 0;
+            }
+            if (num == 1 && aim1 == 65535)
+            {
+                sNum = "Нет старта";
+                aim1 = 0;
+                aim2 = 0;
+                aim3 = 0;
+            }
             Invoke((MethodInvoker)delegate
             {
                 txtNumOfAims.Text = sNum;
-                txtAim1.Text = aim1.ToString();
-                txtAim2.Text = aim2.ToString();
-                txtAim3.Text = aim3.ToString();
+                txtAim1.Text = aim1 != 0 ? aim1.ToString() : String.Empty;
+                txtAim2.Text = aim2 != 0 ? aim2.ToString() : String.Empty;
+                txtAim3.Text = aim3 != 0 ? aim3.ToString() : String.Empty;
             });
         }
 
@@ -1249,9 +1275,9 @@ namespace KINZHAL
         {
             Invoke((MethodInvoker)delegate
             {
-                _frmCoord.txtTPV_UPZ_X.Text = (buf[1] + buf[2] << 8).ToString();
-                _frmCoord.txtTPV_SHPZ_Y.Text = (buf[3] + buf[4] << 8).ToString();
-                _frmCoord.txtTPV_SHPZ_X.Text = (buf[5] + buf[6] << 8).ToString();
+                _frmCoord.txtTPV_UPZ_X.Text = (buf[1] + (buf[2] << 8)).ToString();
+                _frmCoord.txtTPV_SHPZ_Y.Text = (buf[3] + (buf[4] << 8)).ToString();
+                _frmCoord.txtTPV_SHPZ_X.Text = (buf[5] + (buf[6] << 8)).ToString();
             });
         }
 
@@ -1259,9 +1285,9 @@ namespace KINZHAL
         {
             Invoke((MethodInvoker)delegate
             {
-                _frmCoord.txtTPV_UPZ2_Y.Text = (buf[1] + buf[2] << 8).ToString();
-                _frmCoord.txtTPV_UPZ2_X.Text = (buf[3] + buf[4] << 8).ToString();
-                _frmCoord.txtTPV_UPZ_Y.Text = (buf[5] + buf[6] << 8).ToString();
+                _frmCoord.txtTPV_UPZ2_Y.Text = (buf[1] + (buf[2] << 8)).ToString();
+                _frmCoord.txtTPV_UPZ2_X.Text = (buf[3] + (buf[4] << 8)).ToString();
+                _frmCoord.txtTPV_UPZ_Y.Text = (buf[5] + (buf[6] << 8)).ToString();
             });
         }
 
@@ -1269,9 +1295,9 @@ namespace KINZHAL
         {
             Invoke((MethodInvoker)delegate
             {
-                _frmCoord.txtTV_UPZ_X.Text = (buf[1] + buf[2] << 8).ToString();
-                _frmCoord.txtTV_SHPZ_Y.Text = (buf[3] + buf[4] << 8).ToString();
-                _frmCoord.txtTV_SHPZ_X.Text = (buf[5] + buf[6] << 8).ToString();
+                _frmCoord.txtTV_UPZ_X.Text = (buf[1] + (buf[2] << 8)).ToString();
+                _frmCoord.txtTV_SHPZ_Y.Text = (buf[3] + (buf[4] << 8)).ToString();
+                _frmCoord.txtTV_SHPZ_X.Text = (buf[5] + (buf[6] << 8)).ToString();
             });
         }
 
@@ -1289,23 +1315,37 @@ namespace KINZHAL
         {
             Invoke((MethodInvoker)delegate
             {
-                txtDiagnostic.Text =
-                (buf[0] + (buf[1] << 8) +
-                (buf[2] << 16) + (buf[3] << 24) +
-                (buf[4] << 32) + (buf[5] << 40) +
-                (buf[6] << 48) + (buf[7] << 56)).ToString("X");
+                UInt32 diag = (UInt32)(buf[0] +
+                (buf[1] << 8) +
+                (buf[2] << 16) +
+                (buf[3] << 24) +
+                (buf[4] << 32) +
+                (buf[5] << 40) +
+                (buf[6] << 48) +
+                (buf[7] << 56));
+                txtDiagnostic.Text =diag.ToString("X");
             });
         }
 
         private void UpdateVremyaIzmerLD(byte[] buf)
         {
+            UInt32 sec = (UInt32)(buf[0] +
+                (buf[1] << 8) +
+                (buf[2] << 16) +
+                (buf[3] << 24));
+            UInt32 nSec = 
+                (UInt32)((buf[4]) +
+                (buf[5] << 8) +
+                (buf[6] << 16) +
+                (buf[7] << 24));
+            dt = dt1970.AddSeconds(sec);
+
+            
             Invoke((MethodInvoker)delegate
             {
-                txtVremyaIzmLD.Text =
-                (buf[0] + (buf[1] << 8) +
-                (buf[2] << 16) + (buf[3] << 24) +
-                (buf[4] << 32) + (buf[5] << 40) +
-                (buf[6] << 48) + (buf[7] << 56)).ToString();
+                txtVremyaIzmLD.Text = dt.ToLongDateString() + 
+                dt.ToLongTimeString() +
+                ((Math.Round((nSec) / 1000000000.0, 6)).ToString().Substring(1)).PadRight(7, '0');
             });
         }
 
@@ -1313,7 +1353,11 @@ namespace KINZHAL
         {
             Invoke((MethodInvoker)delegate
             {
-                txtNarabotkaLD.Text = (buf[0] + (buf[1] << 8) + (buf[2] << 16) + (buf[3] << 24)).ToString();
+                UInt32 nar = (UInt32)(buf[0] +
+                (buf[1] << 8) +
+                (buf[2] << 16) +
+                (buf[3] << 24));
+                txtNarabotkaLD.Text = nar.ToString();
             });
         }
 

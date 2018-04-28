@@ -309,6 +309,8 @@
             this.groupBox9.Controls.Add(this.label42);
             this.groupBox9.Controls.Add(this.txtNumOfAims);
             this.groupBox9.Controls.Add(this.label43);
+            this.groupBox9.Controls.Add(this.txtVremyaIzmLD);
+            this.groupBox9.Controls.Add(this.label34);
             this.groupBox9.Controls.Add(this.txtAim2);
             this.groupBox9.Controls.Add(this.label39);
             this.groupBox9.Controls.Add(this.label41);
@@ -344,7 +346,7 @@
             // 
             // txtNumOfAims
             // 
-            this.txtNumOfAims.Location = new System.Drawing.Point(106, 45);
+            this.txtNumOfAims.Location = new System.Drawing.Point(111, 45);
             this.txtNumOfAims.Name = "txtNumOfAims";
             this.txtNumOfAims.ReadOnly = true;
             this.txtNumOfAims.Size = new System.Drawing.Size(80, 20);
@@ -355,7 +357,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(1, 48);
+            this.label43.Location = new System.Drawing.Point(6, 48);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(99, 13);
             this.label43.TabIndex = 13;
@@ -432,8 +434,6 @@
             this.groupBox4.Controls.Add(this.label35);
             this.groupBox4.Controls.Add(this.label51);
             this.groupBox4.Controls.Add(this.lblErrorCode);
-            this.groupBox4.Controls.Add(this.txtVremyaIzmLD);
-            this.groupBox4.Controls.Add(this.label34);
             this.groupBox4.Controls.Add(this.txtNarabotkaLD);
             this.groupBox4.Controls.Add(this.label33);
             this.groupBox4.Location = new System.Drawing.Point(6, 315);
@@ -486,22 +486,21 @@
             // 
             // txtVremyaIzmLD
             // 
-            this.txtVremyaIzmLD.Location = new System.Drawing.Point(136, 49);
+            this.txtVremyaIzmLD.Location = new System.Drawing.Point(111, 21);
             this.txtVremyaIzmLD.Name = "txtVremyaIzmLD";
             this.txtVremyaIzmLD.ReadOnly = true;
-            this.txtVremyaIzmLD.Size = new System.Drawing.Size(80, 20);
+            this.txtVremyaIzmLD.Size = new System.Drawing.Size(271, 20);
             this.txtVremyaIzmLD.TabIndex = 14;
-            this.txtVremyaIzmLD.Text = "0";
             this.txtVremyaIzmLD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(11, 52);
+            this.label34.Location = new System.Drawing.Point(19, 24);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(119, 13);
+            this.label34.Size = new System.Drawing.Size(86, 13);
             this.label34.TabIndex = 13;
-            this.label34.Text = "Время измерения ЛД";
+            this.label34.Text = "Время изм. ЛД";
             // 
             // txtNarabotkaLD
             // 
@@ -905,6 +904,7 @@
             // 
             // panelOUT
             // 
+            this.panelOUT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelOUT.AutoScroll = true;
             this.panelOUT.Controls.Add(this.grpCommandOut);
             this.panelOUT.Location = new System.Drawing.Point(1296, 62);
@@ -914,12 +914,12 @@
             // 
             // grpCommandOut
             // 
+            this.grpCommandOut.Controls.Add(this.btnA5_22);
             this.grpCommandOut.Controls.Add(this.groupBox10);
             this.grpCommandOut.Controls.Add(this.grpOtherCommand);
             this.grpCommandOut.Controls.Add(this.groupBox8);
             this.grpCommandOut.Controls.Add(this.grpSoprovozhdeniya);
             this.grpCommandOut.Controls.Add(this.btnA5_4);
-            this.grpCommandOut.Controls.Add(this.btnA5_15);
             this.grpCommandOut.Controls.Add(this.groupBox3);
             this.grpCommandOut.Controls.Add(this.groupBox2);
             this.grpCommandOut.Location = new System.Drawing.Point(0, 0);
@@ -1026,13 +1026,13 @@
             // 
             // grpOtherCommand
             // 
-            this.grpOtherCommand.Controls.Add(this.btnA5_22);
             this.grpOtherCommand.Controls.Add(this.btnZaprosCoord);
             this.grpOtherCommand.Controls.Add(this.btnOtklTPVMatr);
             this.grpOtherCommand.Controls.Add(this.btnVklTPVMatr);
             this.grpOtherCommand.Controls.Add(this.label12);
             this.grpOtherCommand.Controls.Add(this.btnCalibrateTPVMatr);
             this.grpOtherCommand.Controls.Add(this.btnZaprosStatePricel);
+            this.grpOtherCommand.Controls.Add(this.btnA5_15);
             this.grpOtherCommand.Controls.Add(this.numVklObogrev);
             this.grpOtherCommand.Controls.Add(this.btnZaprosLD);
             this.grpOtherCommand.Controls.Add(this.btnVklObogrev);
@@ -1045,9 +1045,9 @@
             // 
             // btnA5_22
             // 
-            this.btnA5_22.Location = new System.Drawing.Point(212, 50);
+            this.btnA5_22.Location = new System.Drawing.Point(6, 115);
             this.btnA5_22.Name = "btnA5_22";
-            this.btnA5_22.Size = new System.Drawing.Size(233, 25);
+            this.btnA5_22.Size = new System.Drawing.Size(216, 25);
             this.btnA5_22.TabIndex = 34;
             this.btnA5_22.Text = "Перейти в транспортное положение";
             this.btnA5_22.UseVisualStyleBackColor = true;
@@ -1104,9 +1104,9 @@
             // 
             // btnZaprosStatePricel
             // 
-            this.btnZaprosStatePricel.Location = new System.Drawing.Point(6, 50);
+            this.btnZaprosStatePricel.Location = new System.Drawing.Point(212, 50);
             this.btnZaprosStatePricel.Name = "btnZaprosStatePricel";
-            this.btnZaprosStatePricel.Size = new System.Drawing.Size(200, 25);
+            this.btnZaprosStatePricel.Size = new System.Drawing.Size(234, 25);
             this.btnZaprosStatePricel.TabIndex = 26;
             this.btnZaprosStatePricel.Text = "Запросить состояние прицела";
             this.btnZaprosStatePricel.UseVisualStyleBackColor = true;
@@ -1861,9 +1861,9 @@
             // 
             // btnA5_4
             // 
-            this.btnA5_4.Location = new System.Drawing.Point(172, 115);
+            this.btnA5_4.Location = new System.Drawing.Point(228, 115);
             this.btnA5_4.Name = "btnA5_4";
-            this.btnA5_4.Size = new System.Drawing.Size(232, 25);
+            this.btnA5_4.Size = new System.Drawing.Size(176, 25);
             this.btnA5_4.TabIndex = 25;
             this.btnA5_4.Text = "Перейти в стабилизацию";
             this.btnA5_4.UseVisualStyleBackColor = true;
@@ -1871,9 +1871,9 @@
             // 
             // btnA5_15
             // 
-            this.btnA5_15.Location = new System.Drawing.Point(6, 115);
+            this.btnA5_15.Location = new System.Drawing.Point(6, 50);
             this.btnA5_15.Name = "btnA5_15";
-            this.btnA5_15.Size = new System.Drawing.Size(160, 25);
+            this.btnA5_15.Size = new System.Drawing.Size(200, 25);
             this.btnA5_15.TabIndex = 25;
             this.btnA5_15.Text = "Запрос диагностики";
             this.btnA5_15.UseVisualStyleBackColor = true;
@@ -2303,6 +2303,7 @@
             // 
             // panelIN
             // 
+            this.panelIN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelIN.AutoScroll = true;
             this.panelIN.Controls.Add(this.groupCommandIN);
             this.panelIN.Location = new System.Drawing.Point(1296, 514);
@@ -2342,6 +2343,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1938, 1061);
             this.Controls.Add(this.txtA6_1);
             this.Controls.Add(this.label32);
@@ -2359,13 +2361,13 @@
             this.Controls.Add(this.panelOUT);
             this.Controls.Add(this.panelIN);
             this.Controls.Add(this.panelPict);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KINZHAL";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
