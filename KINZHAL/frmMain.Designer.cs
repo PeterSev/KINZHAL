@@ -48,6 +48,7 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnShowCoord = new System.Windows.Forms.Button();
             this.txtDiagnostic = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -218,7 +219,6 @@
             this.txtA6_1 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.pict1 = new System.Windows.Forms.PictureBox();
-            this.btnShowCoord = new System.Windows.Forms.Button();
             this.groupCommandIN.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -462,6 +462,16 @@
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Другое";
+            // 
+            // btnShowCoord
+            // 
+            this.btnShowCoord.Location = new System.Drawing.Point(239, 19);
+            this.btnShowCoord.Name = "btnShowCoord";
+            this.btnShowCoord.Size = new System.Drawing.Size(103, 42);
+            this.btnShowCoord.TabIndex = 17;
+            this.btnShowCoord.Text = "Координаты визирной оси";
+            this.btnShowCoord.UseVisualStyleBackColor = true;
+            this.btnShowCoord.Click += new System.EventHandler(this.btnShowCoord_Click);
             // 
             // txtDiagnostic
             // 
@@ -2340,16 +2350,6 @@
             this.pict1.TabIndex = 4;
             this.pict1.TabStop = false;
             this.pict1.Visible = false;
-            // 
-            // btnShowCoord
-            // 
-            this.btnShowCoord.Location = new System.Drawing.Point(239, 19);
-            this.btnShowCoord.Name = "btnShowCoord";
-            this.btnShowCoord.Size = new System.Drawing.Size(103, 42);
-            this.btnShowCoord.TabIndex = 17;
-            this.btnShowCoord.Text = "Координаты визирной оси";
-            this.btnShowCoord.UseVisualStyleBackColor = true;
-            this.btnShowCoord.Click += new System.EventHandler(this.btnShowCoord_Click);
             // 
             // frmMain
             // 

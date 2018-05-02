@@ -26,62 +26,7 @@ namespace KINZHAL
 
         private void frmPU_Load(object sender, EventArgs e)
         {
-            btnA5_14.Click += _frmMain.btnA5_14_Click;
-            btnA5_16.Click += _frmMain.btnA5_16_Click;
-            btnA5_17.Click += _frmMain.btnA5_17_Click;
-            btnA5_15.Click += _frmMain.btnA5_15_Click;
-            btnA5_12.Click += _frmMain.btnA5_12_Click;
-            btnA5_11.Click += _frmMain.btnA5_11_Click;
-            btnA5_18.Click += _frmMain.btnA5_18_Click;
-            btnA5_19.Click += _frmMain.btnA5_19_Click;
 
-            /*chkA5_20_Up.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Down.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Right.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Left.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Menu.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Obogrev.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Focus.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Usil.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Day.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Marka.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Uvel.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Umen.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Polar.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;
-            chkA5_20_Svetofilter.CheckedChanged += _frmMain.chkA5_20_CheckedChanged;*/
-
-            chkA5_20_Up.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Up.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Down.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Down.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Right.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Right.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Left.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Left.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Menu.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Menu.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Obogrev.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Obogrev.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Focus.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Focus.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Usil.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Usil.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Day.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Day.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Marka.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Marka.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Uvel.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Uvel.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Umen.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Umen.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Polar.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Polar.MouseUp += _frmMain.chkPU_MouseUp;
-            chkA5_20_Svetofilter.MouseDown += _frmMain.chkPU_MouseDown;
-            chkA5_20_Svetofilter.MouseUp += _frmMain.chkPU_MouseUp;
-
-            radA5_20_0.Click += _frmMain.radA5_20_Click;
-            radA5_20_Dezh.Click += _frmMain.radA5_20_Click;
-            radA5_20_I.Click += _frmMain.radA5_20_Click;
         }
 
         private void chkPU_CheckedChanged(object sender, EventArgs e)
@@ -90,39 +35,6 @@ namespace KINZHAL
             chk.Checked = false;
         }
 
-        private void btnMenuTehn_MouseDown(object sender, MouseEventArgs e)
-        {
-            chkA5_20_Down.Tag = true;
-            chkA5_20_Menu.Tag = true;
-
-            _frmMain.A5_20_MenuTehnAndInzh();
-        }
-
-        private void btnMenuTehn_MouseUp(object sender, MouseEventArgs e)
-        {
-            chkA5_20_Down.Tag = false;
-            chkA5_20_Menu.Tag = false;
-
-            _frmMain.A5_20_MenuTehnAndInzh();
-        }
-
-        private void btnMenuInzh_MouseDown(object sender, MouseEventArgs e)
-        {
-            chkA5_20_Menu.Tag = true;
-            chkA5_20_Left.Tag = true;
-            chkA5_20_Right.Tag = true;
-
-            _frmMain.A5_20_MenuTehnAndInzh();
-        }
-
-        private void btnMenuInzh_MouseUp(object sender, MouseEventArgs e)
-        {
-            chkA5_20_Menu.Tag = false;
-            chkA5_20_Left.Tag = false;
-            chkA5_20_Right.Tag = false;
-
-            _frmMain.A5_20_MenuTehnAndInzh();
-        }
 
         private void frmPU_KeyDown(object sender, KeyEventArgs e)
         {
@@ -130,6 +42,66 @@ namespace KINZHAL
             {
                 this.Close();
             }
+        }
+
+        private void btnError_Click(object sender, EventArgs e)
+        {
+            _frmMain.A5_23_ResetError();
+        }
+
+        private void buttonMouseDown(object sender, MouseEventArgs e)
+        {
+            Button btn = (Button)sender;
+            uint code = 0;
+            switch (btn.Name.Substring(3))
+            {
+                case "F1":      code = 26; break;
+                case "F2":      code = 27; break;
+                case "F3":      code = 28; break;
+                case "F4":      code = 29; break;
+                case "F5":      code = 30; break;
+                case "F6":      code = 31; break;
+                case "F7":      code = 32; break;
+                case "Left":    code = 21; break;
+                case "Right":   code = 22; break;
+                case "Up":      code = 23; break;
+                case "Down":    code = 24; break;
+                case "Menu":    code = 4; break;
+            }
+
+            _frmMain.A5_23_Button(code, true);
+        }
+
+        private void buttonMouseUp(object sender, MouseEventArgs e)
+        {
+            Button btn = (Button)sender;
+            uint code = 0;
+            switch (btn.Name.Substring(3))
+            {
+                case "F1": code = 26; break;
+                case "F2": code = 27; break;
+                case "F3": code = 28; break;
+                case "F4": code = 29; break;
+                case "F5": code = 30; break;
+                case "F6": code = 31; break;
+                case "F7": code = 32; break;
+                case "Left": code = 21; break;
+                case "Right": code = 22; break;
+                case "Up": code = 23; break;
+                case "Down": code = 24; break;
+                case "Menu": code = 4; break;
+            }
+            _frmMain.A5_23_Button(code, false);
+        }
+
+        private void btnWriteParametr_Click(object sender, EventArgs e)
+        {
+            _frmMain.A5_23_Write();
+        }
+
+        private void btnReadParametr_Click(object sender, EventArgs e)
+        {
+            _frmMain.A5_24_AskForParametres();
         }
     }
 }

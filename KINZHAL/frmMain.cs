@@ -132,7 +132,7 @@ namespace KINZHAL
 
         public SDI_Capture sdi;
 
-        public double version = 2.01;
+        public double version = 2.2;
         //Bitmap bitmap;
         //Graphics imgr;
         public frmMain()
@@ -434,62 +434,6 @@ namespace KINZHAL
             FillDevices();
         }
 
-        public void btnA5_11_Click(object sender, EventArgs e)
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_11);
-        }
-
-        public void btnA5_12_Click(object sender, EventArgs e)
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_12);
-        }
-
-        public void btnA5_14_Click(object sender, EventArgs e)
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_14);
-        }
-
-        public void btnA5_15_Click(object sender, EventArgs e)
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_15);
-        }
-
-        public void btnA5_16_Click(object sender, EventArgs e)
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_16);
-        }
-
-        public void btnA5_17_Click(object sender, EventArgs e)
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_17);
-        }
-
-        public void btnA5_18_Click(object sender, EventArgs e)
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_18);
-        }
-
-        public void btnA5_19_Click(object sender, EventArgs e)
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_19);
-        }
-
-        private void btnA5_23_Click(object sender, EventArgs e)
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_23);
-        }
-
-        private void btnA5_26_Click(object sender, EventArgs e)
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_26);
-        }
-
-        
-
-        void A5_27_Process()
-        {
-            SendMessage(Devices[selectedIndex], devPPK, a5_27);
-        }
 
         private void numAngleAZ_ValueChanged(object sender, EventArgs e)
         {
@@ -821,13 +765,6 @@ namespace KINZHAL
             tipMessage.SetToolTip(cntr, null);
         }
 
-        public void chkPU_MouseDown(object sender, MouseEventArgs e)
-        {
-            CheckBox chk = (CheckBox)sender;
-            chk.Tag = true;
-
-            A5_20_Process();
-        }
 
         private void lblErrorCode_MouseEnter(object sender, EventArgs e)
         {
@@ -857,59 +794,11 @@ namespace KINZHAL
             tipMessage.SetToolTip(txtDiagnostic, msg);
         }
 
-        public void chkPU_MouseUp(object sender, MouseEventArgs e)
-        {
-            CheckBox chk = (CheckBox)sender;
-            chk.Tag = false;
-
-            A5_20_Process();
-        }
-
         private void btnShowCoord_Click(object sender, EventArgs e)
         {
             _frmCoord.Show();
         }
 
-        public void A5_20_MenuTehnAndInzh()
-        {
-            A5_20_Process();
-        }
-
-        void A5_20_Process()
-        {
-            a5_20.Data[0] = 0;
-            a5_20.Data[1] = 0;
-            a5_20.Data[2] = 0;
-
-
-
-            if (_frmPU.chkA5_20_Menu.Tag != null && (bool)_frmPU.chkA5_20_Menu.Tag) a5_20.Data[0] |= (1 << 0);
-            if (_frmPU.chkA5_20_Left.Tag != null && (bool)_frmPU.chkA5_20_Left.Tag) a5_20.Data[0] |= (1 << 1);
-            if (_frmPU.chkA5_20_Right.Tag != null && (bool)_frmPU.chkA5_20_Right.Tag) a5_20.Data[0] |= (1 << 2);
-            if (_frmPU.chkA5_20_Up.Tag != null && (bool)_frmPU.chkA5_20_Up.Tag) a5_20.Data[0] |= (1 << 3);
-            if (_frmPU.chkA5_20_Down.Tag != null && (bool)_frmPU.chkA5_20_Down.Tag) a5_20.Data[0] |= (1 << 4);
-            if (_frmPU.chkA5_20_Obogrev.Tag != null && (bool)_frmPU.chkA5_20_Obogrev.Tag) a5_20.Data[0] |= (1 << 5);
-            if (_frmPU.chkA5_20_Focus.Tag != null && (bool)_frmPU.chkA5_20_Focus.Tag) a5_20.Data[0] |= (1 << 6);
-            if (_frmPU.chkA5_20_Usil.Tag != null && (bool)_frmPU.chkA5_20_Usil.Tag) a5_20.Data[0] |= (1 << 7);
-
-            if (_frmPU.chkA5_20_Svetofilter.Tag != null && (bool)_frmPU.chkA5_20_Svetofilter.Tag) a5_20.Data[1] |= (1 << 0);
-            if (_frmPU.chkA5_20_Polar.Tag != null && (bool)_frmPU.chkA5_20_Polar.Tag) a5_20.Data[1] |= (1 << 1);
-            if (_frmPU.chkA5_20_Day.Tag != null && (bool)_frmPU.chkA5_20_Day.Tag) a5_20.Data[1] |= (1 << 2);
-            if (_frmPU.chkA5_20_Uvel.Tag != null && (bool)_frmPU.chkA5_20_Uvel.Tag) a5_20.Data[1] |= (1 << 3);
-            if (_frmPU.chkA5_20_Umen.Tag != null && (bool)_frmPU.chkA5_20_Umen.Tag) a5_20.Data[1] |= (1 << 4);
-            if (_frmPU.chkA5_20_Marka.Tag != null && (bool)_frmPU.chkA5_20_Marka.Tag) a5_20.Data[1] |= (1 << 5);
-
-            if (_frmPU.radA5_20_I.Checked) a5_20.Data[1] |= (1 << 6);
-            if (_frmPU.radA5_20_Dezh.Checked) a5_20.Data[1] |= (2 << 6);
-
-
-            SendMessage(Devices[selectedIndex], devPPK, a5_20);
-        }
-
-        public void radA5_20_Click(object sender, EventArgs e)
-        {
-            A5_20_Process();
-        }
 
         private void btnCaptureDevice_Click(object sender, EventArgs e)
         {
@@ -1234,7 +1123,120 @@ namespace KINZHAL
                 case 1642:
                     UpdateCoordinates3(inMsg.Data);
                     break;
+                case 1610:
+                    UpdateParameters(inMsg.Data);
+                    break;
                     
+            }
+        }
+
+        private void UpdateParameters(byte[] buf)
+        {
+            uint code = (uint)
+                (buf[0] + 
+                (buf[1] << 8) + 
+                (buf[2] << 16) + 
+                (buf[3] << 24));
+
+            switch (code)
+            {
+                case 0:
+                    uint errCode = (uint)
+                        (buf[4] +
+                        (buf[5] << 8) +
+                        (buf[6] << 16) +
+                        (buf[7] << 24));
+                    Invoke((MethodInvoker)delegate
+                    {
+                        _frmPU.txtError.Text = errCode.ToString("X");
+                    });
+                    break;
+                case 256:
+                    int psi = (int)
+                        (buf[4] +
+                        (buf[5] << 8) +
+                        (buf[6] << 16) +
+                        (buf[7] << 24));
+                    double dPsi = psi / CMR.SPEED_AZ_UM;
+                    Invoke((MethodInvoker)delegate
+                    {
+                        _frmPU.txtAnglePsi.Text = dPsi.ToString();
+                    });
+                    break;
+                case 257:
+                    int teta = (int)
+                        (buf[4] +
+                        (buf[5] << 8) +
+                        (buf[6] << 16) +
+                        (buf[7] << 24));
+                    double dTeta = teta / CMR.SPEED_AZ_UM;
+                    Invoke((MethodInvoker)delegate
+                    {
+                        _frmPU.txtAngleTeta.Text = dTeta.ToString();
+                    });
+                    break;
+                case 258:
+                    int gamma = (int)
+                        (buf[4] +
+                        (buf[5] << 8) +
+                        (buf[6] << 16) +
+                        (buf[7] << 24));
+                    double dGamma = gamma / CMR.SPEED_AZ_UM;
+                    Invoke((MethodInvoker)delegate
+                    {
+                        _frmPU.txtAngleGamma.Text = dGamma.ToString();
+                    });
+                    break;
+                case 259:
+                    float uvodVN = BitConverter.ToSingle(buf, 4);
+                    Invoke((MethodInvoker)delegate
+                    {
+                        _frmPU.txtUvodVN.Text = uvodVN.ToString();
+                    });
+                    break;
+                case 300:
+                    float uvodGN = BitConverter.ToSingle(buf, 4);
+                    Invoke((MethodInvoker)delegate
+                    {
+                        _frmPU.txtUvodVN.Text = uvodGN.ToString();
+                    });
+                    break;
+                case 301:
+                    if(buf[4] == 0)
+                    {
+                        _frmPU.indSSK.BackColor = Color.LightGreen;
+                        _frmPU.indZSK.BackColor = SystemColors.Control;
+                    }
+                    else if(buf[4] == 1)
+                    {
+                        _frmPU.indSSK.BackColor = SystemColors.Control;
+                        _frmPU.indZSK.BackColor = Color.LightGreen;
+                    }
+                    break;
+                case 302:
+                    int nolVN = (int)
+                        (buf[4] +
+                        (buf[5] << 8) +
+                        (buf[6] << 16) +
+                        (buf[7] << 24));
+                    double dNolVN = nolVN / CMR.SPEED_AZ_UM;
+                    Invoke((MethodInvoker)delegate
+                    {
+                        _frmPU.txtNolVN.Text = dNolVN.ToString();
+                    });
+                    break;
+                case 303:
+                    int nolGN = (int)
+                        (buf[4] +
+                        (buf[5] << 8) +
+                        (buf[6] << 16) +
+                        (buf[7] << 24));
+                    double dNolGN = nolGN / CMR.SPEED_AZ_UM;
+                    Invoke((MethodInvoker)delegate
+                    {
+                        _frmPU.txtNolGN.Text = dNolGN.ToString();
+                    });
+                    break;
             }
         }
 
@@ -1732,7 +1734,9 @@ namespace KINZHAL
 
             CanShutdown();
 
-            while (tmrSendA5_9_11.IsRunning)
+            //while (tmrSendA5_9_11.IsRunning)
+            //tmrSendA5_9_11.Stop();
+            if (tmrSendA5_9_11.IsRunning)
                 tmrSendA5_9_11.Stop();
 
 
@@ -1766,6 +1770,232 @@ namespace KINZHAL
         {
             if(chkA5_1_ON.Checked)
                 SendMessage(Devices[selectedIndex], devPPK, a5_1);
+        }
+
+        public void A5_23_ResetError()
+        {
+            A5_23_Zeroing();
+            SendMessage(Devices[selectedIndex], devPPK, a5_23);
+        }
+
+        /// <summary>
+        /// Функция обнуления всех полей данных команды А5_23
+        /// </summary>
+        void A5_23_Zeroing()
+        {
+            a5_23.Data[0] = 0;
+            a5_23.Data[1] = 0;
+            a5_23.Data[2] = 0;
+            a5_23.Data[3] = 0;
+            a5_23.Data[4] = 0;
+            a5_23.Data[5] = 0;
+            a5_23.Data[6] = 0;
+            a5_23.Data[7] = 0;
+        }
+
+        /// <summary>
+        /// Установка параметров при нажатии кнопок на панели АРМ
+        /// </summary>
+        /// <param name="par">Скан-код выбранной кнопки</param>
+        /// <param name="b">Значение параметра. True - Нажата, False - Отжата</param>
+        public void A5_23_Button(uint par, bool b)
+        {
+            A5_23_Zeroing();
+            a5_23.Data[0] = (byte)par;
+            a5_23.Data[1] = (byte)(par >> 8);
+            a5_23.Data[2] = (byte)(par >> 16);
+            a5_23.Data[3] = (byte)(par >> 24);
+
+            a5_23.Data[4] = b ? (byte)1 : (byte)2;
+            SendMessage(Devices[selectedIndex], devPPK, a5_23);
+        }
+
+        /// <summary>
+        /// Функция установки параметров и их дальнейшей посылки
+        /// </summary>
+        public void A5_23_Write()
+        {
+            uint code = 0;
+            Int32 value = 0;
+
+            //Юстировочный угол ПСИ
+            A5_23_Zeroing();
+            code = 256;
+            a5_23.Data[0] = (byte)code;
+            a5_23.Data[1] = (byte)(code >> 8);
+            a5_23.Data[2] = (byte)(code >> 16);
+            a5_23.Data[3] = (byte)(code >> 24);
+            a5_23.Data[4] = (byte)((int)_frmPU.numAnglePSI.Value * CMR.SPEED_AZ_UM);
+            a5_23.Data[5] = (byte)((int)((double)_frmPU.numAnglePSI.Value * CMR.SPEED_AZ_UM) >> 8);
+            a5_23.Data[6] = (byte)((int)((double)_frmPU.numAnglePSI.Value * CMR.SPEED_AZ_UM) >> 16);
+            a5_23.Data[7] = (byte)((int)((double)_frmPU.numAnglePSI.Value * CMR.SPEED_AZ_UM) >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_23);
+
+            //Юстировочный угол ТЕТА
+            A5_23_Zeroing();
+            code = 257;
+            a5_23.Data[0] = (byte)code;
+            a5_23.Data[1] = (byte)(code >> 8);
+            a5_23.Data[2] = (byte)(code >> 16);
+            a5_23.Data[3] = (byte)(code >> 24);
+            a5_23.Data[4] = (byte)((int)_frmPU.numAngleTeta.Value * CMR.SPEED_AZ_UM);
+            a5_23.Data[5] = (byte)((int)((double)_frmPU.numAngleTeta.Value * CMR.SPEED_AZ_UM) >> 8);
+            a5_23.Data[6] = (byte)((int)((double)_frmPU.numAngleTeta.Value * CMR.SPEED_AZ_UM) >> 16);
+            a5_23.Data[7] = (byte)((int)((double)_frmPU.numAngleTeta.Value * CMR.SPEED_AZ_UM) >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_23);
+
+            //Юстировочный угол ГАММА
+            A5_23_Zeroing();
+            code = 258;
+            a5_23.Data[0] = (byte)code;
+            a5_23.Data[1] = (byte)(code >> 8);
+            a5_23.Data[2] = (byte)(code >> 16);
+            a5_23.Data[3] = (byte)(code >> 24);
+            a5_23.Data[4] = (byte)((int)_frmPU.numAngleGamma.Value * CMR.SPEED_AZ_UM);
+            a5_23.Data[5] = (byte)((int)((double)_frmPU.numAngleGamma.Value * CMR.SPEED_AZ_UM) >> 8);
+            a5_23.Data[6] = (byte)((int)((double)_frmPU.numAngleGamma.Value * CMR.SPEED_AZ_UM) >> 16);
+            a5_23.Data[7] = (byte)((int)((double)_frmPU.numAngleGamma.Value * CMR.SPEED_AZ_UM) >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_23);
+
+            //Нулевое положение прицела по ВН
+            A5_23_Zeroing();
+            code = 302;
+            a5_23.Data[0] = (byte)code;
+            a5_23.Data[1] = (byte)(code >> 8);
+            a5_23.Data[2] = (byte)(code >> 16);
+            a5_23.Data[3] = (byte)(code >> 24);
+            a5_23.Data[4] = (byte)((int)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM);
+            a5_23.Data[5] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 8);
+            a5_23.Data[6] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 16);
+            a5_23.Data[7] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_23);
+
+            //Нулевое положение прицела по ВН
+            A5_23_Zeroing();
+            code = 303;
+            a5_23.Data[0] = (byte)code;
+            a5_23.Data[1] = (byte)(code >> 8);
+            a5_23.Data[2] = (byte)(code >> 16);
+            a5_23.Data[3] = (byte)(code >> 24);
+            a5_23.Data[4] = (byte)((int)_frmPU.numNolGN.Value * CMR.SPEED_AZ_UM);
+            a5_23.Data[5] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 8);
+            a5_23.Data[6] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 16);
+            a5_23.Data[7] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_23);
+
+            //Система координат
+            A5_23_Zeroing();
+            code = 301;
+            a5_23.Data[0] = (byte)code;
+            a5_23.Data[1] = (byte)(code >> 8);
+            a5_23.Data[2] = (byte)(code >> 16);
+            a5_23.Data[3] = (byte)(code >> 24);
+            a5_23.Data[4] = _frmPU.radSSK.Checked ? (byte)0 : (byte)1;
+            SendMessage(Devices[selectedIndex], devPPK, a5_23);
+
+            //Увод ВН
+            A5_23_Zeroing();
+            code = 259;
+            a5_23.Data[0] = (byte)code;
+            a5_23.Data[1] = (byte)(code >> 8);
+            a5_23.Data[2] = (byte)(code >> 16);
+            a5_23.Data[3] = (byte)(code >> 24);
+
+            float uvodVN = (float)_frmPU.numUvodVN.Value;
+            var masVN = BitConverter.GetBytes(uvodVN);          //используем GetBytes(), потому что значение нам нужно предавать в типе Float
+            Array.Copy(masVN, 0, a5_23.Data, 4, a5_23.Data.Length - 4);
+            SendMessage(Devices[selectedIndex], devPPK, a5_23);
+
+            //Увод ГН
+            A5_23_Zeroing();
+            code = 300;
+            a5_23.Data[0] = (byte)code;
+            a5_23.Data[1] = (byte)(code >> 8);
+            a5_23.Data[2] = (byte)(code >> 16);
+            a5_23.Data[3] = (byte)(code >> 24);
+
+            float uvodGN = (float)_frmPU.numUvodGN.Value;
+            var masGN = BitConverter.GetBytes(uvodGN);
+            Array.Copy(masGN, 0, a5_23.Data, 4, a5_23.Data.Length - 4);
+            SendMessage(Devices[selectedIndex], devPPK, a5_23);
+
+        }
+
+        public void A5_24_AskForParametres()
+        {
+            //Код ошибки = 0
+            uint code = 0;
+            a5_24.Data[0] = (byte)code;
+            a5_24.Data[1] = (byte)(code >> 8);
+            a5_24.Data[2] = (byte)(code >> 16);
+            a5_24.Data[3] = (byte)(code >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_24);
+
+            //Юстировочный угол ПСИ
+            code = 256;
+            a5_24.Data[0] = (byte)code;
+            a5_24.Data[1] = (byte)(code >> 8);
+            a5_24.Data[2] = (byte)(code >> 16);
+            a5_24.Data[3] = (byte)(code >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_24);
+
+            //Юстировочный угол ТЕТА
+            code = 257;
+            a5_24.Data[0] = (byte)code;
+            a5_24.Data[1] = (byte)(code >> 8);
+            a5_24.Data[2] = (byte)(code >> 16);
+            a5_24.Data[3] = (byte)(code >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_24);
+
+            //Юстировочный угол ГАММА
+            code = 258;
+            a5_24.Data[0] = (byte)code;
+            a5_24.Data[1] = (byte)(code >> 8);
+            a5_24.Data[2] = (byte)(code >> 16);
+            a5_24.Data[3] = (byte)(code >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_24);
+
+            //Увод ВН
+            code = 259;
+            a5_24.Data[0] = (byte)code;
+            a5_24.Data[1] = (byte)(code >> 8);
+            a5_24.Data[2] = (byte)(code >> 16);
+            a5_24.Data[3] = (byte)(code >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_24);
+
+            //Увод ГН
+            code = 300;
+            a5_24.Data[0] = (byte)code;
+            a5_24.Data[1] = (byte)(code >> 8);
+            a5_24.Data[2] = (byte)(code >> 16);
+            a5_24.Data[3] = (byte)(code >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_24);
+
+            //Система координат
+            code = 301;
+            a5_24.Data[0] = (byte)code;
+            a5_24.Data[1] = (byte)(code >> 8);
+            a5_24.Data[2] = (byte)(code >> 16);
+            a5_24.Data[3] = (byte)(code >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_24);
+
+            //Ноль ВН
+            code = 302;
+            a5_24.Data[0] = (byte)code;
+            a5_24.Data[1] = (byte)(code >> 8);
+            a5_24.Data[2] = (byte)(code >> 16);
+            a5_24.Data[3] = (byte)(code >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_24);
+
+            //Ноль ГН
+            code = 303;
+            a5_24.Data[0] = (byte)code;
+            a5_24.Data[1] = (byte)(code >> 8);
+            a5_24.Data[2] = (byte)(code >> 16);
+            a5_24.Data[3] = (byte)(code >> 24);
+            SendMessage(Devices[selectedIndex], devPPK, a5_24);
+
+
         }
 
 

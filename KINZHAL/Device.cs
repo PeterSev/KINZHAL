@@ -1,31 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KINZHAL
+﻿namespace KINZHAL
 {
     public class Device
     {
-        string name;
 
-        public string Name
-        {
-            get { return name; }
-        }
-        byte address;
+        public string Name { get; }
 
-        public byte Address
-        {
-            get { return address; }
-        }
-        string description;
-
-        public string Description
-        {
-            get { return description; }
-        }
+        public byte Address { get; }
+        
+        public string Description { get; }
 
         /// <summary>
         /// Абонент. Устройство, осуществляющее обмен в сети CAN
@@ -35,9 +17,9 @@ namespace KINZHAL
         public Device(byte _address, string _description)
         {
             //name = _name;
-            name = ((DEVICE_ADDR)_address).ToString();
-            address = _address;
-            description = _description;
+            Name = ((DEVICE_ADDR)_address).ToString();
+            Address = _address;
+            Description = _description;
         }
     }
 }

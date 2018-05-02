@@ -29,455 +29,755 @@
         private void InitializeComponent()
         {
             this.groupBox20 = new System.Windows.Forms.GroupBox();
-            this.btnA5_14 = new System.Windows.Forms.Button();
-            this.btnA5_15 = new System.Windows.Forms.Button();
-            this.btnA5_16 = new System.Windows.Forms.Button();
-            this.btnA5_17 = new System.Windows.Forms.Button();
-            this.btnA5_12 = new System.Windows.Forms.Button();
-            this.btnA5_18 = new System.Windows.Forms.Button();
-            this.btnA5_19 = new System.Windows.Forms.Button();
-            this.btnA5_11 = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.btnMenuInzh = new System.Windows.Forms.Button();
-            this.btnMenuTehn = new System.Windows.Forms.Button();
-            this.chkA5_20_Marka = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Umen = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Uvel = new System.Windows.Forms.CheckBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtError = new System.Windows.Forms.TextBox();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnLeft = new System.Windows.Forms.Button();
+            this.btnRight = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnError = new System.Windows.Forms.Button();
+            this.btnF7 = new System.Windows.Forms.Button();
+            this.btnF6 = new System.Windows.Forms.Button();
+            this.btnF5 = new System.Windows.Forms.Button();
+            this.btnF4 = new System.Windows.Forms.Button();
+            this.btnF3 = new System.Windows.Forms.Button();
+            this.btnF2 = new System.Windows.Forms.Button();
+            this.btnF1 = new System.Windows.Forms.Button();
+            this.numAnglePSI = new System.Windows.Forms.NumericUpDown();
+            this.numAngleTeta = new System.Windows.Forms.NumericUpDown();
+            this.numAngleGamma = new System.Windows.Forms.NumericUpDown();
+            this.numUvodVN = new System.Windows.Forms.NumericUpDown();
+            this.numUvodGN = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radZSC = new System.Windows.Forms.RadioButton();
+            this.radSSK = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.numNolVN = new System.Windows.Forms.NumericUpDown();
+            this.numNolGN = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.radA5_20_Dezh = new System.Windows.Forms.RadioButton();
-            this.radA5_20_I = new System.Windows.Forms.RadioButton();
-            this.radA5_20_0 = new System.Windows.Forms.RadioButton();
-            this.chkA5_20_Day = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Polar = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Svetofilter = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Usil = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Focus = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Obogrev = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Up = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Down = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Right = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Left = new System.Windows.Forms.CheckBox();
-            this.chkA5_20_Menu = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnWriteParametr = new System.Windows.Forms.Button();
+            this.btnReadParametr = new System.Windows.Forms.Button();
+            this.txtAnglePsi = new System.Windows.Forms.TextBox();
+            this.txtAngleTeta = new System.Windows.Forms.TextBox();
+            this.txtAngleGamma = new System.Windows.Forms.TextBox();
+            this.txtUvodVN = new System.Windows.Forms.TextBox();
+            this.txtUvodGN = new System.Windows.Forms.TextBox();
+            this.txtNolVN = new System.Windows.Forms.TextBox();
+            this.txtNolGN = new System.Windows.Forms.TextBox();
+            this.indSSK = new System.Windows.Forms.Button();
+            this.indZSK = new System.Windows.Forms.Button();
             this.groupBox20.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numAnglePSI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAngleTeta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAngleGamma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUvodVN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUvodGN)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNolVN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNolGN)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox20
             // 
-            this.groupBox20.Controls.Add(this.btnA5_14);
-            this.groupBox20.Controls.Add(this.btnA5_15);
-            this.groupBox20.Controls.Add(this.btnA5_16);
-            this.groupBox20.Controls.Add(this.btnA5_17);
-            this.groupBox20.Controls.Add(this.btnA5_12);
-            this.groupBox20.Controls.Add(this.btnA5_18);
-            this.groupBox20.Controls.Add(this.btnA5_19);
-            this.groupBox20.Controls.Add(this.btnA5_11);
+            this.groupBox20.Controls.Add(this.txtNolGN);
+            this.groupBox20.Controls.Add(this.txtNolVN);
+            this.groupBox20.Controls.Add(this.txtUvodGN);
+            this.groupBox20.Controls.Add(this.txtUvodVN);
+            this.groupBox20.Controls.Add(this.txtAngleGamma);
+            this.groupBox20.Controls.Add(this.txtAngleTeta);
+            this.groupBox20.Controls.Add(this.txtAnglePsi);
+            this.groupBox20.Controls.Add(this.label7);
+            this.groupBox20.Controls.Add(this.btnReadParametr);
+            this.groupBox20.Controls.Add(this.txtError);
+            this.groupBox20.Controls.Add(this.btnWriteParametr);
+            this.groupBox20.Controls.Add(this.btnError);
+            this.groupBox20.Controls.Add(this.label5);
+            this.groupBox20.Controls.Add(this.label6);
+            this.groupBox20.Controls.Add(this.label4);
+            this.groupBox20.Controls.Add(this.label3);
+            this.groupBox20.Controls.Add(this.label2);
+            this.groupBox20.Controls.Add(this.label1);
+            this.groupBox20.Controls.Add(this.groupBox1);
+            this.groupBox20.Controls.Add(this.numNolGN);
+            this.groupBox20.Controls.Add(this.numUvodGN);
+            this.groupBox20.Controls.Add(this.numNolVN);
+            this.groupBox20.Controls.Add(this.numUvodVN);
+            this.groupBox20.Controls.Add(this.numAngleGamma);
+            this.groupBox20.Controls.Add(this.numAngleTeta);
+            this.groupBox20.Controls.Add(this.numAnglePSI);
+            this.groupBox20.Controls.Add(this.btnUp);
+            this.groupBox20.Controls.Add(this.btnDown);
+            this.groupBox20.Controls.Add(this.btnLeft);
+            this.groupBox20.Controls.Add(this.btnRight);
+            this.groupBox20.Controls.Add(this.btnMenu);
+            this.groupBox20.Controls.Add(this.btnF7);
+            this.groupBox20.Controls.Add(this.btnF6);
+            this.groupBox20.Controls.Add(this.btnF5);
+            this.groupBox20.Controls.Add(this.btnF4);
+            this.groupBox20.Controls.Add(this.btnF3);
+            this.groupBox20.Controls.Add(this.btnF2);
+            this.groupBox20.Controls.Add(this.btnF1);
             this.groupBox20.Location = new System.Drawing.Point(12, 12);
             this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(576, 220);
+            this.groupBox20.Size = new System.Drawing.Size(672, 365);
             this.groupBox20.TabIndex = 7;
             this.groupBox20.TabStop = false;
-            this.groupBox20.Text = "Меню";
+            this.groupBox20.Text = "Параметры";
             // 
-            // btnA5_14
+            // txtError
             // 
-            this.btnA5_14.BackgroundImage = global::KINZHAL.Properties.Resources.up;
-            this.btnA5_14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnA5_14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnA5_14.Location = new System.Drawing.Point(73, 19);
-            this.btnA5_14.Name = "btnA5_14";
-            this.btnA5_14.Size = new System.Drawing.Size(60, 60);
-            this.btnA5_14.TabIndex = 2;
-            this.btnA5_14.UseVisualStyleBackColor = true;
+            this.txtError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtError.Location = new System.Drawing.Point(7, 323);
+            this.txtError.Name = "txtError";
+            this.txtError.ReadOnly = true;
+            this.txtError.Size = new System.Drawing.Size(192, 23);
+            this.txtError.TabIndex = 8;
+            this.txtError.Text = "0x0";
+            this.txtError.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnA5_15
+            // btnUp
             // 
-            this.btnA5_15.BackgroundImage = global::KINZHAL.Properties.Resources.down;
-            this.btnA5_15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnA5_15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnA5_15.Location = new System.Drawing.Point(73, 151);
-            this.btnA5_15.Name = "btnA5_15";
-            this.btnA5_15.Size = new System.Drawing.Size(60, 60);
-            this.btnA5_15.TabIndex = 2;
-            this.btnA5_15.UseVisualStyleBackColor = true;
+            this.btnUp.BackgroundImage = global::KINZHAL.Properties.Resources.up;
+            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUp.Location = new System.Drawing.Point(73, 85);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(60, 60);
+            this.btnUp.TabIndex = 2;
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // btnA5_16
+            // btnDown
             // 
-            this.btnA5_16.BackgroundImage = global::KINZHAL.Properties.Resources.left;
-            this.btnA5_16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnA5_16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnA5_16.Location = new System.Drawing.Point(7, 85);
-            this.btnA5_16.Name = "btnA5_16";
-            this.btnA5_16.Size = new System.Drawing.Size(60, 60);
-            this.btnA5_16.TabIndex = 2;
-            this.btnA5_16.UseVisualStyleBackColor = true;
+            this.btnDown.BackgroundImage = global::KINZHAL.Properties.Resources.down;
+            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDown.Location = new System.Drawing.Point(73, 217);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(60, 60);
+            this.btnDown.TabIndex = 2;
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // btnA5_17
+            // btnLeft
             // 
-            this.btnA5_17.BackgroundImage = global::KINZHAL.Properties.Resources.right;
-            this.btnA5_17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnA5_17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnA5_17.Location = new System.Drawing.Point(139, 85);
-            this.btnA5_17.Name = "btnA5_17";
-            this.btnA5_17.Size = new System.Drawing.Size(60, 60);
-            this.btnA5_17.TabIndex = 2;
-            this.btnA5_17.UseVisualStyleBackColor = true;
+            this.btnLeft.BackgroundImage = global::KINZHAL.Properties.Resources.left;
+            this.btnLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLeft.Location = new System.Drawing.Point(7, 151);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.Size = new System.Drawing.Size(60, 60);
+            this.btnLeft.TabIndex = 2;
+            this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnLeft.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // btnA5_12
+            // btnRight
             // 
-            this.btnA5_12.BackgroundImage = global::KINZHAL.Properties.Resources.menu;
-            this.btnA5_12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnA5_12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnA5_12.Location = new System.Drawing.Point(73, 85);
-            this.btnA5_12.Name = "btnA5_12";
-            this.btnA5_12.Size = new System.Drawing.Size(60, 60);
-            this.btnA5_12.TabIndex = 2;
-            this.btnA5_12.UseVisualStyleBackColor = true;
+            this.btnRight.BackgroundImage = global::KINZHAL.Properties.Resources.right;
+            this.btnRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRight.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRight.Location = new System.Drawing.Point(139, 151);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.Size = new System.Drawing.Size(60, 60);
+            this.btnRight.TabIndex = 2;
+            this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnRight.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // btnA5_18
+            // btnMenu
             // 
-            this.btnA5_18.Location = new System.Drawing.Point(207, 19);
-            this.btnA5_18.Name = "btnA5_18";
-            this.btnA5_18.Size = new System.Drawing.Size(365, 26);
-            this.btnA5_18.TabIndex = 2;
-            this.btnA5_18.Text = "Выбор пункта меню ПКП-МРО";
-            this.btnA5_18.UseVisualStyleBackColor = true;
+            this.btnMenu.BackgroundImage = global::KINZHAL.Properties.Resources.menu;
+            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMenu.Location = new System.Drawing.Point(73, 151);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(60, 60);
+            this.btnMenu.TabIndex = 2;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnMenu.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // btnA5_19
+            // btnError
             // 
-            this.btnA5_19.Location = new System.Drawing.Point(207, 185);
-            this.btnA5_19.Name = "btnA5_19";
-            this.btnA5_19.Size = new System.Drawing.Size(365, 26);
-            this.btnA5_19.TabIndex = 2;
-            this.btnA5_19.Text = "Выход из пункта меню ПКП-МРО";
-            this.btnA5_19.UseVisualStyleBackColor = true;
+            this.btnError.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnError.Location = new System.Drawing.Point(7, 289);
+            this.btnError.Name = "btnError";
+            this.btnError.Size = new System.Drawing.Size(192, 23);
+            this.btnError.TabIndex = 2;
+            this.btnError.Text = "Сброс кода ошибки";
+            this.btnError.UseVisualStyleBackColor = true;
+            this.btnError.Click += new System.EventHandler(this.btnError_Click);
             // 
-            // btnA5_11
+            // btnF7
             // 
-            this.btnA5_11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnA5_11.Location = new System.Drawing.Point(139, 20);
-            this.btnA5_11.Name = "btnA5_11";
-            this.btnA5_11.Size = new System.Drawing.Size(60, 60);
-            this.btnA5_11.TabIndex = 2;
-            this.btnA5_11.Text = "Обогрев";
-            this.btnA5_11.UseVisualStyleBackColor = true;
+            this.btnF7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnF7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnF7.Location = new System.Drawing.Point(139, 217);
+            this.btnF7.Name = "btnF7";
+            this.btnF7.Size = new System.Drawing.Size(60, 60);
+            this.btnF7.TabIndex = 2;
+            this.btnF7.Text = "F7";
+            this.btnF7.UseVisualStyleBackColor = true;
+            this.btnF7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnF7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // groupBox6
+            // btnF6
             // 
-            this.groupBox6.Controls.Add(this.btnMenuInzh);
-            this.groupBox6.Controls.Add(this.btnMenuTehn);
-            this.groupBox6.Controls.Add(this.chkA5_20_Marka);
-            this.groupBox6.Controls.Add(this.chkA5_20_Umen);
-            this.groupBox6.Controls.Add(this.chkA5_20_Uvel);
-            this.groupBox6.Controls.Add(this.panel5);
-            this.groupBox6.Controls.Add(this.chkA5_20_Day);
-            this.groupBox6.Controls.Add(this.chkA5_20_Polar);
-            this.groupBox6.Controls.Add(this.chkA5_20_Svetofilter);
-            this.groupBox6.Controls.Add(this.chkA5_20_Usil);
-            this.groupBox6.Controls.Add(this.chkA5_20_Focus);
-            this.groupBox6.Controls.Add(this.chkA5_20_Obogrev);
-            this.groupBox6.Controls.Add(this.chkA5_20_Up);
-            this.groupBox6.Controls.Add(this.chkA5_20_Down);
-            this.groupBox6.Controls.Add(this.chkA5_20_Right);
-            this.groupBox6.Controls.Add(this.chkA5_20_Left);
-            this.groupBox6.Controls.Add(this.chkA5_20_Menu);
-            this.groupBox6.Location = new System.Drawing.Point(12, 238);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(576, 230);
-            this.groupBox6.TabIndex = 8;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Состояние клавиш ПКП-ПУ";
+            this.btnF6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnF6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnF6.Location = new System.Drawing.Point(7, 217);
+            this.btnF6.Name = "btnF6";
+            this.btnF6.Size = new System.Drawing.Size(60, 60);
+            this.btnF6.TabIndex = 2;
+            this.btnF6.Text = "F6";
+            this.btnF6.UseVisualStyleBackColor = true;
+            this.btnF6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnF6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // btnMenuInzh
+            // btnF5
             // 
-            this.btnMenuInzh.Location = new System.Drawing.Point(382, 191);
-            this.btnMenuInzh.Name = "btnMenuInzh";
-            this.btnMenuInzh.Size = new System.Drawing.Size(188, 23);
-            this.btnMenuInzh.TabIndex = 3;
-            this.btnMenuInzh.Text = "Инженерное меню";
-            this.btnMenuInzh.UseVisualStyleBackColor = true;
-            this.btnMenuInzh.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMenuInzh_MouseDown);
-            this.btnMenuInzh.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMenuInzh_MouseUp);
+            this.btnF5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnF5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnF5.Location = new System.Drawing.Point(139, 85);
+            this.btnF5.Name = "btnF5";
+            this.btnF5.Size = new System.Drawing.Size(60, 60);
+            this.btnF5.TabIndex = 2;
+            this.btnF5.Text = "F5";
+            this.btnF5.UseVisualStyleBackColor = true;
+            this.btnF5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnF5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // btnMenuTehn
+            // btnF4
             // 
-            this.btnMenuTehn.Location = new System.Drawing.Point(382, 162);
-            this.btnMenuTehn.Name = "btnMenuTehn";
-            this.btnMenuTehn.Size = new System.Drawing.Size(188, 23);
-            this.btnMenuTehn.TabIndex = 3;
-            this.btnMenuTehn.Text = "Технологическое меню";
-            this.btnMenuTehn.UseVisualStyleBackColor = true;
-            this.btnMenuTehn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMenuTehn_MouseDown);
-            this.btnMenuTehn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMenuTehn_MouseUp);
+            this.btnF4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnF4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnF4.Location = new System.Drawing.Point(7, 85);
+            this.btnF4.Name = "btnF4";
+            this.btnF4.Size = new System.Drawing.Size(60, 60);
+            this.btnF4.TabIndex = 2;
+            this.btnF4.Text = "F4";
+            this.btnF4.UseVisualStyleBackColor = true;
+            this.btnF4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnF4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // chkA5_20_Marka
+            // btnF3
             // 
-            this.chkA5_20_Marka.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Marka.BackgroundImage = global::KINZHAL.Properties.Resources.marka;
-            this.chkA5_20_Marka.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Marka.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Marka.Location = new System.Drawing.Point(431, 21);
-            this.chkA5_20_Marka.Name = "chkA5_20_Marka";
-            this.chkA5_20_Marka.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Marka.TabIndex = 1;
-            this.chkA5_20_Marka.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Marka.UseVisualStyleBackColor = true;
-            this.chkA5_20_Marka.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.btnF3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnF3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnF3.Location = new System.Drawing.Point(139, 19);
+            this.btnF3.Name = "btnF3";
+            this.btnF3.Size = new System.Drawing.Size(60, 60);
+            this.btnF3.TabIndex = 2;
+            this.btnF3.Text = "F3";
+            this.btnF3.UseVisualStyleBackColor = true;
+            this.btnF3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnF3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // chkA5_20_Umen
+            // btnF2
             // 
-            this.chkA5_20_Umen.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Umen.BackgroundImage = global::KINZHAL.Properties.Resources.umen;
-            this.chkA5_20_Umen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Umen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Umen.Location = new System.Drawing.Point(299, 153);
-            this.chkA5_20_Umen.Name = "chkA5_20_Umen";
-            this.chkA5_20_Umen.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Umen.TabIndex = 1;
-            this.chkA5_20_Umen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Umen.UseVisualStyleBackColor = true;
-            this.chkA5_20_Umen.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.btnF2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnF2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnF2.Location = new System.Drawing.Point(73, 19);
+            this.btnF2.Name = "btnF2";
+            this.btnF2.Size = new System.Drawing.Size(60, 60);
+            this.btnF2.TabIndex = 2;
+            this.btnF2.Text = "F2";
+            this.btnF2.UseVisualStyleBackColor = true;
+            this.btnF2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnF2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // chkA5_20_Uvel
+            // btnF1
             // 
-            this.chkA5_20_Uvel.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Uvel.BackgroundImage = global::KINZHAL.Properties.Resources.uvel;
-            this.chkA5_20_Uvel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Uvel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Uvel.Location = new System.Drawing.Point(299, 87);
-            this.chkA5_20_Uvel.Name = "chkA5_20_Uvel";
-            this.chkA5_20_Uvel.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Uvel.TabIndex = 1;
-            this.chkA5_20_Uvel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Uvel.UseVisualStyleBackColor = true;
-            this.chkA5_20_Uvel.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.btnF1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnF1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnF1.Location = new System.Drawing.Point(7, 19);
+            this.btnF1.Name = "btnF1";
+            this.btnF1.Size = new System.Drawing.Size(60, 60);
+            this.btnF1.TabIndex = 2;
+            this.btnF1.Text = "F1";
+            this.btnF1.UseVisualStyleBackColor = true;
+            this.btnF1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMouseDown);
+            this.btnF1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMouseUp);
             // 
-            // panel5
+            // numAnglePSI
             // 
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.radA5_20_Dezh);
-            this.panel5.Controls.Add(this.radA5_20_I);
-            this.panel5.Controls.Add(this.radA5_20_0);
-            this.panel5.Location = new System.Drawing.Point(382, 87);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(188, 69);
-            this.panel5.TabIndex = 2;
+            this.numAnglePSI.DecimalPlaces = 3;
+            this.numAnglePSI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numAnglePSI.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numAnglePSI.Location = new System.Drawing.Point(383, 19);
+            this.numAnglePSI.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numAnglePSI.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numAnglePSI.Name = "numAnglePSI";
+            this.numAnglePSI.Size = new System.Drawing.Size(132, 23);
+            this.numAnglePSI.TabIndex = 9;
+            this.numAnglePSI.Tag = "0";
+            this.numAnglePSI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numAnglePSI.Value = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numAngleTeta
+            // 
+            this.numAngleTeta.DecimalPlaces = 3;
+            this.numAngleTeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numAngleTeta.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numAngleTeta.Location = new System.Drawing.Point(383, 48);
+            this.numAngleTeta.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numAngleTeta.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numAngleTeta.Name = "numAngleTeta";
+            this.numAngleTeta.Size = new System.Drawing.Size(132, 23);
+            this.numAngleTeta.TabIndex = 9;
+            this.numAngleTeta.Tag = "0";
+            this.numAngleTeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numAngleTeta.Value = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numAngleGamma
+            // 
+            this.numAngleGamma.DecimalPlaces = 3;
+            this.numAngleGamma.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numAngleGamma.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numAngleGamma.Location = new System.Drawing.Point(383, 77);
+            this.numAngleGamma.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numAngleGamma.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numAngleGamma.Name = "numAngleGamma";
+            this.numAngleGamma.Size = new System.Drawing.Size(132, 23);
+            this.numAngleGamma.TabIndex = 9;
+            this.numAngleGamma.Tag = "0";
+            this.numAngleGamma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numAngleGamma.Value = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numUvodVN
+            // 
+            this.numUvodVN.DecimalPlaces = 3;
+            this.numUvodVN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numUvodVN.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numUvodVN.Location = new System.Drawing.Point(383, 106);
+            this.numUvodVN.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numUvodVN.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numUvodVN.Name = "numUvodVN";
+            this.numUvodVN.Size = new System.Drawing.Size(132, 23);
+            this.numUvodVN.TabIndex = 9;
+            this.numUvodVN.Tag = "0";
+            this.numUvodVN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numUvodVN.Value = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numUvodGN
+            // 
+            this.numUvodGN.DecimalPlaces = 3;
+            this.numUvodGN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numUvodGN.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numUvodGN.Location = new System.Drawing.Point(383, 135);
+            this.numUvodGN.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numUvodGN.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numUvodGN.Name = "numUvodGN";
+            this.numUvodGN.Size = new System.Drawing.Size(132, 23);
+            this.numUvodGN.TabIndex = 9;
+            this.numUvodGN.Tag = "0";
+            this.numUvodGN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numUvodGN.Value = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.indZSK);
+            this.groupBox1.Controls.Add(this.radZSC);
+            this.groupBox1.Controls.Add(this.indSSK);
+            this.groupBox1.Controls.Add(this.radSSK);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Location = new System.Drawing.Point(255, 164);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(398, 57);
+            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Система координат";
+            // 
+            // radZSC
+            // 
+            this.radZSC.AutoSize = true;
+            this.radZSC.Location = new System.Drawing.Point(266, 22);
+            this.radZSC.Name = "radZSC";
+            this.radZSC.Size = new System.Drawing.Size(53, 21);
+            this.radZSC.TabIndex = 0;
+            this.radZSC.Text = "ЗСК";
+            this.radZSC.UseVisualStyleBackColor = true;
+            // 
+            // radSSK
+            // 
+            this.radSSK.AutoSize = true;
+            this.radSSK.Checked = true;
+            this.radSSK.Location = new System.Drawing.Point(69, 22);
+            this.radSSK.Name = "radSSK";
+            this.radSSK.Size = new System.Drawing.Size(53, 21);
+            this.radSSK.TabIndex = 0;
+            this.radSSK.TabStop = true;
+            this.radSSK.Text = "ССК";
+            this.radSSK.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(215, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 17);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Юстировочный угол δψ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(217, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(161, 17);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Юстировочный угол δθ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(217, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 17);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Юстировочный угол δγ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(314, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 17);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Увод ВН";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(315, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 17);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Увод ГН";
+            // 
+            // numNolVN
+            // 
+            this.numNolVN.DecimalPlaces = 3;
+            this.numNolVN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numNolVN.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numNolVN.Location = new System.Drawing.Point(383, 231);
+            this.numNolVN.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numNolVN.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numNolVN.Name = "numNolVN";
+            this.numNolVN.Size = new System.Drawing.Size(132, 23);
+            this.numNolVN.TabIndex = 9;
+            this.numNolVN.Tag = "0";
+            this.numNolVN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numNolVN.Value = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numNolGN
+            // 
+            this.numNolGN.DecimalPlaces = 3;
+            this.numNolGN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numNolGN.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numNolGN.Location = new System.Drawing.Point(383, 260);
+            this.numNolGN.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numNolGN.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numNolGN.Name = "numNolGN";
+            this.numNolGN.Size = new System.Drawing.Size(132, 23);
+            this.numNolGN.TabIndex = 9;
+            this.numNolGN.Tag = "0";
+            this.numNolGN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numNolGN.Value = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(2, 5);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(280, 233);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Тумблер ТПВК:";
+            this.label6.Size = new System.Drawing.Size(97, 17);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Ноль ППК ВН";
             // 
-            // radA5_20_Dezh
+            // label7
             // 
-            this.radA5_20_Dezh.AutoSize = true;
-            this.radA5_20_Dezh.Location = new System.Drawing.Point(94, 48);
-            this.radA5_20_Dezh.Name = "radA5_20_Dezh";
-            this.radA5_20_Dezh.Size = new System.Drawing.Size(77, 17);
-            this.radA5_20_Dezh.TabIndex = 1;
-            this.radA5_20_Dezh.Text = "Деж. реж.";
-            this.radA5_20_Dezh.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(281, 262);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 17);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Ноль ППК ГН";
             // 
-            // radA5_20_I
+            // btnWriteParametr
             // 
-            this.radA5_20_I.AutoSize = true;
-            this.radA5_20_I.Location = new System.Drawing.Point(94, 25);
-            this.radA5_20_I.Name = "radA5_20_I";
-            this.radA5_20_I.Size = new System.Drawing.Size(28, 17);
-            this.radA5_20_I.TabIndex = 1;
-            this.radA5_20_I.Text = "I";
-            this.radA5_20_I.UseVisualStyleBackColor = true;
+            this.btnWriteParametr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnWriteParametr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnWriteParametr.Location = new System.Drawing.Point(255, 289);
+            this.btnWriteParametr.Name = "btnWriteParametr";
+            this.btnWriteParametr.Size = new System.Drawing.Size(260, 57);
+            this.btnWriteParametr.TabIndex = 2;
+            this.btnWriteParametr.Text = "Установить параметры";
+            this.btnWriteParametr.UseVisualStyleBackColor = true;
+            this.btnWriteParametr.Click += new System.EventHandler(this.btnWriteParametr_Click);
             // 
-            // radA5_20_0
+            // btnReadParametr
             // 
-            this.radA5_20_0.AutoSize = true;
-            this.radA5_20_0.Checked = true;
-            this.radA5_20_0.Location = new System.Drawing.Point(94, 2);
-            this.radA5_20_0.Name = "radA5_20_0";
-            this.radA5_20_0.Size = new System.Drawing.Size(33, 17);
-            this.radA5_20_0.TabIndex = 1;
-            this.radA5_20_0.TabStop = true;
-            this.radA5_20_0.Text = "O";
-            this.radA5_20_0.UseVisualStyleBackColor = true;
+            this.btnReadParametr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReadParametr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReadParametr.Location = new System.Drawing.Point(521, 289);
+            this.btnReadParametr.Name = "btnReadParametr";
+            this.btnReadParametr.Size = new System.Drawing.Size(132, 57);
+            this.btnReadParametr.TabIndex = 2;
+            this.btnReadParametr.Text = "Запросить параметры";
+            this.btnReadParametr.UseVisualStyleBackColor = true;
+            this.btnReadParametr.Click += new System.EventHandler(this.btnReadParametr_Click);
             // 
-            // chkA5_20_Day
+            // txtAnglePsi
             // 
-            this.chkA5_20_Day.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Day.BackgroundImage = global::KINZHAL.Properties.Resources.day_night;
-            this.chkA5_20_Day.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Day.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Day.Location = new System.Drawing.Point(365, 21);
-            this.chkA5_20_Day.Name = "chkA5_20_Day";
-            this.chkA5_20_Day.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Day.TabIndex = 1;
-            this.chkA5_20_Day.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Day.UseVisualStyleBackColor = true;
-            this.chkA5_20_Day.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.txtAnglePsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtAnglePsi.Location = new System.Drawing.Point(521, 18);
+            this.txtAnglePsi.Name = "txtAnglePsi";
+            this.txtAnglePsi.ReadOnly = true;
+            this.txtAnglePsi.Size = new System.Drawing.Size(132, 23);
+            this.txtAnglePsi.TabIndex = 34;
+            this.txtAnglePsi.Text = "0";
+            this.txtAnglePsi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // chkA5_20_Polar
+            // txtAngleTeta
             // 
-            this.chkA5_20_Polar.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Polar.BackgroundImage = global::KINZHAL.Properties.Resources.polar;
-            this.chkA5_20_Polar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Polar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Polar.Location = new System.Drawing.Point(233, 153);
-            this.chkA5_20_Polar.Name = "chkA5_20_Polar";
-            this.chkA5_20_Polar.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Polar.TabIndex = 1;
-            this.chkA5_20_Polar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Polar.UseVisualStyleBackColor = true;
-            this.chkA5_20_Polar.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.txtAngleTeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtAngleTeta.Location = new System.Drawing.Point(521, 47);
+            this.txtAngleTeta.Name = "txtAngleTeta";
+            this.txtAngleTeta.ReadOnly = true;
+            this.txtAngleTeta.Size = new System.Drawing.Size(132, 23);
+            this.txtAngleTeta.TabIndex = 34;
+            this.txtAngleTeta.Text = "0";
+            this.txtAngleTeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // chkA5_20_Svetofilter
+            // txtAngleGamma
             // 
-            this.chkA5_20_Svetofilter.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Svetofilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Svetofilter.Location = new System.Drawing.Point(497, 21);
-            this.chkA5_20_Svetofilter.Name = "chkA5_20_Svetofilter";
-            this.chkA5_20_Svetofilter.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Svetofilter.TabIndex = 1;
-            this.chkA5_20_Svetofilter.Text = "Светофильтр";
-            this.chkA5_20_Svetofilter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Svetofilter.UseVisualStyleBackColor = true;
-            this.chkA5_20_Svetofilter.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.txtAngleGamma.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtAngleGamma.Location = new System.Drawing.Point(521, 76);
+            this.txtAngleGamma.Name = "txtAngleGamma";
+            this.txtAngleGamma.ReadOnly = true;
+            this.txtAngleGamma.Size = new System.Drawing.Size(132, 23);
+            this.txtAngleGamma.TabIndex = 34;
+            this.txtAngleGamma.Text = "0";
+            this.txtAngleGamma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // chkA5_20_Usil
+            // txtUvodVN
             // 
-            this.chkA5_20_Usil.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Usil.BackgroundImage = global::KINZHAL.Properties.Resources.usil;
-            this.chkA5_20_Usil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Usil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Usil.Location = new System.Drawing.Point(299, 21);
-            this.chkA5_20_Usil.Name = "chkA5_20_Usil";
-            this.chkA5_20_Usil.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Usil.TabIndex = 1;
-            this.chkA5_20_Usil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Usil.UseVisualStyleBackColor = true;
-            this.chkA5_20_Usil.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.txtUvodVN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtUvodVN.Location = new System.Drawing.Point(521, 105);
+            this.txtUvodVN.Name = "txtUvodVN";
+            this.txtUvodVN.ReadOnly = true;
+            this.txtUvodVN.Size = new System.Drawing.Size(132, 23);
+            this.txtUvodVN.TabIndex = 34;
+            this.txtUvodVN.Text = "0";
+            this.txtUvodVN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // chkA5_20_Focus
+            // txtUvodGN
             // 
-            this.chkA5_20_Focus.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Focus.BackgroundImage = global::KINZHAL.Properties.Resources.focus;
-            this.chkA5_20_Focus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Focus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Focus.Location = new System.Drawing.Point(233, 21);
-            this.chkA5_20_Focus.Name = "chkA5_20_Focus";
-            this.chkA5_20_Focus.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Focus.TabIndex = 1;
-            this.chkA5_20_Focus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Focus.UseVisualStyleBackColor = true;
-            this.chkA5_20_Focus.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.txtUvodGN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtUvodGN.Location = new System.Drawing.Point(521, 134);
+            this.txtUvodGN.Name = "txtUvodGN";
+            this.txtUvodGN.ReadOnly = true;
+            this.txtUvodGN.Size = new System.Drawing.Size(132, 23);
+            this.txtUvodGN.TabIndex = 34;
+            this.txtUvodGN.Text = "0";
+            this.txtUvodGN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // chkA5_20_Obogrev
+            // txtNolVN
             // 
-            this.chkA5_20_Obogrev.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Obogrev.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Obogrev.Location = new System.Drawing.Point(137, 21);
-            this.chkA5_20_Obogrev.Name = "chkA5_20_Obogrev";
-            this.chkA5_20_Obogrev.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Obogrev.TabIndex = 1;
-            this.chkA5_20_Obogrev.Text = "Обогрев";
-            this.chkA5_20_Obogrev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Obogrev.UseVisualStyleBackColor = true;
-            this.chkA5_20_Obogrev.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.txtNolVN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtNolVN.Location = new System.Drawing.Point(521, 230);
+            this.txtNolVN.Name = "txtNolVN";
+            this.txtNolVN.ReadOnly = true;
+            this.txtNolVN.Size = new System.Drawing.Size(132, 23);
+            this.txtNolVN.TabIndex = 34;
+            this.txtNolVN.Text = "0";
+            this.txtNolVN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // chkA5_20_Up
+            // txtNolGN
             // 
-            this.chkA5_20_Up.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Up.BackgroundImage = global::KINZHAL.Properties.Resources.up;
-            this.chkA5_20_Up.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Up.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Up.Location = new System.Drawing.Point(71, 21);
-            this.chkA5_20_Up.Name = "chkA5_20_Up";
-            this.chkA5_20_Up.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Up.TabIndex = 1;
-            this.chkA5_20_Up.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Up.UseVisualStyleBackColor = true;
-            this.chkA5_20_Up.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.txtNolGN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtNolGN.Location = new System.Drawing.Point(521, 259);
+            this.txtNolGN.Name = "txtNolGN";
+            this.txtNolGN.ReadOnly = true;
+            this.txtNolGN.Size = new System.Drawing.Size(132, 23);
+            this.txtNolGN.TabIndex = 34;
+            this.txtNolGN.Text = "0";
+            this.txtNolGN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // chkA5_20_Down
+            // indSSK
             // 
-            this.chkA5_20_Down.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Down.BackgroundImage = global::KINZHAL.Properties.Resources.down;
-            this.chkA5_20_Down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Down.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Down.Location = new System.Drawing.Point(71, 153);
-            this.chkA5_20_Down.Name = "chkA5_20_Down";
-            this.chkA5_20_Down.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Down.TabIndex = 1;
-            this.chkA5_20_Down.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Down.UseVisualStyleBackColor = true;
-            this.chkA5_20_Down.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.indSSK.Enabled = false;
+            this.indSSK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.indSSK.Location = new System.Drawing.Point(128, 22);
+            this.indSSK.Name = "indSSK";
+            this.indSSK.Size = new System.Drawing.Size(20, 20);
+            this.indSSK.TabIndex = 35;
+            this.indSSK.UseVisualStyleBackColor = true;
             // 
-            // chkA5_20_Right
+            // indZSK
             // 
-            this.chkA5_20_Right.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Right.BackgroundImage = global::KINZHAL.Properties.Resources.right;
-            this.chkA5_20_Right.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Right.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Right.Location = new System.Drawing.Point(137, 87);
-            this.chkA5_20_Right.Name = "chkA5_20_Right";
-            this.chkA5_20_Right.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Right.TabIndex = 1;
-            this.chkA5_20_Right.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Right.UseVisualStyleBackColor = true;
-            this.chkA5_20_Right.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
-            // 
-            // chkA5_20_Left
-            // 
-            this.chkA5_20_Left.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Left.BackgroundImage = global::KINZHAL.Properties.Resources.left;
-            this.chkA5_20_Left.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Left.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Left.Location = new System.Drawing.Point(5, 87);
-            this.chkA5_20_Left.Name = "chkA5_20_Left";
-            this.chkA5_20_Left.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Left.TabIndex = 1;
-            this.chkA5_20_Left.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Left.UseVisualStyleBackColor = true;
-            this.chkA5_20_Left.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
-            // 
-            // chkA5_20_Menu
-            // 
-            this.chkA5_20_Menu.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkA5_20_Menu.BackgroundImage = global::KINZHAL.Properties.Resources.menu;
-            this.chkA5_20_Menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.chkA5_20_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkA5_20_Menu.Location = new System.Drawing.Point(71, 87);
-            this.chkA5_20_Menu.Name = "chkA5_20_Menu";
-            this.chkA5_20_Menu.Size = new System.Drawing.Size(60, 60);
-            this.chkA5_20_Menu.TabIndex = 1;
-            this.chkA5_20_Menu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkA5_20_Menu.UseVisualStyleBackColor = true;
-            this.chkA5_20_Menu.CheckedChanged += new System.EventHandler(this.chkPU_CheckedChanged);
+            this.indZSK.Enabled = false;
+            this.indZSK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.indZSK.Location = new System.Drawing.Point(325, 22);
+            this.indZSK.Name = "indZSK";
+            this.indZSK.Size = new System.Drawing.Size(20, 20);
+            this.indZSK.TabIndex = 35;
+            this.indZSK.UseVisualStyleBackColor = true;
             // 
             // frmPU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 475);
-            this.Controls.Add(this.groupBox6);
+            this.ClientSize = new System.Drawing.Size(696, 387);
             this.Controls.Add(this.groupBox20);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "frmPU";
-            this.Text = "Панель управления";
+            this.Text = "Работа с параметрами";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPU_FormClosing);
             this.Load += new System.EventHandler(this.frmPU_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPU_KeyDown);
             this.groupBox20.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.groupBox20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numAnglePSI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAngleTeta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAngleGamma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUvodVN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUvodGN)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNolVN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNolGN)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -485,35 +785,47 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox20;
-        private System.Windows.Forms.Button btnA5_14;
-        private System.Windows.Forms.Button btnA5_15;
-        private System.Windows.Forms.Button btnA5_16;
-        private System.Windows.Forms.Button btnA5_17;
-        private System.Windows.Forms.Button btnA5_12;
-        private System.Windows.Forms.Button btnA5_18;
-        private System.Windows.Forms.Button btnA5_19;
-        private System.Windows.Forms.Button btnA5_11;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnLeft;
+        private System.Windows.Forms.Button btnRight;
+        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnF1;
+        private System.Windows.Forms.Button btnError;
+        private System.Windows.Forms.Button btnF7;
+        private System.Windows.Forms.Button btnF6;
+        private System.Windows.Forms.Button btnF5;
+        private System.Windows.Forms.Button btnF4;
+        private System.Windows.Forms.Button btnF3;
+        private System.Windows.Forms.Button btnF2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnReadParametr;
+        private System.Windows.Forms.Button btnWriteParametr;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.CheckBox chkA5_20_Marka;
-        public System.Windows.Forms.CheckBox chkA5_20_Umen;
-        public System.Windows.Forms.CheckBox chkA5_20_Uvel;
-        public System.Windows.Forms.RadioButton radA5_20_Dezh;
-        public System.Windows.Forms.RadioButton radA5_20_I;
-        public System.Windows.Forms.RadioButton radA5_20_0;
-        public System.Windows.Forms.CheckBox chkA5_20_Day;
-        public System.Windows.Forms.CheckBox chkA5_20_Polar;
-        public System.Windows.Forms.CheckBox chkA5_20_Svetofilter;
-        public System.Windows.Forms.CheckBox chkA5_20_Usil;
-        public System.Windows.Forms.CheckBox chkA5_20_Focus;
-        public System.Windows.Forms.CheckBox chkA5_20_Obogrev;
-        public System.Windows.Forms.CheckBox chkA5_20_Up;
-        public System.Windows.Forms.CheckBox chkA5_20_Down;
-        public System.Windows.Forms.CheckBox chkA5_20_Right;
-        public System.Windows.Forms.CheckBox chkA5_20_Left;
-        public System.Windows.Forms.CheckBox chkA5_20_Menu;
-        private System.Windows.Forms.Button btnMenuInzh;
-        private System.Windows.Forms.Button btnMenuTehn;
+        public System.Windows.Forms.NumericUpDown numUvodGN;
+        public System.Windows.Forms.NumericUpDown numUvodVN;
+        public System.Windows.Forms.NumericUpDown numAngleGamma;
+        public System.Windows.Forms.NumericUpDown numAngleTeta;
+        public System.Windows.Forms.NumericUpDown numAnglePSI;
+        public System.Windows.Forms.RadioButton radZSC;
+        public System.Windows.Forms.RadioButton radSSK;
+        public System.Windows.Forms.NumericUpDown numNolGN;
+        public System.Windows.Forms.NumericUpDown numNolVN;
+        public System.Windows.Forms.TextBox txtError;
+        public System.Windows.Forms.TextBox txtNolGN;
+        public System.Windows.Forms.TextBox txtNolVN;
+        public System.Windows.Forms.TextBox txtUvodGN;
+        public System.Windows.Forms.TextBox txtUvodVN;
+        public System.Windows.Forms.TextBox txtAngleGamma;
+        public System.Windows.Forms.TextBox txtAngleTeta;
+        public System.Windows.Forms.TextBox txtAnglePsi;
+        public System.Windows.Forms.Button indZSK;
+        public System.Windows.Forms.Button indSSK;
     }
 }
