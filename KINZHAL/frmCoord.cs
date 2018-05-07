@@ -23,5 +23,10 @@ namespace KINZHAL
             e.Cancel = true;
             _frmMain._frmCoord.Hide();
         }
+
+        private void btnZaprosCoord_Click(object sender, EventArgs e)
+        {
+            _frmMain.ZaprosCoord();
+        }
     }
 }

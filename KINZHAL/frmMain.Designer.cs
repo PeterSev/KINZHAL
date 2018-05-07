@@ -104,7 +104,6 @@
             this.label48 = new System.Windows.Forms.Label();
             this.numAims = new System.Windows.Forms.NumericUpDown();
             this.grpOtherCommand = new System.Windows.Forms.GroupBox();
-            this.btnZaprosCoord = new System.Windows.Forms.Button();
             this.btnOtklTPVMatr = new System.Windows.Forms.Button();
             this.btnVklTPVMatr = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -219,6 +218,7 @@
             this.txtA6_1 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.pict1 = new System.Windows.Forms.PictureBox();
+            this.btnShowParam = new System.Windows.Forms.Button();
             this.groupCommandIN.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -282,8 +282,6 @@
             // chkJoy
             // 
             this.chkJoy.AutoSize = true;
-            this.chkJoy.Checked = true;
-            this.chkJoy.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkJoy.Location = new System.Drawing.Point(369, 49);
             this.chkJoy.Name = "chkJoy";
             this.chkJoy.Size = new System.Drawing.Size(154, 17);
@@ -449,6 +447,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnShowParam);
             this.groupBox4.Controls.Add(this.btnShowCoord);
             this.groupBox4.Controls.Add(this.txtDiagnostic);
             this.groupBox4.Controls.Add(this.label35);
@@ -465,9 +464,9 @@
             // 
             // btnShowCoord
             // 
-            this.btnShowCoord.Location = new System.Drawing.Point(239, 19);
+            this.btnShowCoord.Location = new System.Drawing.Point(222, 19);
             this.btnShowCoord.Name = "btnShowCoord";
-            this.btnShowCoord.Size = new System.Drawing.Size(103, 42);
+            this.btnShowCoord.Size = new System.Drawing.Size(160, 24);
             this.btnShowCoord.TabIndex = 17;
             this.btnShowCoord.Text = "Координаты визирной оси";
             this.btnShowCoord.UseVisualStyleBackColor = true;
@@ -1048,7 +1047,6 @@
             // 
             // grpOtherCommand
             // 
-            this.grpOtherCommand.Controls.Add(this.btnZaprosCoord);
             this.grpOtherCommand.Controls.Add(this.btnOtklTPVMatr);
             this.grpOtherCommand.Controls.Add(this.btnVklTPVMatr);
             this.grpOtherCommand.Controls.Add(this.label12);
@@ -1064,16 +1062,6 @@
             this.grpOtherCommand.TabIndex = 28;
             this.grpOtherCommand.TabStop = false;
             this.grpOtherCommand.Text = "Другое";
-            // 
-            // btnZaprosCoord
-            // 
-            this.btnZaprosCoord.Location = new System.Drawing.Point(212, 19);
-            this.btnZaprosCoord.Name = "btnZaprosCoord";
-            this.btnZaprosCoord.Size = new System.Drawing.Size(234, 25);
-            this.btnZaprosCoord.TabIndex = 33;
-            this.btnZaprosCoord.Text = "Запросить координаты визирной оси";
-            this.btnZaprosCoord.UseVisualStyleBackColor = true;
-            this.btnZaprosCoord.Click += new System.EventHandler(this.btnZaprosCoord_Click);
             // 
             // btnOtklTPVMatr
             // 
@@ -1116,7 +1104,7 @@
             // 
             // btnZaprosStatePricel
             // 
-            this.btnZaprosStatePricel.Location = new System.Drawing.Point(212, 50);
+            this.btnZaprosStatePricel.Location = new System.Drawing.Point(211, 19);
             this.btnZaprosStatePricel.Name = "btnZaprosStatePricel";
             this.btnZaprosStatePricel.Size = new System.Drawing.Size(234, 25);
             this.btnZaprosStatePricel.TabIndex = 26;
@@ -1874,11 +1862,6 @@
             this.numSpeedAz.TabIndex = 0;
             this.numSpeedAz.Tag = "0";
             this.numSpeedAz.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numSpeedAz.Value = new decimal(new int[] {
-            180,
-            0,
-            0,
-            -2147483648});
             this.numSpeedAz.ValueChanged += new System.EventHandler(this.numSpeedAz_ValueChanged);
             // 
             // btnA5_4
@@ -2098,8 +2081,8 @@
             this.окнаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.логToolStripMenuItem,
             this.панельУправленияToolStripMenuItem,
-            this.отладкаToolStripMenuItem,
             this.координатыВизирнойОсиToolStripMenuItem,
+            this.отладкаToolStripMenuItem,
             this.toolStripMenuItem2,
             this.оПрограммеToolStripMenuItem});
             this.окнаToolStripMenuItem.Name = "окнаToolStripMenuItem";
@@ -2117,7 +2100,7 @@
             // 
             this.панельУправленияToolStripMenuItem.Name = "панельУправленияToolStripMenuItem";
             this.панельУправленияToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.панельУправленияToolStripMenuItem.Text = "Панель управления";
+            this.панельУправленияToolStripMenuItem.Text = "Управление параметрами";
             this.панельУправленияToolStripMenuItem.Click += new System.EventHandler(this.панельУправленияToolStripMenuItem_Click);
             // 
             // отладкаToolStripMenuItem
@@ -2350,6 +2333,16 @@
             this.pict1.TabIndex = 4;
             this.pict1.TabStop = false;
             this.pict1.Visible = false;
+            // 
+            // btnShowParam
+            // 
+            this.btnShowParam.Location = new System.Drawing.Point(222, 45);
+            this.btnShowParam.Name = "btnShowParam";
+            this.btnShowParam.Size = new System.Drawing.Size(160, 24);
+            this.btnShowParam.TabIndex = 18;
+            this.btnShowParam.Text = "Управление параметрами";
+            this.btnShowParam.UseVisualStyleBackColor = true;
+            this.btnShowParam.Click += new System.EventHandler(this.btnShowParam_Click);
             // 
             // frmMain
             // 
@@ -2602,12 +2595,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numVklObogrev;
         private System.Windows.Forms.Button btnVklObogrev;
-        private System.Windows.Forms.Button btnZaprosCoord;
         private System.Windows.Forms.Button btnOtklTPVMatr;
         private System.Windows.Forms.Button btnVklTPVMatr;
         private System.Windows.Forms.TextBox txtA6_1;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label lblErrorCode;
         private System.Windows.Forms.Button btnA5_22;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtVremyaIzmLD;
@@ -2643,6 +2634,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Button btnShowCoord;
+        private System.Windows.Forms.Button btnShowParam;
+        private System.Windows.Forms.Label lblErrorCode;
     }
 }
 

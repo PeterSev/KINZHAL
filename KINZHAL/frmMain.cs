@@ -132,14 +132,14 @@ namespace KINZHAL
 
         public SDI_Capture sdi;
 
-        public double version = 2.2;
+        public double version = 2.4;
         //Bitmap bitmap;
         //Graphics imgr;
         public frmMain()
         {
             InitializeComponent();
             Init();
-        }
+        } 
 
         void Init()
         {
@@ -505,7 +505,7 @@ namespace KINZHAL
             SendMessage(Devices[selectedIndex], devPPK, a5_18);
         }
 
-        private void btnZaprosCoord_Click(object sender, EventArgs e)
+        public void ZaprosCoord()
         {
             SendMessage(Devices[selectedIndex], devPPK, a5_27);
         }
@@ -850,6 +850,11 @@ namespace KINZHAL
             //_frmShutDown.Hide();
         }
 
+        private void btnShowParam_Click(object sender, EventArgs e)
+        {
+            _frmPU.Show();
+        }
+
         void CanSrv_InitCanEvent(byte bDeviceNr_p, byte bChannel_p)
         {
             //throw new NotImplementedException();
@@ -1148,7 +1153,7 @@ namespace KINZHAL
                         (buf[7] << 24));
                     Invoke((MethodInvoker)delegate
                     {
-                        _frmPU.txtError.Text = errCode.ToString("X");
+                        _frmPU.txtError.Text = lblErrorCode.Text = errCode.ToString("X");
                     });
                     break;
                 case 256:
@@ -1198,19 +1203,15 @@ namespace KINZHAL
                     float uvodGN = BitConverter.ToSingle(buf, 4);
                     Invoke((MethodInvoker)delegate
                     {
-                        _frmPU.txtUvodVN.Text = uvodGN.ToString();
+                        _frmPU.txtUvodGN.Text = uvodGN.ToString();
                     });
                     break;
                 case 301:
-                    if(buf[4] == 0)
+                    switch (buf[4])
                     {
-                        _frmPU.indSSK.BackColor = Color.LightGreen;
-                        _frmPU.indZSK.BackColor = SystemColors.Control;
-                    }
-                    else if(buf[4] == 1)
-                    {
-                        _frmPU.indSSK.BackColor = SystemColors.Control;
-                        _frmPU.indZSK.BackColor = Color.LightGreen;
+                        case 0: _frmPU.txtCoord.Text = "ССК";  break;
+                        case 1: _frmPU.txtCoord.Text = "ЗСК";  break;
+                        default: _frmPU.txtCoord.Text = "Ошибка!"; break;
                     }
                     break;
                 case 302:
@@ -1825,7 +1826,7 @@ namespace KINZHAL
             a5_23.Data[1] = (byte)(code >> 8);
             a5_23.Data[2] = (byte)(code >> 16);
             a5_23.Data[3] = (byte)(code >> 24);
-            a5_23.Data[4] = (byte)((int)_frmPU.numAnglePSI.Value * CMR.SPEED_AZ_UM);
+            a5_23.Data[4] = (byte)((double)_frmPU.numAnglePSI.Value * CMR.SPEED_AZ_UM);
             a5_23.Data[5] = (byte)((int)((double)_frmPU.numAnglePSI.Value * CMR.SPEED_AZ_UM) >> 8);
             a5_23.Data[6] = (byte)((int)((double)_frmPU.numAnglePSI.Value * CMR.SPEED_AZ_UM) >> 16);
             a5_23.Data[7] = (byte)((int)((double)_frmPU.numAnglePSI.Value * CMR.SPEED_AZ_UM) >> 24);
@@ -1838,7 +1839,7 @@ namespace KINZHAL
             a5_23.Data[1] = (byte)(code >> 8);
             a5_23.Data[2] = (byte)(code >> 16);
             a5_23.Data[3] = (byte)(code >> 24);
-            a5_23.Data[4] = (byte)((int)_frmPU.numAngleTeta.Value * CMR.SPEED_AZ_UM);
+            a5_23.Data[4] = (byte)((double)_frmPU.numAngleTeta.Value * CMR.SPEED_AZ_UM);
             a5_23.Data[5] = (byte)((int)((double)_frmPU.numAngleTeta.Value * CMR.SPEED_AZ_UM) >> 8);
             a5_23.Data[6] = (byte)((int)((double)_frmPU.numAngleTeta.Value * CMR.SPEED_AZ_UM) >> 16);
             a5_23.Data[7] = (byte)((int)((double)_frmPU.numAngleTeta.Value * CMR.SPEED_AZ_UM) >> 24);
@@ -1851,7 +1852,7 @@ namespace KINZHAL
             a5_23.Data[1] = (byte)(code >> 8);
             a5_23.Data[2] = (byte)(code >> 16);
             a5_23.Data[3] = (byte)(code >> 24);
-            a5_23.Data[4] = (byte)((int)_frmPU.numAngleGamma.Value * CMR.SPEED_AZ_UM);
+            a5_23.Data[4] = (byte)((double)_frmPU.numAngleGamma.Value * CMR.SPEED_AZ_UM);
             a5_23.Data[5] = (byte)((int)((double)_frmPU.numAngleGamma.Value * CMR.SPEED_AZ_UM) >> 8);
             a5_23.Data[6] = (byte)((int)((double)_frmPU.numAngleGamma.Value * CMR.SPEED_AZ_UM) >> 16);
             a5_23.Data[7] = (byte)((int)((double)_frmPU.numAngleGamma.Value * CMR.SPEED_AZ_UM) >> 24);
@@ -1864,7 +1865,7 @@ namespace KINZHAL
             a5_23.Data[1] = (byte)(code >> 8);
             a5_23.Data[2] = (byte)(code >> 16);
             a5_23.Data[3] = (byte)(code >> 24);
-            a5_23.Data[4] = (byte)((int)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM);
+            a5_23.Data[4] = (byte)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM);
             a5_23.Data[5] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 8);
             a5_23.Data[6] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 16);
             a5_23.Data[7] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 24);
@@ -1877,10 +1878,10 @@ namespace KINZHAL
             a5_23.Data[1] = (byte)(code >> 8);
             a5_23.Data[2] = (byte)(code >> 16);
             a5_23.Data[3] = (byte)(code >> 24);
-            a5_23.Data[4] = (byte)((int)_frmPU.numNolGN.Value * CMR.SPEED_AZ_UM);
-            a5_23.Data[5] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 8);
-            a5_23.Data[6] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 16);
-            a5_23.Data[7] = (byte)((int)((double)_frmPU.numNolVN.Value * CMR.SPEED_AZ_UM) >> 24);
+            a5_23.Data[4] = (byte)((double)_frmPU.numNolGN.Value * CMR.SPEED_AZ_UM);
+            a5_23.Data[5] = (byte)((int)((double)_frmPU.numNolGN.Value * CMR.SPEED_AZ_UM) >> 8);
+            a5_23.Data[6] = (byte)((int)((double)_frmPU.numNolGN.Value * CMR.SPEED_AZ_UM) >> 16);
+            a5_23.Data[7] = (byte)((int)((double)_frmPU.numNolGN.Value * CMR.SPEED_AZ_UM) >> 24);
             SendMessage(Devices[selectedIndex], devPPK, a5_23);
 
             //Система координат
